@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include "Encoder.h"
 
 Encoder::Encoder() {
@@ -13,42 +14,82 @@ int Encoder::getPin() {
 	return this -> pin;
 }
 
-void Encoder::setHolesNumber(uint8_t num) {
-	if (!this -> started)
-		this -> holes_number = num;
+void Encoder::setCogsNumber(uint8_t num) {
+	if (this -> started || !num)
+    return;
+	this -> cogs_number = num;
+ #if _USE_TIMING_REFERENCES_
+  this -> sample_interval = (60*1000/num);
+ #else
+  this -> sample_interval = ((60*1000)/(num * this -> flush_period));
+ #endif
 }
 
-uint8_t Encoder::getHolesNumber() {
-	return this -> holes_number;
+uint8_t Encoder::getCogsNumber() {
+	return this -> cogs_number;
 }
 
 bool Encoder::start() {
-  if (this -> pin < 0 || !this -> holes_number || this -> started)
+ #if !_USE_TIMING_REFERENCES_
+  if (this -> started || this -> pin < 0 || !this -> cogs_number || !this -> flush_period)
+ #else
+  if (this -> started || this -> pin < 0 || !this -> cogs_number)
+ #endif
     return false;
   return (this -> started = true);
+}
+
+bool Encoder::stop() {
+  return !(this -> started = false);
 }
 
 volatile bool Encoder::isStarted() {
 	return this -> started;
 }
 
-void Encoder::addPulse() {
+void Encoder::pulse() {
 	if (!this -> started)
 		return;
+ #if _USE_TIMING_REFERENCES_
+  this -> prev_time = this -> curr_time;
+  this -> curr_time = micros();
+ #else
 	this -> pulses++;
+ #endif
 }
-		
+
+#if !_USE_TIMING_REFERENCES_
+volatile uint16_t Encoder::getPulses() {
+  if (!this -> started)
+    return 0;
+  return this -> pulses;
+}
+
 void Encoder::resetPulses() {
-	if (!this -> started)
-		return;
-	this -> pulses = 0;
+  if (!this -> started)
+    return;
+  this -> pulses = 0;
+}
+
+void Encoder::setFlushPeriod(unsigned long period) {
+  if (this -> started || !period)
+    return;
+
+  this -> flush_period = period;
 }
 
 uint16_t Encoder::getFrequency() {
-	return 0;
+  return 0;
 }
+#endif
 
 uint16_t Encoder::getRPM() {
-	return 0;
+	if (!this -> started)
+    return 0;
+  #if _USE_TIMING_REFERENCES_
+    return this -> sample_interval / (this -> curr_time - this -> prev_time);
+  #else
+    return this -> sample_interval * this -> pulses;
+  #endif
 }
 

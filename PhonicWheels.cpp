@@ -1,36 +1,42 @@
 #include "PhonicWheels.h"
 
+//PhonicWheels instance;
+
 PhonicWheels PhonicWheels::Instance() {
   static PhonicWheels instance;
   return instance;
 }
 
+#if !_USE_TIMING_REFERENCES_
 void tim_handler() {
 	PhonicWheels::Instance().getEncoder(FR_SX).resetPulses();
 	PhonicWheels::Instance().getEncoder(FR_DX).resetPulses();
 	PhonicWheels::Instance().getEncoder(RT_SX).resetPulses();
 	PhonicWheels::Instance().getEncoder(RT_DX).resetPulses();
 }
+#endif
 
 void exti_handler0() {
-	PhonicWheels::Instance().getEncoder(FR_SX).addPulse();
+	PhonicWheels::Instance().getEncoder(FR_SX).pulse();
 }
 
 void exti_handler1() {
-	PhonicWheels::Instance().getEncoder(FR_DX).addPulse();
+	PhonicWheels::Instance().getEncoder(FR_DX).pulse();
 }
 
 void exti_handler2() {
-	PhonicWheels::Instance().getEncoder(RT_SX).addPulse();
+	PhonicWheels::Instance().getEncoder(RT_SX).pulse();
 }
 
 void exti_handler3() {
-	PhonicWheels::Instance().getEncoder(RT_DX).addPulse();
+	PhonicWheels::Instance().getEncoder(RT_DX).pulse();
 }
 
 PhonicWheels::PhonicWheels() {
 	this -> start = false;
+ #if !_USE_TIMING_REFERENCES_
 	this -> timer = &(DueTimer::getAvailable().attachInterrupt(tim_handler));
+ #endif
 }
 
 bool PhonicWheels::begin() {
@@ -61,7 +67,9 @@ bool PhonicWheels::begin() {
 		return false;
 		
 	this -> start = true;
+ #if !_USE_TIMING_REFERENCES_
 	this -> timer -> start(this -> period);
+ #endif
 }
 
 Encoder PhonicWheels::getEncoder(enPos pos) {
@@ -75,9 +83,10 @@ bool PhonicWheels::end() {
 		return false;
 	
 	Encoder e;
-	
+
+ #if !_USE_TIMING_REFERENCES_
 	this -> timer -> stop();
-	
+ #endif
 	if ((e = this -> encoders[0]).isStarted()) {
 		e.stop();
 		detachInterrupt(digitalPinToInterrupt(e.getPin()));

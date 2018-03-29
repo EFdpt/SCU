@@ -15,7 +15,10 @@
 #ifndef _PHONIC_WHEELS_
 #define _PHONIC_WHEELS_
 
+#if !_USE_TIMING_REFERENCES_
 #include <DueTimer.h>
+#endif
+
 #include "Encoder.h"
 
 typedef enum _enPos {
@@ -30,17 +33,17 @@ class PhonicWheels {
 		Encoder       encoders[4];
 		volatile bool start;
 		unsigned long period;
+
+  #if !_USE_TIMING_REFERENCES_
 		DueTimer* 	  timer;
-		
+	#endif
+  
 		PhonicWheels();
 		
 	public:
-		void setFlushPeriod(unsigned long);
 		Encoder getEncoder(enPos encoder_position);
-		
 		bool begin();
 		bool end();
-   
 		static PhonicWheels Instance();
 };
 
