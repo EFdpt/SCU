@@ -1,6 +1,14 @@
 #include <Arduino.h>
 #include "Encoder.h"
 
+#if _USE_TIMING_REFERENCES_
+  #define __update_sample_interval__      \
+    this -> sample_interval = (60*1000/num);
+#else
+  #define __update_sample_interval__      \
+    this -> sample_interval = ((60*1000)/(num * this -> flush_period));
+#endif
+
 Encoder::Encoder() {
 	this -> pin = -1;
 }
@@ -18,11 +26,8 @@ void Encoder::setCogsNumber(uint8_t num) {
 	if (this -> started || !num)
     return;
 	this -> cogs_number = num;
- #if _USE_TIMING_REFERENCES_
-  this -> sample_interval = (60*1000/num);
- #else
-  this -> sample_interval = ((60*1000)/(num * this -> flush_period));
- #endif
+  
+  __update_sample_interval__
 }
 
 uint8_t Encoder::getCogsNumber() {
@@ -76,6 +81,8 @@ void Encoder::setFlushPeriod(unsigned long period) {
     return;
 
   this -> flush_period = period;
+  
+  __update_sample_interval__
 }
 
 uint16_t Encoder::getFrequency() {

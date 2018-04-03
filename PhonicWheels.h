@@ -45,6 +45,9 @@ class PhonicWheels {
 		bool begin();
 		bool end();
 		static PhonicWheels Instance();
+  #if !_USE_TIMING_REFERENCES_
+    void setFlushPeriod(unsigned long);
+  #endif
 };
 
 #endif /* _PHONIC_WHEELS_ */

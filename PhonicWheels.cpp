@@ -106,3 +106,17 @@ bool PhonicWheels::end() {
 	
 	return true;
 }
+
+#if !_USE_TIMING_REFERENCES_
+void PhonicWheels::setFlushPeriod(unsigned long period) {
+  if (this -> start || !period)
+    return;
+
+  this -> period = period;
+    
+  this -> encoders[0].setFlushPeriod(pediod);
+  this -> encoders[1].setFlushPeriod(pediod);
+  this -> encoders[2].setFlushPeriod(pediod);
+  this -> encoders[3].setFlushPeriod(pediod);
+}
+#endif
