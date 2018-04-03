@@ -97,3 +97,10 @@ bool PhonicWheels::end() {
 	
 	return true;
 }
+
+void PhonicWheels::setFlushPeriod(unsigned long period) {
+  if (this -> start || !period)
+    return;
+
+  this -> period = period;
+}

@@ -16,17 +16,25 @@
 
 #include <due_can.h>
 #include <DueTimer.h>
-#include "PhonicWheels.h"
+#include "CarSensors.h"
 
 #define TX_PERIOD       				1000 // 1ms
 #define CAN_PORT        				Can0
 
 
-#define HOLES_NUMBER					30
-#define PHONIC_WHEELS_FLUSH_PERIOD		256
-#define WHEELS_ID						0x11
 
 uint8_t IT = 0; // Interval Timer Slot
+DueTimer*    timer;
+
+CarSensors sensors;
+
+inline void CAN_pack_pedals(CAN_FRAME* frame) {
+  frame -> id = PEDALS_ID;
+  frame -> extended = false;
+  frame -> data.byte[0] = sensors.getTps1Percentage();
+  frame -> data.byte[1] = sensors.getTps2Percentage();
+  frame -> data.byte[2] = sensors.getBrakePercentage();
+}
 
 inline void CAN_pack_encoders(CAN_FRAME* frame) {
 	frame -> id = WHEELS_ID;
@@ -49,10 +57,10 @@ void timer_handler() {
 	  CAN_pack_encoders(&outgoing);
 	  break;
 	case 2:
-	  CAN_pack_accelerometers(&outgoing);
+	  //CAN_pack_accelerometers(&outgoing);
 	  break;
 	case 3:
-	  CAN_pack_suspensions(&outgoing);
+	  //CAN_pack_suspensions(&outgoing);
 	  break;
 	default: IT = 0;
   }
@@ -60,7 +68,7 @@ void timer_handler() {
   CAN_PORT.sendFrame(outgoing);
 }
 
-inline void CAN_init() {
+inline void CANInit() {
   // sync with VCU
   
   // if TCS is connected send all sensors data through CAN & radio
@@ -68,34 +76,24 @@ inline void CAN_init() {
   // else send only pedals through CAN and all sensors data through radio
 }
 
-inline void Timer_init() {
-  DueTimer::getAvailable().attachInterrupt(timer_handler).start(TX_PERIOD);
+inline void TimerInit() {
+  timer = &(DueTimer::getAvailable().attachInterrupt(timer_handler));
 }
 
-void PhonicWheels_init() {
-  PhonicWheels::setFlushPeriod(PHONIC_WHEELS_FLUSH_PERIOD);
-  PhonicWheels::Instance().getEncoder(FR_SX).attachPin(0);
-  PhonicWheels::Instance().getEncoder(FR_DX).attachPin(1);
-  PhonicWheels::Instance().getEncoder(RT_SX).attachPin(2);
-  PhonicWheels::Instance().getEncoder(RT_DX).attachPin(3);
-  PhonicWheels::Instance().getEncoder(FR_SX).setHolesNumber(HOLES_NUMBER);
-  PhonicWheels::Instance().getEncoder(FR_DX).setHolesNumber(HOLES_NUMBER);
-  PhonicWheels::Instance().getEncoder(RT_SX).setHolesNumber(HOLES_NUMBER);
-  PhonicWheels::Instance().getEncoder(RT_DX).setHolesNumber(HOLES_NUMBER);
-  PhonicWheels::Instance().begin();
-}
-
-inline void Sensors_init() {
-  Pedals_init();
+inline void RadioInit() {
   
-  PhonicWheels_init();
+}
+
+inline void SCU_start() {
+  timer -> start(TX_PERIOD);
 }
 
 void setup() {
-  CAN_init();
-  Radio_init();
-  Timer_init();
-  Sensors_init();
+  CANInit();
+  RadioInit();
+  TimerInit();
+
+  SCU_start();
 }
 
 void loop() {
