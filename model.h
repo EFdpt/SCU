@@ -6,23 +6,25 @@
 #include "common.h"
 
 #if defined(_FRONTAL_)
-extern uint16_t tps1_value;
-extern uint16_t tps1_max;
-extern uint16_t tps1_low;
+extern volatile uint16_t tps1_value;
+extern volatile uint16_t tps1_max;
+extern volatile uint16_t tps1_low;
 
-extern uint16_t tps2_value;
-extern uint16_t tps2_max;
-extern uint16_t tps2_low;
+extern volatile bool plaus;
 
-extern uint16_t brake_value;
-extern uint16_t brake_max;
-extern uint16_t brake_low;
+extern volatile uint16_t tps2_value;
+extern volatile uint16_t tps2_max;
+extern volatile uint16_t tps2_low;
+
+extern volatile uint16_t brake_value;
+extern volatile uint16_t brake_max;
+extern volatile uint16_t brake_low;
 
 extern uint16_t fr_sx_rpm;
 extern uint16_t fr_dx_rpm;
 
-extern uint16_t fr_sx_susp;
-extern uint16_t fr_dx_susp;
+extern volatile uint16_t fr_sx_susp;
+extern volatile uint16_t fr_dx_susp;
 
 #elif defined(_RETRO_)
 extern uint16_t rt_sx_rpm;

@@ -16,23 +16,25 @@ volatile bool calibrate;
 
 uint16_t buf[BUFFERS][BUFFER_SIZE * ADC_CHANNELS];
 
-uint16_t tps1_value;
-uint16_t tps1_max = ADC_MIN;
-uint16_t tps1_low = ADC_MAX;
+volatile uint16_t tps1_value;
+volatile uint16_t tps1_max = ADC_MIN;
+volatile uint16_t tps1_low = ADC_MAX;
 
-uint16_t tps2_value;
-uint16_t tps2_max = ADC_MIN;
-uint16_t tps2_low = ADC_MAX;
+volatile bool plaus = true;
 
-uint16_t brake_value;
-uint16_t brake_max = ADC_MIN;
-uint16_t brake_low = ADC_MAX;
+volatile uint16_t tps2_value;
+volatile uint16_t tps2_max = ADC_MIN;
+volatile uint16_t tps2_low = ADC_MAX;
+
+volatile uint16_t brake_value;
+volatile uint16_t brake_max = ADC_MIN;
+volatile uint16_t brake_low = ADC_MAX;
 
 uint16_t fr_sx_rpm;
 uint16_t fr_dx_rpm;
 
-uint16_t fr_sx_susp;
-uint16_t fr_dx_susp;
+volatile uint16_t fr_sx_susp;
+volatile uint16_t fr_dx_susp;
 
 void ADC_Handler() {     // move DMA pointers to next buffer
   int f = ADC->ADC_ISR;
@@ -55,6 +57,13 @@ void ADC_Handler() {     // move DMA pointers to next buffer
       if (tps2_value > tps2_max) tps2_max = tps2_value;
       if (brake_value < brake_low) brake_low = brake_value;
       if (brake_value > brake_max) brake_max = brake_value;
+    }
+
+    if (map(tps1_value, tps1_low, tps1_max, 0, 100) > 5 && map(brake_value, brake_low, brake_max, 0, 100) > 25) {
+      plaus = false;
+    }
+    if (!map(brake_value, brake_low, brake_max, 0, 100)) {
+      plaus = true;
     }
     
     obufn = (obufn + 1) &(BUFFERS - 1);

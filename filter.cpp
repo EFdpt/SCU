@@ -1,7 +1,7 @@
 #include "filter.h"
 #include "sort.h"
 
-#define FILTER_BOUND			(4)
+#define FILTER_BOUND			(8)
 
 #define USE_LOOP_UNROLLING		(1)
 
@@ -53,7 +53,7 @@ uint16_t filter_buffer(uint16_t* buffer, int size, unsigned offset) {
 	}
 	return sum / divisor;
 #endif
-#endif
+#else
 
   volatile int index = 0;
   volatile unsigned long long sum = 0ULL;
@@ -62,4 +62,5 @@ uint16_t filter_buffer(uint16_t* buffer, int size, unsigned offset) {
     sum += buffer[pos(index, offset)];
 
   return sum / size;
+#endif
 }
