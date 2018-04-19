@@ -12,9 +12,14 @@
 #define ADC_MIN               0
 #define ADC_MAX               4095
 
+#define SUSPENSIONS_MIN       0   /* [mm] */
+#define SUSPENSIONS_MAX       150 /* [mm] */
+
 #define COGS_NUMBER           30.0d
 #define NORMALIZE_RPM         1000000.0d
 #define RPM_MIN               10
+
+#define APPS_PLAUS_RANGE      10
 
 #if defined(_FRONTAL_)
 
@@ -33,10 +38,19 @@
 #endif
 
 volatile int      bufn, obufn;
-volatile bool     calibrate = true;
+
 volatile bool     tcs_online = false;
 
+#if defined(_FRONTAL_)
+volatile bool     calibrate = true;   // calibrate pedals
+#endif
+
+#if defined(_FRONTAL_)
 volatile uint16_t tps1_value = 0;
+volatile uint16_t tps2_value = 0;
+volatile uint16_t brake_value = 0;
+#endif
+
 volatile uint8_t  tps1_percentage = 0;
 volatile uint16_t tps1_max = ADC_MIN;
 volatile uint16_t tps1_low = ADC_MAX;
@@ -44,32 +58,30 @@ volatile uint16_t tps1_low = ADC_MAX;
 volatile bool     plaus1 = true;
 volatile bool     plaus2 = true;
 
-volatile uint16_t tps2_value = 0;
 volatile uint8_t  tps2_percentage = 0;
 volatile uint16_t tps2_max = ADC_MIN;
 volatile uint16_t tps2_low = ADC_MAX;
 
-volatile uint16_t brake_value = 0;
 volatile uint8_t  brake_percentage = 0;
 volatile uint16_t brake_max = ADC_MIN;
 volatile uint16_t brake_low = ADC_MAX;
 
 volatile uint16_t fr_sx_rpm = 0;
-
-#if defined(_FRONTAL_)
-volatile unsigned long fr_sx_prev;
-volatile unsigned long fr_sx_curr;
-#endif
-
 volatile uint16_t fr_dx_rpm = 0;
 
 #if defined(_FRONTAL_)
+
+// phonic wheel encoders timings
+volatile unsigned long fr_sx_prev;
+volatile unsigned long fr_sx_curr;
+
 volatile unsigned long fr_dx_prev;
 volatile unsigned long fr_dx_curr;
 #endif
 
-volatile uint16_t fr_sx_susp = 0;
-volatile uint16_t fr_dx_susp = 0;
+// FRONTAL SUSPENSIONS
+volatile uint8_t fr_sx_susp = 0;
+volatile uint8_t fr_dx_susp = 0;
 
 #if defined(_RETRO_)
 
@@ -141,8 +153,8 @@ static void filter_data() {
     tps1_value = (tps1_value + filter_buffer(buf[obufn], ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
     tps2_value = (tps2_value + filter_buffer(buf[obufn] + 1, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
     brake_value = (brake_value + filter_buffer(buf[obufn] + 2, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
-    fr_sx_susp = (fr_sx_susp + filter_buffer(buf[obufn] + 3, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
-    fr_dx_susp = (fr_dx_susp + filter_buffer(buf[obufn] + 4, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
+    fr_sx_susp = (volatile uint8_t) (fr_sx_susp + map(filter_buffer(buf[obufn] + 3, ADC_BUFFER_SIZE, ADC_CHANNELS), ADC_MIN, ADC_MAX, SUSPENSIONS_MIN, SUSPENSIONS_MAX)) / 2;
+    fr_dx_susp = (volatile uint8_t) (fr_dx_susp + map(filter_buffer(buf[obufn] + 4, ADC_BUFFER_SIZE, ADC_CHANNELS), ADC_MIN, ADC_MAX, SUSPENSIONS_MIN, SUSPENSIONS_MAX)) / 2;
 
     if (calibrate) {
       if (tps1_value < tps1_low) tps1_low = tps1_value;
@@ -157,13 +169,22 @@ static void filter_data() {
     tps2_percentage = map(tps2_value, tps2_low, tps2_max, 0, 100);
     brake_percentage = map(brake_value, brake_low, brake_max, 0, 100);
 
-    if (tps1_percentage > 5 && brake_percentage > 25) { // ACCELERATOR + BRAKE plausibility
+    // APPS plausibility
+    if (abs(tps1_percentage, tps2_percentage) > APPS_PLAUS_RANGE)
+      plaus1 = false;
+    else
+      plaus1 = true;
+
+    // check APPS + brake plausibility (BSPD)
+    if (tps1_percentage > 5 && brake_percentage > 25) // ACCELERATOR + BRAKE plausibility
       plaus2 = false;
-    }
-    if (!brake_percentage) {
+    else if (!brake_percentage)
       plaus2 = true;
-    }
+    
   #elif defined(_RETRO_)
+    rt_sx_susp = (volatile uint8_t) (rt_sx_susp + map(filter_buffer(buf[obufn] + 2, ADC_BUFFER_SIZE, ADC_CHANNELS), ADC_MIN, ADC_MAX, SUSPENSIONS_MIN, SUSPENSIONS_MAX)) / 2;
+    rt_dx_susp = (volatile uint8_t) (rt_dx_susp + map(filter_buffer(buf[obufn] + 3, ADC_BUFFER_SIZE, ADC_CHANNELS), ADC_MIN, ADC_MAX, SUSPENSIONS_MIN, SUSPENSIONS_MAX)) / 2;
+
 
   #endif
 }
@@ -247,6 +268,11 @@ void model_stop_calibrations() {
 }
 
 void CAN_pack_model_data(CAN_FRAME* frame) {
+  #if defined(_RETRO_)
+    if (!tcs_online)
+      return;
+  #endif
+
   switch (frame -> id) {
   #if defined(_FRONTAL_)
     case CAN_PEDALS_ID:
@@ -258,13 +284,20 @@ void CAN_pack_model_data(CAN_FRAME* frame) {
       break;
     case CAN_FRONTAL_ID:
       frame -> length = 6;
-  
-        // TODO
+      frame -> data.s0 = get_fr_dx_rpm();
+      frame -> data.s1 = get_fr_sx_rpm();
+      frame -> data.byte[4] = fr_sx_susp;
+      frame -> data.byte[5] = fr_dx_susp;
       break;
   #elif defined(_RETRO_)
     case CAN_RETRO_ID:
-
-        // TODO
+      frame -> length = 8;
+      frame -> data.s0 = get_rt_dx_rpm();
+      frame -> data.s1 = get_rt_sx_rpm();
+      frame -> data.byte[4] = acc_x_value;
+      frame -> data.byte[5] = acc_y_value;
+      frame -> data.byte[6] = rt_sx_susp;
+      frame -> data.byte[7] = rt_dx_susp;
       break;
   #endif
     default: {}

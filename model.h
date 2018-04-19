@@ -11,7 +11,7 @@
 
 extern volatile bool 	 tcs_online;
 
-extern volatile uint16_t tps1_value;
+//extern volatile uint16_t tps1_value;
 extern volatile uint8_t  tps1_percentage;
 extern volatile uint16_t tps1_max;
 extern volatile uint16_t tps1_low;
@@ -19,18 +19,18 @@ extern volatile uint16_t tps1_low;
 extern volatile bool     plaus1;
 extern volatile bool     plaus2;
 
-extern volatile uint16_t tps2_value;
+//extern volatile uint16_t tps2_value;
 extern volatile uint8_t  tps2_percentage;
 extern volatile uint16_t tps2_max;
 extern volatile uint16_t tps2_low;
 
-extern volatile uint16_t brake_value;
+//extern volatile uint16_t brake_value;
 extern volatile uint8_t  brake_percentage;
 extern volatile uint16_t brake_max;
 extern volatile uint16_t brake_low;
 
-extern volatile uint16_t fr_sx_susp;
-extern volatile uint16_t fr_dx_susp;
+extern volatile uint8_t fr_sx_susp;
+extern volatile uint8_t fr_dx_susp;
 
 extern volatile uint8_t acc_x_value;
 extern volatile uint8_t acc_y_value;
