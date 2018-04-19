@@ -306,30 +306,26 @@ void CAN_pack_model_data(CAN_FRAME* frame) {
 
 void CAN_unpack_model_data(CAN_FRAME* frame) {
   switch (frame -> id) {
-  #if defined(_FRONTAL_)
+  #if defined(_RETRO_)
     case CAN_PEDALS_ID:
-      frame -> length = 3;
-      frame -> data.byte[0] = (uint8_t) map(tps1_value, tps1_low, tps1_max, ADC_MIN, ADC_MAX);
-      frame -> data.byte[1] = (uint8_t) map(tps2_value, tps2_low, tps2_max, ADC_MIN, ADC_MAX);
-      frame -> data.byte[2] = (uint8_t) map(brake_value, brake_low, brake_max, ADC_MIN, ADC_MAX);
+      tps1_percentage = frame -> data.byte[0];
+      tps2_percentage = frame -> data.byte[1];
+      brake_percentage = frame -> data.byte[2];
+      plaus1 = 0xF0 & frame -> data.byte[3];
+      plaus2 = 0x0F & frame -> data.byte[3];
       break;
     case CAN_FRONTAL_ID:
-      if (tcs_online) {
-        frame -> length = 6;
-  
-        // TODO
-      }
-      break;
-  #elif defined(_RETRO_)
-      if (tcs_online) {
-        // TODO
-      }
+      fr_dx_rpm = frame -> data.s0;
+      fr_sx_rpm = frame -> data.s1;
+      fr_sx_susp = frame -> data.byte[4];
+      fr_dx_susp = frame -> data.byte[5];
       break;
   #endif
     default: {}
   }
 }
 
+#if defined(_RETRO_) // log data telemetry via radio by RETRO SCU
 void SPI_send_string(String str) {
 
 }
@@ -372,3 +368,4 @@ void RADIO_send_model() {
   //root.printTo(log);
   //SPI_send_string(log);
 }
+#endif

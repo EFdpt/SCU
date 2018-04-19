@@ -50,6 +50,8 @@ void model_stop_calibrations();
 void CAN_pack_model_data(CAN_FRAME* frame);
 void CAN_unpack_model_data(CAN_FRAME* frame);
 
+#if defined(_RETRO_)
 void RADIO_send_model();
+#endif
 
 #endif /* _MODEL_H_ */
