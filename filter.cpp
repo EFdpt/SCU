@@ -16,7 +16,7 @@
  *  @param		size [in] The size of the buffer
  *  @retval		Filtered value
  */
-uint16_t filter_buffer(uint16_t* buffer, int size, unsigned offset) {
+uint16_t filter_buffer(volatile uint16_t* buffer, int size, unsigned offset) {
 #if 0
 	int start = FILTER_BOUND;
 	int end = size - (FILTER_BOUND << 2);
@@ -53,6 +53,7 @@ uint16_t filter_buffer(uint16_t* buffer, int size, unsigned offset) {
 	}
 	return sum / divisor;
 #endif
+
 #else
 
   volatile int index = 0;
