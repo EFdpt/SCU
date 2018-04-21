@@ -106,6 +106,9 @@ volatile uint16_t buf[BUFFERS][BUFFER_LENGTH];
 #if defined(_RETRO_)
 
 #define JSON_BUFFER_SIZE      JSON_OBJECT_SIZE(2) + 3*JSON_OBJECT_SIZE(4) + JSON_OBJECT_SIZE(11)
+#define CIPHER_MAX_LENGTH     1024
+
+byte cipher[CIPHER_MAX_LENGTH];
 
 #endif
 
@@ -331,8 +334,9 @@ void SPI_send_string(String str) {
 }
 
 void RADIO_send_model() {
-  StaticJsonBuffer<JSON_BUFFER_SIZE> jsonBuffer;
-  String    log = "";
+  StaticJsonBuffer<JSON_BUFFER_SIZE>  jsonBuffer;
+  String                              log = "";
+  size_t                              cipher_len;
 
   JsonObject&   root = jsonBuffer.createObject();
 
@@ -363,9 +367,14 @@ void RADIO_send_model() {
   accelerometers["acc_x"] = acc_x_value;
   accelerometers["acc_y"] = acc_y_value;
 
-  root.printTo(Serial);
-  Serial.print("\r\n");
-  //root.printTo(log);
+  root.printTo(log);
+  
+  if (!(cipher_len = encrypt_model(log, cipher, CIPHER_MAX_LENGTH)))
+    return;   // error: string too long
+
+  
+
+
   //SPI_send_string(log);
 }
 #endif
