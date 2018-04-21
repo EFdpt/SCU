@@ -1,7 +1,12 @@
 #include "model.h"
 #include "radio.h"
 
-void serialize_model(String model) {
+#include <AES.h>
+
+void encrypt_model(String model) {
+	#if DO_ENCRYPT
 	
-	
+
+
+	#endif
 }
