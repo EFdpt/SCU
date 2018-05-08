@@ -7,7 +7,7 @@
 
 #define SERIAL_BAUDRATE     115200
 
-#define _FRONTAL_
-//#define _RETRO_
+//#define _FRONTAL_
+#define _RETRO_
 
 #endif /* _COMMON_H_ */

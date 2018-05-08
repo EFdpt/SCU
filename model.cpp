@@ -1,8 +1,11 @@
 #include "model.h"
 #include "filter.h"
+#include "CANOpen/CO_can.h"
+#include "CANOpen/nmt.h"
 
 #if defined(_RETRO_)
 #include <ArduinoJson.h>
+#include "radio.h"
 #endif
 
 #undef HID_ENABLED
@@ -13,7 +16,8 @@
 #define ADC_MAX               4095
 
 #define SUSPENSIONS_MIN       0   /* [mm] */
-#define SUSPENSIONS_MAX       150 /* [mm] */
+#define SUSPENSIONS_ADC_MAX   ADC_MAX
+#define SUSP_STROKE_NORMALIZE (SUSP_STROKE_EXTENSION / SUSPENSIONS_ADC_MAX) /* normalize voltage */
 
 #define COGS_NUMBER           30.0d
 #define NORMALIZE_RPM         1000000.0d
@@ -108,11 +112,23 @@ volatile uint16_t buf[BUFFERS][BUFFER_LENGTH];
 #define JSON_BUFFER_SIZE      JSON_OBJECT_SIZE(2) + 3*JSON_OBJECT_SIZE(4) + JSON_OBJECT_SIZE(11)
 #define CIPHER_MAX_LENGTH     1024
 
+byte plain[CIPHER_MAX_LENGTH];
 byte cipher[CIPHER_MAX_LENGTH];
 
 #endif
 
+// retrieve wheels RPM
 #if defined(_FRONTAL_)
+
+void fr_sx_pulse() {
+  fr_sx_prev = fr_sx_curr;
+  fr_sx_curr = micros();
+}
+
+void fr_dx_pulse() {
+  fr_dx_prev = fr_dx_curr;
+  fr_dx_curr = micros();
+}
 
 inline volatile uint16_t get_fr_sx_rpm() {
   volatile double rpm;
@@ -128,6 +144,16 @@ inline volatile uint16_t get_fr_dx_rpm() {
 
 #elif defined(_RETRO_)
 
+void rt_sx_pulse() {
+  rt_sx_prev = rt_sx_curr;
+  rt_sx_curr = micros();
+}
+
+void rt_dx_pulse() {
+  rt_dx_prev = rt_dx_curr;
+  rt_dx_curr = micros();
+}
+
 // frontal rpm values getted from CAN frame
 inline volatile uint16_t get_fr_sx_rpm() {
   return fr_sx_rpm;
@@ -136,8 +162,6 @@ inline volatile uint16_t get_fr_sx_rpm() {
 inline volatile uint16_t get_fr_dx_rpm() {
   return fr_dx_rpm;
 }
-
-#endif
 
 inline volatile uint16_t get_rt_sx_rpm() {
   volatile double rpm;
@@ -151,13 +175,15 @@ inline volatile uint16_t get_rt_dx_rpm() {
     0 : (volatile uint16_t) rpm;
 }
 
+#endif
+
 static void filter_data() {
   #if defined(_FRONTAL_)
-    tps1_value = (tps1_value + filter_buffer(buf[obufn], ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
-    tps2_value = (tps2_value + filter_buffer(buf[obufn] + 1, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
-    brake_value = (brake_value + filter_buffer(buf[obufn] + 2, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
-    fr_sx_susp = (volatile uint8_t) (fr_sx_susp + map(filter_buffer(buf[obufn] + 3, ADC_BUFFER_SIZE, ADC_CHANNELS), ADC_MIN, ADC_MAX, SUSPENSIONS_MIN, SUSPENSIONS_MAX)) / 2;
-    fr_dx_susp = (volatile uint8_t) (fr_dx_susp + map(filter_buffer(buf[obufn] + 4, ADC_BUFFER_SIZE, ADC_CHANNELS), ADC_MIN, ADC_MAX, SUSPENSIONS_MIN, SUSPENSIONS_MAX)) / 2;
+    tps1_value = (tps1_value + filter_buffer(buf[obufn] + TPS1_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
+    tps2_value = (tps2_value + filter_buffer(buf[obufn] + TPS2_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
+    brake_value = (brake_value + filter_buffer(buf[obufn] + BRAKE_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
+    fr_sx_susp = (volatile uint8_t) (fr_sx_susp + (SUSP_STROKE_NORMALIZE * filter_buffer(buf[obufn] + FR_SX_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS))) / 2;
+    fr_dx_susp = (volatile uint8_t) (fr_dx_susp + (SUSP_STROKE_NORMALIZE * filter_buffer(buf[obufn] + FR_DX_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS))) / 2;
 
     if (calibrate) {
       if (tps1_value < tps1_low) tps1_low = tps1_value;
@@ -185,8 +211,8 @@ static void filter_data() {
       plaus2 = true;
     
   #elif defined(_RETRO_)
-    rt_sx_susp = (volatile uint8_t) (rt_sx_susp + map(filter_buffer(buf[obufn] + 2, ADC_BUFFER_SIZE, ADC_CHANNELS), ADC_MIN, ADC_MAX, SUSPENSIONS_MIN, SUSPENSIONS_MAX)) / 2;
-    rt_dx_susp = (volatile uint8_t) (rt_dx_susp + map(filter_buffer(buf[obufn] + 3, ADC_BUFFER_SIZE, ADC_CHANNELS), ADC_MIN, ADC_MAX, SUSPENSIONS_MIN, SUSPENSIONS_MAX)) / 2;
+    rt_sx_susp = (volatile uint8_t) (rt_sx_susp + (SUSP_STROKE_NORMALIZE * filter_buffer(buf[obufn] + RT_SX_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS))) / 2;
+    rt_dx_susp = (volatile uint8_t) (rt_dx_susp + (SUSP_STROKE_NORMALIZE * filter_buffer(buf[obufn] + RT_DX_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS))) / 2;
 
 
   #endif
@@ -204,32 +230,6 @@ void ADC_Handler() {
     obufn = (obufn + 1) &(BUFFERS - 1);
   }
 }
-
-#if defined(_FRONTAL_)
-
-void fr_sx_pulse() {
-  fr_sx_prev = fr_sx_curr;
-  fr_sx_curr = micros();
-}
-
-void fr_dx_pulse() {
-  fr_dx_prev = fr_dx_curr;
-  fr_dx_curr = micros();
-}
-
-#elif defined(_RETRO_)
-
-void rt_sx_pulse() {
-  rt_sx_prev = rt_sx_curr;
-  rt_sx_curr = micros();
-}
-
-void rt_dx_pulse() {
-  rt_dx_prev = rt_dx_curr;
-  rt_dx_curr = micros();
-}
-
-#endif
 
 void model_init() {
   pmc_enable_periph_clk(ID_ADC);
@@ -263,79 +263,20 @@ void model_init() {
   #endif
 }
 
+#if defined(_FRONTAL_)
 void model_enable_calibrations() {
   calibrate = true;
 }
 void model_stop_calibrations() {
   calibrate = false;
 }
-
-void CAN_pack_model_data(CAN_FRAME* frame) {
-  #if defined(_RETRO_)
-    if (!tcs_online)
-      return;
-  #endif
-
-  switch (frame -> id) {
-  #if defined(_FRONTAL_)
-    case CAN_PEDALS_ID:
-      frame -> length = 3;
-      frame -> data.byte[0] = tps1_percentage;
-      frame -> data.byte[1] = tps2_percentage;
-      frame -> data.byte[2] = brake_percentage;
-      frame -> data.byte[3] = (plaus1 ? (0xFF << 4) : 0) | (plaus2 ? 0xFF : 0);
-      break;
-    case CAN_FRONTAL_ID:
-      frame -> length = 6;
-      frame -> data.s0 = get_fr_dx_rpm();
-      frame -> data.s1 = get_fr_sx_rpm();
-      frame -> data.byte[4] = fr_sx_susp;
-      frame -> data.byte[5] = fr_dx_susp;
-      break;
-  #elif defined(_RETRO_)
-    case CAN_RETRO_ID:
-      frame -> length = 8;
-      frame -> data.s0 = get_rt_dx_rpm();
-      frame -> data.s1 = get_rt_sx_rpm();
-      frame -> data.byte[4] = acc_x_value;
-      frame -> data.byte[5] = acc_y_value;
-      frame -> data.byte[6] = rt_sx_susp;
-      frame -> data.byte[7] = rt_dx_susp;
-      break;
-  #endif
-    default: {}
-  }
-}
-
-void CAN_unpack_model_data(CAN_FRAME* frame) {
-  switch (frame -> id) {
-  #if defined(_RETRO_)
-    case CAN_PEDALS_ID:
-      tps1_percentage = frame -> data.byte[0];
-      tps2_percentage = frame -> data.byte[1];
-      brake_percentage = frame -> data.byte[2];
-      plaus1 = 0xF0 & frame -> data.byte[3];
-      plaus2 = 0x0F & frame -> data.byte[3];
-      break;
-    case CAN_FRONTAL_ID:
-      fr_dx_rpm = frame -> data.s0;
-      fr_sx_rpm = frame -> data.s1;
-      fr_sx_susp = frame -> data.byte[4];
-      fr_dx_susp = frame -> data.byte[5];
-      break;
-  #endif
-    default: {}
-  }
-}
+#endif
 
 #if defined(_RETRO_) // log data telemetry via radio by RETRO SCU
-void SPI_send_string(String str) {
-
-}
-
-void RADIO_send_model() {
+void radio_send_model() {
   StaticJsonBuffer<JSON_BUFFER_SIZE>  jsonBuffer;
-  String                              log = "";
+  String                              model = "";
+  size_t                              model_len;
   size_t                              cipher_len;
 
   JsonObject&   root = jsonBuffer.createObject();
@@ -367,9 +308,11 @@ void RADIO_send_model() {
   accelerometers["acc_x"] = acc_x_value;
   accelerometers["acc_y"] = acc_y_value;
 
-  root.printTo(log);
+  root.printTo(model);
+  model_len = model.length();
+  strncpy((char*) plain, model.c_str(), model_len);
   
-  if (!(cipher_len = encrypt_model(log, cipher, CIPHER_MAX_LENGTH)))
+  if (!(cipher_len = encrypt_model(plain, model_len, cipher, CIPHER_MAX_LENGTH)))
     return;   // error: string too long
 
   
