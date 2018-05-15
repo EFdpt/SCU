@@ -1,15 +1,17 @@
-#include <DueTimer.h>
+#include "common.h"
+#include "CAN_ID.h"
 #include "model.h"
 
+#include "CANOpen/states.h"
+#include "CANOpen/nmt.h"
+
 void setup() {
-  model_init();
+    // Serial.begin(SERIAL_BAUDRATE);
+    // while(!Serial);
 
-  #if defined(_FRONTAL_)
-  model_enable_calibrations();
-  #endif
-
-  Serial.begin(SERIAL_BAUDRATE);
-  while(!Serial);
+    setNodeId(NODE_ID);
+    initialisation();
+    slaveSendBootUp();  
 }
 
 void loop() {

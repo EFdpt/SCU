@@ -18,10 +18,10 @@ typedef enum enum_nodeState e_nodeState;
  * @brief Function that user app can overload
  * @ingroup statemachine
  */
-typedef void (*initialisation_t)();
-typedef void (*preOperational_t)();
-typedef void (*operational_t)();
-typedef void (*stopped_t)();
+void initialisation();
+void preOperational();
+void operational();
+void stopped();
 
 /** 
  * @brief Called by driver/app when receiving messages

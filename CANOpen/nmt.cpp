@@ -7,21 +7,24 @@ void proceedNMTstateChange(Message* m) {
             case NMT_Start_Node:
                 if ((getState() == Pre_operational) || (getState() == Stopped))
                     setState(Operational);
-                    
+                    operational();
                 break;
 
             case NMT_Stop_Node:
                 if (getState() == Pre_operational || getState() == Operational)
                     setState(Stopped);
+                    stopped();
                 break;
 
             case NMT_Enter_PreOperational:
                 if (getState() == Operational || getState() == Stopped)
                     setState(Pre_operational);
+                    preOperational();
                 break;
 
             case NMT_Reset_Node:
           		setState(Initialisation);
+                initialisation();
                 break;
             default: {}
 		}

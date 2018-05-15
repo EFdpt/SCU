@@ -37,9 +37,9 @@
 	#define ACC_X_ADC_CHAN_NUM    		ADC_CHER_CH7   // AD7
 	#define ACC_X_ADC_OFFSET			0
 
-	#define ACC_Y_PIN			        A1
-	#define ACC_Y_ADC_CHAN_NUM    		ADC_CHER_CH6   // AD6
-	#define ACC_Y_ADC_OFFSET			1
+	#define ACC_Z_PIN			        A1
+	#define ACC_Z_ADC_CHAN_NUM    		ADC_CHER_CH6   // AD6
+	#define ACC_Z_ADC_OFFSET			1
 
 	#define RT_SX_SUSP_PIN		    	A2
 	#define RT_SX_ADC_CHAN_NUM    		ADC_CHER_CH5   // AD5

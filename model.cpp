@@ -1,12 +1,5 @@
 #include "model.h"
 #include "filter.h"
-#include "CANOpen/CO_can.h"
-#include "CANOpen/nmt.h"
-
-#if defined(_RETRO_)
-#include <ArduinoJson.h>
-#include "radio.h"
-#endif
 
 #undef HID_ENABLED
 #define ADC_BUFFER_SIZE       128
@@ -35,7 +28,7 @@
 #elif defined(_RETRO_)
 
   #define ADC_CHANNELS        4
-  #define ADC_CHANNELS_LIST   ACC_X_ADC_CHAN_NUM | ACC_Y_ADC_CHAN_NUM | RT_SX_ADC_CHAN_NUM | RT_DX_ADC_CHAN_NUM
+  #define ADC_CHANNELS_LIST   ACC_X_ADC_CHAN_NUM | ACC_Z_ADC_CHAN_NUM | RT_SX_ADC_CHAN_NUM | RT_DX_ADC_CHAN_NUM
   
   #define BUFFER_LENGTH       ADC_BUFFER_SIZE * ADC_CHANNELS    
   
@@ -55,23 +48,23 @@ volatile uint16_t tps2_value = 0;
 volatile uint16_t brake_value = 0;
 #endif
 
-volatile uint8_t  tps1_percentage = 0;
+volatile uint8_t  tps1_percentage = 0; // global
 volatile uint16_t tps1_max = ADC_MIN;
 volatile uint16_t tps1_low = ADC_MAX;
 
-volatile bool     plaus1 = true;
-volatile bool     plaus2 = true;
+volatile bool     apps_plausibility = true; // global
+volatile bool     brake_plausibility = true; // global
 
-volatile uint8_t  tps2_percentage = 0;
+volatile uint8_t  tps2_percentage = 0; // global
 volatile uint16_t tps2_max = ADC_MIN;
 volatile uint16_t tps2_low = ADC_MAX;
 
-volatile uint8_t  brake_percentage = 0;
+volatile uint8_t  brake_percentage = 0; // global
 volatile uint16_t brake_max = ADC_MIN;
 volatile uint16_t brake_low = ADC_MAX;
 
-volatile uint16_t fr_sx_rpm = 0;
-volatile uint16_t fr_dx_rpm = 0;
+volatile uint16_t fr_sx_rpm = 0; // global
+volatile uint16_t fr_dx_rpm = 0; // global
 
 #if defined(_FRONTAL_)
 
@@ -98,7 +91,7 @@ volatile unsigned long rt_dx_prev;
 volatile unsigned long rt_dx_curr;
   
 volatile uint8_t acc_x_value = 0;
-volatile uint8_t acc_y_value = 0;
+volatile uint8_t acc_z_value = 0;
   
 volatile uint8_t rt_sx_susp = 0;
 volatile uint8_t rt_dx_susp = 0;
@@ -106,16 +99,6 @@ volatile uint8_t rt_dx_susp = 0;
 #endif
 
 volatile uint16_t buf[BUFFERS][BUFFER_LENGTH];
-
-#if defined(_RETRO_)
-
-#define JSON_BUFFER_SIZE      JSON_OBJECT_SIZE(2) + 3*JSON_OBJECT_SIZE(4) + JSON_OBJECT_SIZE(11)
-#define CIPHER_MAX_LENGTH     1024
-
-byte plain[CIPHER_MAX_LENGTH];
-byte cipher[CIPHER_MAX_LENGTH];
-
-#endif
 
 // retrieve wheels RPM
 #if defined(_FRONTAL_)
@@ -177,11 +160,12 @@ inline volatile uint16_t get_rt_dx_rpm() {
 
 #endif
 
-static void filter_data() {
+static inline void filter_data() {
   #if defined(_FRONTAL_)
     tps1_value = (tps1_value + filter_buffer(buf[obufn] + TPS1_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
     tps2_value = (tps2_value + filter_buffer(buf[obufn] + TPS2_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
     brake_value = (brake_value + filter_buffer(buf[obufn] + BRAKE_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
+
     fr_sx_susp = (volatile uint8_t) (fr_sx_susp + (SUSP_STROKE_NORMALIZE * filter_buffer(buf[obufn] + FR_SX_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS))) / 2;
     fr_dx_susp = (volatile uint8_t) (fr_dx_susp + (SUSP_STROKE_NORMALIZE * filter_buffer(buf[obufn] + FR_DX_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS))) / 2;
 
@@ -198,23 +182,21 @@ static void filter_data() {
     tps2_percentage = map(tps2_value, tps2_low, tps2_max, 0, 100);
     brake_percentage = map(brake_value, brake_low, brake_max, 0, 100);
 
-    // APPS plausibility
+    // check APPS plausibility
     if (abs(tps1_percentage, tps2_percentage) > APPS_PLAUS_RANGE)
-      plaus1 = false;
+      apps_plausibility = false;
     else
-      plaus1 = true;
+      apps_plausibility = true;
 
     // check APPS + brake plausibility (BSPD)
     if (tps1_percentage > 5 && brake_percentage > 25) // ACCELERATOR + BRAKE plausibility
-      plaus2 = false;
+      brake_plausibility = false;
     else if (!brake_percentage)
-      plaus2 = true;
+      brake_plausibility = true;
     
   #elif defined(_RETRO_)
     rt_sx_susp = (volatile uint8_t) (rt_sx_susp + (SUSP_STROKE_NORMALIZE * filter_buffer(buf[obufn] + RT_SX_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS))) / 2;
     rt_dx_susp = (volatile uint8_t) (rt_dx_susp + (SUSP_STROKE_NORMALIZE * filter_buffer(buf[obufn] + RT_DX_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS))) / 2;
-
-
   #endif
 }
 
@@ -269,55 +251,5 @@ void model_enable_calibrations() {
 }
 void model_stop_calibrations() {
   calibrate = false;
-}
-#endif
-
-#if defined(_RETRO_) // log data telemetry via radio by RETRO SCU
-void radio_send_model() {
-  StaticJsonBuffer<JSON_BUFFER_SIZE>  jsonBuffer;
-  String                              model = "";
-  size_t                              model_len;
-  size_t                              cipher_len;
-
-  JsonObject&   root = jsonBuffer.createObject();
-
-  JsonObject& pedals = root.createNestedObject("pedals");
-  JsonObject& suspensions = root.createNestedObject("suspensions");
-  JsonObject& wheels = root.createNestedObject("wheels");
-  JsonObject& accelerometers = root.createNestedObject("accelerometers");
-
-  pedals["tps1"] = tps1_percentage;
-  pedals["tps2"] = tps1_percentage;
-  pedals["brake"] = brake_percentage;
-  pedals["tps1_min"] = tps1_low;
-  pedals["tps1_max"] = tps1_max;
-  pedals["tps2_min"] = tps2_low;
-  pedals["tps2_max"] = tps2_max;
-  pedals["brake_min"] = brake_low;
-  pedals["brake_max"] = brake_max;
-  pedals["plaus1"] = plaus1;
-  pedals["plaus2"] = plaus2;
-  suspensions["front_sx"] = fr_sx_susp;
-  suspensions["front_dx"] = fr_dx_susp;
-  suspensions["retro_sx"] = rt_sx_susp;
-  suspensions["retro_dx"] = rt_dx_susp;
-  wheels["front_sx"] = fr_sx_rpm;
-  wheels["front_dx"] = fr_dx_rpm;
-  wheels["retro_sx"] = rt_sx_rpm;
-  wheels["retro_dx"] = rt_dx_susp;
-  accelerometers["acc_x"] = acc_x_value;
-  accelerometers["acc_y"] = acc_y_value;
-
-  root.printTo(model);
-  model_len = model.length();
-  strncpy((char*) plain, model.c_str(), model_len);
-  
-  if (!(cipher_len = encrypt_model(plain, model_len, cipher, CIPHER_MAX_LENGTH)))
-    return;   // error: string too long
-
-  
-
-
-  //SPI_send_string(log);
 }
 #endif

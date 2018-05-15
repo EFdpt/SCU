@@ -4,8 +4,11 @@
 #include "CAN_ID.h"
 
 #define CAN_PORT            Can0
+#define CAN_BAUDRATE        1000000 // 1Mb/s
 
 #define SERIAL_BAUDRATE     115200
+
+#define TIME_SLOT_PERIOD	4000 // 4ms
 
 //#define _FRONTAL_
 #define _RETRO_

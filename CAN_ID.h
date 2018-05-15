@@ -11,4 +11,6 @@
 #define NODE_ID				2
 #endif
 
+#define VCU_NODE_ID			3
+
 #endif /* _CAN_ID_H_ */

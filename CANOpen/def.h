@@ -22,11 +22,12 @@
 #define LSS 	   0xF
 
 #define GET_FUNC_CODE(COB_ID)	(COB_ID >> 7)
+#define SET_FUNC_CODE(COB_ID)   (COB_ID << 7)
 
 /* NMT Command Specifier, sent by master to change a slave state */
 /* ------------------------------------------------------------- */
 /* Should not be modified */
-#define NMT_Start_Node              0x01
+#define NMT_Start_Node              0x01 // go Operational
 #define NMT_Stop_Node               0x02
 #define NMT_Enter_PreOperational    0x80
 #define NMT_Reset_Node              0x81

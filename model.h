@@ -18,8 +18,8 @@ extern volatile uint8_t  tps1_percentage;
 //extern volatile uint16_t tps1_max;
 //extern volatile uint16_t tps1_low;
 
-extern volatile bool     plaus1;
-extern volatile bool     plaus2;
+extern volatile bool     apps_plausibility;
+extern volatile bool     brake_plausibility;
 
 //extern volatile uint16_t tps2_value;
 extern volatile uint8_t  tps2_percentage;
@@ -34,12 +34,15 @@ extern volatile uint8_t  brake_percentage;
 extern volatile uint8_t fr_sx_susp;
 extern volatile uint8_t fr_dx_susp;
 
+extern volatile uint16_t fr_sx_rpm;
+extern volatile uint16_t fr_dx_rpm;
+
 volatile uint16_t get_fr_sx_rpm();
 volatile uint16_t get_fr_dx_rpm();
 
 #if defined(_RETRO_)
 extern volatile uint8_t acc_x_value;
-extern volatile uint8_t acc_y_value;
+extern volatile uint8_t acc_z_value;
 
 extern volatile uint8_t rt_sx_susp;
 extern volatile uint8_t rt_dx_susp;
