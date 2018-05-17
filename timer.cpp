@@ -1,6 +1,6 @@
 #include <DueTimer.h>
 
-#include "../common.h"
+#include "common.h"
 #include "timer.h"
 #include "pdo.h"
 #include "CO_can.h"
@@ -14,42 +14,46 @@
 
 volatile uint8_t		t_slot = SCU_FRONT_FIRST_SLOT;
 
-DueTimer* timer;
+DueTimer* co_timer;
 
 void TimeDispatch() { // send PDOs periodically
-	switch (t_slot) {
-
 #if defined(_FRONTAL_)
-		case SCU_FRONT_FIRST_SLOT:
+    switch (t_slot) {
+		case SCU_FRONT_FIRST_SLOT: {
 			Message m = Message_Initializer;
             buildPDO(PDO1tx, &m);
             canSend(&m);
 			break;
-		case SCU_FRONT_SECOND_SLOT:
+        }
+		case SCU_FRONT_SECOND_SLOT: {
             Message m = Message_Initializer;
             buildPDO(PDO2tx, &m);
             canSend(&m);
 			break;
-
+        }
+    }
 #elif defined(_RETRO_)
-		case SCU_REAR_SLOT:
+    switch (t_slot) {
+		case SCU_REAR_SLOT: {
             Message m = Message_Initializer;
             buildPDO(PDO1tx, &m);
             canSend(&m);
 			break;
+        }
+    }
 #endif
-		default: t_slot = (t_slot + 1) & TIME_SLOT_MASK;
-	}
+
+    t_slot = (t_slot + 1) & TIME_SLOT_MASK;
 }
 
-inline void timerInit() {
-	*timer = DueTimer::getAvailable().attachInterrupt(TimeDispatch).setPeriod(TIME_SLOT_PERIOD);
+__attribute__((__inline__)) void timerInit() {
+	co_timer = &(DueTimer::getAvailable().attachInterrupt(TimeDispatch));
 }
 
-inline void timerStart() {
-	timer -> start();
+__attribute__((__inline__)) void timerStart() {
+	co_timer -> start(TIME_SLOT_PERIOD);
 }
 
-inline void timerStop() {
-	timer -> stop();
+__attribute__((__inline__)) void timerStop() {
+	co_timer -> stop();
 }

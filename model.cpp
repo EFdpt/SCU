@@ -113,13 +113,13 @@ void fr_dx_pulse() {
   fr_dx_curr = micros();
 }
 
-inline volatile uint16_t get_fr_sx_rpm() {
+__attribute__((__inline__)) volatile uint16_t get_fr_sx_rpm() {
   volatile double rpm;
   return ((rpm = (60.0 / COGS_NUMBER) * (NORMALIZE_RPM / (double) (fr_sx_curr - fr_sx_prev))) < RPM_MIN) ?
     0 : (volatile uint16_t) rpm;
 }
 
-inline volatile uint16_t get_fr_dx_rpm() {
+__attribute__((__inline__)) volatile uint16_t get_fr_dx_rpm() {
   volatile double rpm;
   return ((rpm = (60.0 / COGS_NUMBER) * (NORMALIZE_RPM / (double) (fr_dx_curr - fr_dx_prev))) < RPM_MIN) ?
     0 : (volatile uint16_t) rpm;
@@ -138,21 +138,21 @@ void rt_dx_pulse() {
 }
 
 // frontal rpm values getted from CAN frame
-inline volatile uint16_t get_fr_sx_rpm() {
+__attribute__((__inline__)) volatile uint16_t get_fr_sx_rpm() {
   return fr_sx_rpm;
 }
 
-inline volatile uint16_t get_fr_dx_rpm() {
+__attribute__((__inline__)) volatile uint16_t get_fr_dx_rpm() {
   return fr_dx_rpm;
 }
 
-inline volatile uint16_t get_rt_sx_rpm() {
+__attribute__((__inline__)) volatile uint16_t get_rt_sx_rpm() {
   volatile double rpm;
   return ((rpm = (60.0 / COGS_NUMBER) * (NORMALIZE_RPM / (double) (rt_sx_curr - rt_sx_prev))) < RPM_MIN) ?
     0 : (volatile uint16_t) rpm;
 }
 
-inline volatile uint16_t get_rt_dx_rpm() {
+__attribute__((__inline__)) volatile uint16_t get_rt_dx_rpm() {
   volatile double rpm;
   return ((rpm = (60.0 / COGS_NUMBER) * (NORMALIZE_RPM / (double) (rt_dx_curr - rt_dx_prev))) < RPM_MIN) ?
     0 : (volatile uint16_t) rpm;
@@ -183,7 +183,7 @@ static inline void filter_data() {
     brake_percentage = map(brake_value, brake_low, brake_max, 0, 100);
 
     // check APPS plausibility
-    if (abs(tps1_percentage, tps2_percentage) > APPS_PLAUS_RANGE)
+    if (abs(tps1_percentage - tps2_percentage) > APPS_PLAUS_RANGE)
       apps_plausibility = false;
     else
       apps_plausibility = true;
@@ -246,10 +246,10 @@ void model_init() {
 }
 
 #if defined(_FRONTAL_)
-void model_enable_calibrations() {
+__attribute__((__inline__)) void model_enable_calibrations() {
   calibrate = true;
 }
-void model_stop_calibrations() {
+__attribute__((__inline__)) void model_stop_calibrations() {
   calibrate = false;
 }
 #endif

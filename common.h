@@ -1,8 +1,6 @@
 #ifndef _COMMON_H_
 #define _COMMON_H_
 
-#include "CAN_ID.h"
-
 #define CAN_PORT            Can0
 #define CAN_BAUDRATE        1000000 // 1Mb/s
 
@@ -10,7 +8,9 @@
 
 #define TIME_SLOT_PERIOD	4000 // 4ms
 
-//#define _FRONTAL_
-#define _RETRO_
+#define _FRONTAL_
+//#define _RETRO_
+
+#include "CAN_ID.h"
 
 #endif /* _COMMON_H_ */

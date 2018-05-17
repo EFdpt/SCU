@@ -1,9 +1,6 @@
 #include "common.h"
-#include "CAN_ID.h"
-#include "model.h"
-
-#include "CANOpen/states.h"
-#include "CANOpen/nmt.h"
+#include "states.h"
+#include "nmt.h"
 
 void setup() {
     // Serial.begin(SERIAL_BAUDRATE);

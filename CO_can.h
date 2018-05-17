@@ -13,6 +13,6 @@ typedef struct {
 
 void canSend(Message* m);
 
-void initCAN(uint32_t baudRate);
+void initCAN();
 
 #endif /* _CO_CAN_H_ */

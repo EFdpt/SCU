@@ -1,3 +1,4 @@
+#include "def.h"
 #include "nmt.h"
 #include "states.h"
 
@@ -31,11 +32,11 @@ void proceedNMTstateChange(Message* m) {
 	}
 }
 
-void slaveSendBootUp() {
+__attribute__((__inline__)) void slaveSendBootUp() {
 	Message m;
 
 	m.cob_id = 0x700 | getNodeId();
-	m.length = 1;
+	m.len = 1;
 	m.data[0] = 0x00;
 
 	canSend(&m);

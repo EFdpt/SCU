@@ -1,7 +1,7 @@
 #include "pdo.h"
 #include "states.h"
 
-#include "../model.h"
+#include "model.h"
 
 void buildPDO(uint8_t PDOtype, Message* pdo) {
     pdo -> cob_id = (SET_FUNC_CODE(PDOtype) | getNodeId());
@@ -14,7 +14,7 @@ void buildPDO(uint8_t PDOtype, Message* pdo) {
             pdo -> data[0] = tps1_percentage;
             pdo -> data[1] = tps2_percentage;
             pdo -> data[2] = brake_percentage;
-            pdo -> data[3] = (uint8_t) (apps_plausibility ? 0xF0) | (brake_plausibility ? 0x0F);
+            pdo -> data[3] = (uint8_t) (apps_plausibility ? 0xF0 : 0x00) | (brake_plausibility ? 0x0F : 0x00);
             break;
         case PDO2tx:
             pdo -> len = 6;
@@ -40,7 +40,7 @@ void buildPDO(uint8_t PDOtype, Message* pdo) {
 }
 
 #if defined(_RETRO_)
-void proceedPDO(Message *m) {
+void proceedPDO(Message* m) {
     switch (GET_FUNC_CODE(m -> cob_id)) {
         case PDO1rx: // first PDO from frontal SCU (pedals)
             tps1_percentage = (uint8_t) m -> data[0];

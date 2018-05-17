@@ -1,6 +1,8 @@
 #ifndef _STATES_H_
 #define _STATES_H_
 
+#include "CO_can.h"
+
 enum enum_nodeState {
     Initialisation = 0x00,
     Disconnected = 0x01,
@@ -28,12 +30,14 @@ void stopped();
  * @param *d Pointer on a CAN object data structure
  * @param *m Pointer on a CAN message structure
  */
-void canDispatch(Message *m);
+void canDispatch(Message* m);
 
 e_nodeState getState();
 
 void setState(e_nodeState newState);
 
 uint8_t getNodeId();
+
+void setNodeId(uint8_t nodeId);
 
 #endif /* _STATES_H_ */

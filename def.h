@@ -1,5 +1,5 @@
 #ifndef _DEF_H_
-#include _DEF_H_
+#define _DEF_H_
 
 /*  Function Codes 
  ---------------

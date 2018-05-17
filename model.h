@@ -1,7 +1,6 @@
 #ifndef _MODEL_H_
 #define _MODEL_H_
 
-#include <due_can.h>
 #include "sensors_pinout.h"
 #include "common.h"
 
