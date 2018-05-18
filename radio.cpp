@@ -11,33 +11,63 @@
 
 #define CIPHER_MAX_LENGTH     1024
 
-byte cipher[CIPHER_MAX_LENGTH];
+#define IV_LEN                AES_KEYLEN
 
-int encrypt_model(byte* model, size_t model_length, size_t cipher_max_length) {
+uint8_t key[AES_KEYLEN] = {   0x8e, 0x73, 0xb0, 0xf7, 0xda, 0x0e, 0x64, 0x52, 
+                                        0xc8, 0x10, 0xf3, 0x2b, 0x80, 0x90, 0x79, 0xe5, 
+                                        0x62, 0xf8, 0xea, 0xd2, 0x52, 0x2c, 0x6b, 0x7b }; // 24 bytes
+uint8_t iv[IV_LEN];
+char    cipher[CIPHER_MAX_LENGTH];
+
+__attribute__((__inline__))
+uint8_t generate_random_uint8() {
+  return *(volatile uint8_t *) 0x3FF20E44;
+}
+
+// Generate a random initialization vector
+void generate_iv(uint8_t* buffer, uint16_t len) {
+    uint16_t i = 0;
+    for (; i < len; i++)
+        buffer[i] = generate_random_uint8();
+}
+
+__attribute__((__inline__))
+void AES_add_pkcs7_padding(char* buffer, uint16_t plain_len, uint16_t buffer_len) {
+    char padding = buffer_len - plain_len - 1;
+    if (padding) {
+        memset(buffer + plain_len, padding, padding);
+        buffer[buffer_len - 1] = '\0';
+    }
+}
+
+void encrypt_model(char* buffer, uint16_t plain_len, uint16_t buffer_len) {
 	
-	int cipher_length = model_length + (AES_BLOCKLEN - ((model_length - 1) & 0x10)); //  % 16));
-	if (cipher_length > cipher_max_length) // cipher byte array not too big to store encrypted data
-		return 0;
+	struct AES_ctx ctx;
 
-    struct AES_ctx ctx;
+    AES_add_pkcs7_padding(buffer, plain_len, buffer_len);
 
-    AES_init_ctx_iv(&ctx, key, IV);
-    AES_CTR_xcrypt_buffer(&ctx, (uint8_t*) cipher, cipher_length);
+    generate_iv(iv, IV_LEN);
+    AES_init_ctx_iv(&ctx, key, iv);
 
-    return cipher_length;
+    AES_CTR_xcrypt_buffer(&ctx, (uint8_t*) buffer, buffer_len);
 }
 
 __attribute__((__inline__)) void radio_init() {
+    // init SPI
+
 }
 
+/*
+{"pedals":{"tps1":23,"tps2":23,"brake":0,"apps_plaus":true,"brake_plaus":true},
+"suspensions":{"front_sx":23,"front_dx":23,"retro_sx":23,"retro_dx":23},
+"wheels":{"front_sx":23,"front_dx":23,"retro_sx":23,"retro_dx":23},
+"accelerometers":{"acc_x":23,"acc_z":23}
+}
+*/
 void radio_send_model() {
     StaticJsonBuffer<JSON_BUFFER_SIZE>  jsonBuffer;
 
-    String                              model = "";
-    size_t                              model_len;
-    size_t                              padd_len;
-    size_t                              num_blocks;
-    size_t                              cipher_len;
+    uint16_t                            model_len;
     
     JsonObject&   root = jsonBuffer.createObject();
 
@@ -65,20 +95,11 @@ void radio_send_model() {
     accelerometers["acc_x"] = acc_x_value;
     accelerometers["acc_z"] = acc_z_value;
 
-    root.printTo(model);
+    root.printTo(cipher);
 
-    model_len = model.length();
-    strncpy((char*) cipher, model.c_str(), model_len);
-
-    num_blocks = model_len / AES_BLOCKLEN;
-    padd_len = model_len % AES_BLOCKLEN;
-
-    memset(cipher + model_len, padd_len, padd_len);
+    model_len = strlen(cipher);
   
-    if (!(cipher_len = encrypt_model(cipher, model_len, CIPHER_MAX_LENGTH)))
-        return;   // error: string too long
-
-  
+    encrypt_model(cipher, model_len, CIPHER_MAX_LENGTH);
 
 
     //SPI_send_string(log);

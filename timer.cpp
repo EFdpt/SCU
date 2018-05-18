@@ -5,14 +5,23 @@
 #include "pdo.h"
 #include "CO_can.h"
 
+#if defined(_RETRO_)
+    #include "radio.h"
+#endif
+
 #define SCU_FRONT_FIRST_SLOT 			0
 #define SCU_FRONT_SECOND_SLOT 			1
 #define SCU_REAR_SLOT 					2
 #define TCS_SLOT 						3
 
 #define TIME_SLOT_MASK                  3
+#define RADIO_SLOT_MASK                 3 // 3 slot temporali di _RETRO_ (spedisci via radio ogni TIME_SLOT_PERIOD * 4 * 3, con 4 = #slot di attesa per SCU_RETRO)
 
 volatile uint8_t		t_slot = SCU_FRONT_FIRST_SLOT;
+
+#if defined(_RETRO_)
+volatile uint8_t        radio_slot = 0;
+#endif
 
 DueTimer* co_timer;
 
@@ -38,6 +47,9 @@ void TimeDispatch() { // send PDOs periodically
             Message m = Message_Initializer;
             buildPDO(PDO1tx, &m);
             canSend(&m);
+            if (radio_slot)
+                radio_send_model();
+            radio_slot = (radio_slot + 1) & RADIO_SLOT_MASK;
 			break;
         }
     }

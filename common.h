@@ -8,8 +8,8 @@
 
 #define TIME_SLOT_PERIOD	4000 // 4ms
 
-#define _FRONTAL_
-//#define _RETRO_
+// #define _FRONTAL_
+#define _RETRO_
 
 #include "CAN_ID.h"
 
