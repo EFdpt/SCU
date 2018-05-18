@@ -13,6 +13,8 @@
 
 #define IV_LEN                AES_KEYLEN
 
+#define PADDING_ALGORITHM     byte_padding        
+
 uint8_t key[AES_KEYLEN] = {   0x8e, 0x73, 0xb0, 0xf7, 0xda, 0x0e, 0x64, 0x52, 
                                         0xc8, 0x10, 0xf3, 0x2b, 0x80, 0x90, 0x79, 0xe5, 
                                         0x62, 0xf8, 0xea, 0xd2, 0x52, 0x2c, 0x6b, 0x7b }; // 24 bytes
@@ -32,7 +34,7 @@ void generate_iv(uint8_t* buffer, uint16_t len) {
 }
 
 __attribute__((__inline__))
-void AES_add_pkcs7_padding(char* buffer, uint16_t plain_len, uint16_t buffer_len) {
+void pkcs7_padding(char* buffer, uint16_t plain_len, uint16_t buffer_len) {
     char padding = buffer_len - plain_len - 1;
     if (padding) {
         memset(buffer + plain_len, padding, padding);
@@ -40,11 +42,21 @@ void AES_add_pkcs7_padding(char* buffer, uint16_t plain_len, uint16_t buffer_len
     }
 }
 
+// ISO/IEC 7816-4 byte padding
+__attribute__((__inline__))
+void byte_padding(char* buffer, uint16_t plain_len, uint16_t buffer_len) {
+    char padding = buffer_len - plain_len;
+    if (padding) {
+        buffer[plain_len] = '0x80';
+        memset(buffer + plain_len + 1, '0x00', padding - 1);
+    }
+}
+
 void encrypt_model(char* buffer, uint16_t plain_len, uint16_t buffer_len) {
 	
 	struct AES_ctx ctx;
 
-    AES_add_pkcs7_padding(buffer, plain_len, buffer_len);
+    PADDING_ALGORITHM(buffer, plain_len, buffer_len);
 
     generate_iv(iv, IV_LEN);
     AES_init_ctx_iv(&ctx, key, iv);
@@ -101,8 +113,9 @@ void radio_send_model() {
   
     encrypt_model(cipher, model_len, CIPHER_MAX_LENGTH);
 
-
-    //SPI_send_string(log);
+    // ATTENTION
+    // now cipher is non zero terminated buffer!
+    //SPI_send_string(cipher, CIPHER_MAX_LENGTH); // send cipher buffer and terminator
 }
 
 #endif
