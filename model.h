@@ -10,8 +10,6 @@
 
 #define SUSP_STROKE_EXTENSION	75.0	// [mm]
 
-extern volatile bool 	 tcs_online;
-
 //extern volatile uint16_t tps1_value;
 extern volatile uint8_t  tps1_percentage;
 //extern volatile uint16_t tps1_max;

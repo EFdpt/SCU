@@ -36,8 +36,6 @@
 
 volatile int      bufn, obufn;
 
-volatile bool     tcs_online = false;
-
 #if defined(_FRONTAL_)
 volatile bool     calibrate = true;   // calibrate pedals
 #endif

@@ -48,6 +48,7 @@ void canDispatch(Message* m) {
 }
 
 __attribute__((__inline__)) void initialisation() {
+    setState(Initialisation);
     model_init();
 #if defined(_FRONTAL_)
     model_enable_calibrations();
@@ -58,12 +59,16 @@ __attribute__((__inline__)) void initialisation() {
     timerInit();
 }
 
-__attribute__((__inline__)) void preOperational() {}
+__attribute__((__inline__)) void preOperational() {
+    setState(Pre_operational);
+}
 
 __attribute__((__inline__)) void operational() {
+    setState(Operational);
 	timerStart();
 }
 
 __attribute__((__inline__)) void stopped() {
+    setState(Stopped);
 	timerStop();
 }
