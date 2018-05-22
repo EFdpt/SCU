@@ -16,6 +16,7 @@
 #define SERIAL_BAUDRATE     115200
 
 #define TIME_SLOT_PERIOD	4000 // 4ms
+#define TIMER               Timer3
 
 //#define _FRONTAL_
 #define _RETRO_

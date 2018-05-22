@@ -11,19 +11,17 @@
 
 #define CIPHER_MAX_LENGTH     1024
 
-#define IV_LEN                AES_KEYLEN
-
-#define PADDING_ALGORITHM     byte_padding        
+#define IV_LEN                AES_KEYLEN      
 
 uint8_t key[AES_KEYLEN] = {   0x8e, 0x73, 0xb0, 0xf7, 0xda, 0x0e, 0x64, 0x52, 
                                         0xc8, 0x10, 0xf3, 0x2b, 0x80, 0x90, 0x79, 0xe5, 
                                         0x62, 0xf8, 0xea, 0xd2, 0x52, 0x2c, 0x6b, 0x7b }; // 24 bytes
 uint8_t iv[IV_LEN];
-char    cipher[CIPHER_MAX_LENGTH];
+char    cipher[CIPHER_MAX_LENGTH + 1] = {0};
 
 __attribute__((__inline__))
 uint8_t generate_random_uint8() {
-  return *(volatile uint8_t *) 0x3FF20E44;
+  return 0x05;
 }
 
 // Generate a random initialization vector
@@ -35,17 +33,17 @@ void generate_iv(uint8_t* buffer, uint16_t len) {
 
 __attribute__((__inline__))
 void pkcs7_padding(char* buffer, uint16_t plain_len, uint16_t buffer_len) {
-    char padding = buffer_len - plain_len - 1;
+    unsigned char padding = buffer_len - plain_len - 1;
     if (padding) {
         memset(buffer + plain_len, padding, padding);
-        buffer[buffer_len - 1] = '\0';
+        //buffer[buffer_len - 1] = '\0';
     }
 }
 
 // ISO/IEC 7816-4 byte padding
 __attribute__((__inline__))
 void byte_padding(char* buffer, uint16_t plain_len, uint16_t buffer_len) {
-    char padding = buffer_len - plain_len;
+    unsigned char padding = buffer_len - plain_len;
     if (padding) {
         buffer[plain_len] = '0x80';
         memset(buffer + plain_len + 1, '0x00', padding - 1);
@@ -56,7 +54,7 @@ void encrypt_model(char* buffer, uint16_t plain_len, uint16_t buffer_len) {
 	
 	struct AES_ctx ctx;
 
-    PADDING_ALGORITHM(buffer, plain_len, buffer_len);
+    pkcs7_padding(buffer, plain_len, buffer_len);
 
     generate_iv(iv, IV_LEN);
     AES_init_ctx_iv(&ctx, key, iv);
@@ -110,9 +108,14 @@ void radio_send_model() {
     root.printTo(cipher);
 
     model_len = strlen(cipher);
-  
-    encrypt_model(cipher, model_len, CIPHER_MAX_LENGTH);
 
+    pkcs7_padding(cipher, model_len, CIPHER_MAX_LENGTH);
+    cipher[CIPHER_MAX_LENGTH] = '\0';
+  
+    //encrypt_model(cipher, model_len + 1, CIPHER_MAX_LENGTH);
+
+    SerialUSB.println(cipher);
+    SerialUSB.flush();
     // ATTENTION
     // now cipher is non zero terminated buffer!
     //SPI_send_string(cipher, CIPHER_MAX_LENGTH); // send cipher buffer and terminator

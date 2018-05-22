@@ -9,6 +9,7 @@
 #include "common.h"
 #include "states.h"
 #include "nmt.h"
+#include "radio.h"
 
 /**
  *  @mainpage FastChargeSAE SCU firmware
@@ -59,10 +60,15 @@
  *  @retval     None
  */
 void setup() {
+    SerialUSB.begin(0);
+    while(!SerialUSB);
+    SerialUSB.println("Serial configured");
+    SerialUSB.flush();
     setNodeId(NODE_ID);
     initialisation();
     slaveSendBootUp();  
     preOperational();
+    operational();
 }
 
 /**
@@ -74,5 +80,6 @@ void setup() {
  */
 void loop() {
     /* Go in Wait For Interrupt mode for reducing power consumption */
-    __asm__("WFI");
+    //__asm__("WFI");
+    //radio_send_model();
 }
