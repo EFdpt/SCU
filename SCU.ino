@@ -60,16 +60,18 @@
  *  @retval     None
  */
 void setup() {
-    SerialUSB.begin(0);
-    while(!SerialUSB);
-    SerialUSB.println("Serial configured");
-    SerialUSB.flush();
+    Serial.begin(SERIAL_BAUDRATE);
+    while(!Serial);
+    Serial.println("Serial configured");
+    Serial.flush();
     setNodeId(NODE_ID);
     initialisation();
     slaveSendBootUp();  
     preOperational();
     operational();
 }
+
+#define ATOMIC          0
 
 /**
  *  @brief      This function is called into endless while main loop
@@ -81,5 +83,22 @@ void setup() {
 void loop() {
     /* Go in Wait For Interrupt mode for reducing power consumption */
     //__asm__("WFI");
-    //radio_send_model();
+    volatile bool radio_transmit_curr;
+    #if ATOMIC
+    noInterrupts();
+    #endif
+    radio_transmit_curr = radio_transmit;
+    #if ATOMIC
+    interrupts();
+    #endif
+    if (radio_transmit_curr) {
+        #if ATOMIC
+        noInterrupts();
+        #endif
+        radio_transmit = false;
+        #if ATOMIC
+        interrupts();
+        #endif
+        radio_send_model();
+    }
 }

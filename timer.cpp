@@ -49,7 +49,7 @@ void TimeDispatch() { // send PDOs periodically
             buildPDO(PDO1tx, &m);
             canSend(&m);
             if (radio_slot)
-                radio_send_model();
+                radio_transmit = true;
             radio_slot = (radio_slot + 1) & RADIO_SLOT_MASK;
 			break;
         }
