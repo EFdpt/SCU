@@ -14,24 +14,6 @@
 
 #define IV_LEN                AES_KEYLEN  
 
-typedef struct radio_model_s {
-    uint8_t tps1;
-    uint8_t tps2;
-    uint8_t brake;
-    bool    apps_plausibility;
-    bool    brake_plausibility;
-    uint8_t fr_sx_susp;
-    uint8_t fr_dx_susp;
-    uint8_t rt_sx_susp;
-    uint8_t rt_dx_susp;
-    uint16_t fr_sx_rpm;
-    uint16_t fr_dx_rpm;
-    uint16_t rt_sx_rpm;
-    uint16_t rt_dx_rpm;
-    uint8_t acc_x;
-    uint8_t acc_z;
-} radio_model;
-
 volatile bool radio_transmit = false;
 
 volatile uint8_t buffer_in;
@@ -42,8 +24,6 @@ uint8_t key[AES_KEYLEN] = {   0x8e, 0x73, 0xb0, 0xf7, 0xda, 0x0e, 0x64, 0x52,
                                         0x62, 0xf8, 0xea, 0xd2, 0x52, 0x2c, 0x6b, 0x7b }; // 24 bytes
 uint8_t iv[IV_LEN];
 char    cipher[CIPHER_MAX_LENGTH + 1] = {0};
-
-//radio_model radio_buffer[RADIO_BUFFER_SIZE] = {0};
 
 __attribute__((__inline__))
 uint8_t generate_random_uint8() {
@@ -135,15 +115,12 @@ void radio_send_model() {
 
     model_len = strlen(cipher);
 
-    pkcs7_padding(cipher, model_len, CIPHER_MAX_LENGTH);
+    encrypt_model(cipher, model_len, CIPHER_MAX_LENGTH);
     cipher[CIPHER_MAX_LENGTH] = '\0';
-  
-    //encrypt_model(cipher, model_len + 1, CIPHER_MAX_LENGTH);
 
     Serial.println(cipher);
     Serial.flush();
-    // ATTENTION
-    // now cipher is non zero terminated buffer!
+
     //SPI_send_string(cipher, CIPHER_MAX_LENGTH); // send cipher buffer and terminator
 }
 
