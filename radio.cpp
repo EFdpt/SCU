@@ -3,6 +3,8 @@
 #if defined(_RETRO_)
 
 #include <ArduinoJson.h>
+#include <Base64.h>
+
 #include "model.h"
 
 #define RADIO_BUFFER_SIZE     32
@@ -26,8 +28,9 @@ uint8_t iv[IV_LEN];
 char    cipher[CIPHER_MAX_LENGTH + 1] = {0};
 
 __attribute__((__inline__))
-uint8_t generate_random_uint8() {
-  return 0x05;
+volatile uint8_t generate_random_uint8() {
+    while (!(TRNG->TRNG_ISR & TRNG_ISR_DATRDY));
+    return (volatile uint8_t) TRNG->TRNG_ODATA;
 }
 
 // Generate a random initialization vector
@@ -39,7 +42,7 @@ void generate_iv(uint8_t* buffer, uint16_t len) {
 
 __attribute__((__inline__))
 void pkcs7_padding(char* buffer, uint16_t plain_len, uint16_t buffer_len) {
-    unsigned char padding = buffer_len - plain_len - 1;
+    unsigned char padding = buffer_len - plain_len;
     if (padding) {
         memset(buffer + plain_len, padding, padding);
         //buffer[buffer_len - 1] = '\0';
@@ -60,17 +63,19 @@ void encrypt_model(char* buffer, uint16_t plain_len, uint16_t buffer_len) {
 	
 	struct AES_ctx ctx;
 
-    pkcs7_padding(buffer, plain_len, buffer_len);
+    byte_padding(buffer, plain_len, buffer_len);
 
-    generate_iv(iv, IV_LEN);
+    //generate_iv(iv, IV_LEN);
     AES_init_ctx_iv(&ctx, key, iv);
 
     AES_CTR_xcrypt_buffer(&ctx, (uint8_t*) buffer, buffer_len);
 }
 
 __attribute__((__inline__)) void radio_init() {
+    pmc_enable_periph_clk(ID_TRNG);
+    TRNG->TRNG_IDR = 0xFFFFFFFF;
+    TRNG->TRNG_CR = TRNG_CR_KEY(0x524e47) | TRNG_CR_ENABLE;
     // init SPI
-
 }
 
 /*
@@ -111,16 +116,34 @@ void radio_send_model() {
     accelerometers["acc_x"] = acc_x_value;
     accelerometers["acc_z"] = acc_z_value;
 
+    memset(cipher, 0, CIPHER_MAX_LENGTH);
     root.printTo(cipher);
 
     model_len = strlen(cipher);
 
+    generate_iv(iv, IV_LEN);
+
     encrypt_model(cipher, model_len, CIPHER_MAX_LENGTH);
-    cipher[CIPHER_MAX_LENGTH] = '\0';
+    //cipher[CIPHER_MAX_LENGTH] = '\0';
 
-    Serial.println(cipher);
+    int encodedLength = Base64.encodedLength(CIPHER_MAX_LENGTH);
+    char encodedString[encodedLength];
+    Base64.encode(encodedString, cipher, CIPHER_MAX_LENGTH);
+
+    //Serial.println(encodedString);
+    //Serial.flush();
+
+    // TEST DECODE
+    int decodedLength = Base64.decodedLength(encodedString, encodedLength);
+    char decodedString[decodedLength];
+    Base64.decode(decodedString, encodedString, encodedLength);
+
+    encrypt_model(decodedString, decodedLength, CIPHER_MAX_LENGTH);
+    //decodedString[decodedLength] = '\0';
+
+    Serial.println(decodedString);
     Serial.flush();
-
+    
     //SPI_send_string(cipher, CIPHER_MAX_LENGTH); // send cipher buffer and terminator
 }
 
