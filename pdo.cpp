@@ -42,14 +42,14 @@ void buildPDO(uint8_t PDOtype, Message* pdo) {
 #if defined(_RETRO_)
 void proceedPDO(Message* m) {
     switch (GET_FUNC_CODE(m -> cob_id)) {
-        case PDO1rx: // first PDO from frontal SCU (pedals)
+        case PDO1tx: // first PDO from frontal SCU (pedals)
             tps1_percentage = (uint8_t) m -> data[0];
             tps2_percentage = (uint8_t) m -> data[1];
             brake_percentage = (uint8_t) m -> data[2];
             apps_plausibility = (m -> data[3] & 0xF0) ? true : false;
             brake_plausibility = (m -> data[3] & 0x0F) ? true : false;
             break;
-        case PDO2rx: // second PDO from frontal SCU (suspensions & wheels)
+        case PDO2tx: // second PDO from frontal SCU (suspensions & wheels)
             fr_sx_rpm = (uint16_t) ((uint16_t*) m -> data)[0];
             fr_dx_rpm = (uint16_t) ((uint16_t*) m -> data)[1];
             fr_sx_susp = (uint8_t) m -> data[4];

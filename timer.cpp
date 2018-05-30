@@ -48,7 +48,7 @@ void TimeDispatch() { // send PDOs periodically
             Message m = Message_Initializer;
             buildPDO(PDO1tx, &m);
             canSend(&m);
-            if (radio_slot)
+            if (!radio_slot)
                 radio_transmit = true;
             radio_slot = (radio_slot + 1) & RADIO_SLOT_MASK;
 			break;
