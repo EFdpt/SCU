@@ -16,6 +16,9 @@
 #define NORMALIZE_RPM         1000000.0d
 #define RPM_MIN               10
 
+#define ACCELEROMETER_MAX_G   5.0d
+#define ACCELEROMETER_NORMALIZE   2.0d * ACCELEROMETER_MAX_G / ADC_MAX
+
 #define APPS_PLAUS_RANGE      10
 
 #if defined(_FRONTAL_)
@@ -23,6 +26,12 @@
   #define ADC_CHANNELS        5
   #define ADC_CHANNELS_LIST   TPS1_ADC_CHAN_NUM | TPS2_ADC_CHAN_NUM | BRAKE_ADC_CHAN_NUM | FR_SX_ADC_CHAN_NUM | FR_DX_ADC_CHAN_NUM
   
+  #define TPS1_ADC_OFFSET     0
+  #define TPS2_ADC_OFFSET     1
+  #define BRAKE_ADC_OFFSET    2
+  #define FR_SX_ADC_OFFSET    3
+  #define FR_DX_ADC_OFFSET    4
+
   #define BUFFER_LENGTH       ADC_BUFFER_SIZE * ADC_CHANNELS    
   
 #elif defined(_RETRO_)
@@ -30,6 +39,11 @@
   #define ADC_CHANNELS        4
   #define ADC_CHANNELS_LIST   ACC_X_ADC_CHAN_NUM | ACC_Z_ADC_CHAN_NUM | RT_SX_ADC_CHAN_NUM | RT_DX_ADC_CHAN_NUM
   
+  #define ACC_X_ADC_OFFSET    0
+  #define ACC_Z_ADC_OFFSET    1
+  #define RT_SX_ADC_OFFSET    2
+  #define RT_DX_ADC_OFFSET    3
+
   #define BUFFER_LENGTH       ADC_BUFFER_SIZE * ADC_CHANNELS    
   
 #endif
@@ -195,6 +209,9 @@ static inline void filter_data() {
   #elif defined(_RETRO_)
     rt_sx_susp = (volatile uint8_t) (rt_sx_susp + (SUSP_STROKE_NORMALIZE * filter_buffer(buf[obufn] + RT_SX_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS))) / 2;
     rt_dx_susp = (volatile uint8_t) (rt_dx_susp + (SUSP_STROKE_NORMALIZE * filter_buffer(buf[obufn] + RT_DX_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS))) / 2;
+  
+    acc_x_value = (volatile uint8_t) (acc_x_value + (ACCELEROMETER_NORMALIZE * filter_buffer(buf[obufn] + ACC_X_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS))) / 2;
+    acc_z_value = (volatile uint8_t) (acc_z_value + (ACCELEROMETER_NORMALIZE * filter_buffer(buf[obufn] + ACC_Z_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS))) / 2;
   #endif
 }
 

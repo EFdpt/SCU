@@ -11,9 +11,9 @@
 
     #define RADIO_KEY_BITS	192 // choose 128, 192 or 256
 
-    extern uint8_t key[];
+    extern volatile bool radio_transmit;
 
-    void encrypt_model(char* buffer, uint16_t plain_len, uint16_t buffer_len);
+    void encrypt_model(char* buffer, char* iv, uint16_t plain_len, uint16_t buffer_len);
 
     void radio_init();
 

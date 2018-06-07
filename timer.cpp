@@ -15,7 +15,7 @@
 #define TCS_SLOT 						3
 
 #define TIME_SLOT_MASK                  3
-#define RADIO_SLOT_MASK                 3 // 3 slot temporali di _RETRO_ (spedisci via radio ogni TIME_SLOT_PERIOD * 4 * 3, con 4 = #slot di attesa per SCU_RETRO)
+#define RADIO_SLOT_MASK                 7 // 3 slot temporali di _RETRO_ (spedisci via radio ogni TIME_SLOT_PERIOD * 4 * 3, con 4 = #slot di attesa per SCU_RETRO)
 
 volatile uint8_t		t_slot = SCU_FRONT_FIRST_SLOT;
 
@@ -23,7 +23,7 @@ volatile uint8_t		t_slot = SCU_FRONT_FIRST_SLOT;
 volatile uint8_t        radio_slot = 0;
 #endif
 
-DueTimer* co_timer;
+DueTimer* timer;
 
 void TimeDispatch() { // send PDOs periodically
 #if defined(_FRONTAL_)
@@ -40,6 +40,7 @@ void TimeDispatch() { // send PDOs periodically
             canSend(&m);
 			break;
         }
+        default: {}
     }
 #elif defined(_RETRO_)
     switch (t_slot) {
@@ -47,11 +48,12 @@ void TimeDispatch() { // send PDOs periodically
             Message m = Message_Initializer;
             buildPDO(PDO1tx, &m);
             canSend(&m);
-            if (radio_slot)
-                radio_send_model();
+            if (!radio_slot)
+                radio_transmit = true;
             radio_slot = (radio_slot + 1) & RADIO_SLOT_MASK;
 			break;
         }
+        default: {}
     }
 #endif
 
@@ -59,13 +61,13 @@ void TimeDispatch() { // send PDOs periodically
 }
 
 __attribute__((__inline__)) void timerInit() {
-	co_timer = &(DueTimer::getAvailable().attachInterrupt(TimeDispatch));
+	TIMER.attachInterrupt(TimeDispatch);
 }
 
 __attribute__((__inline__)) void timerStart() {
-	co_timer -> start(TIME_SLOT_PERIOD);
+	TIMER.start(TIME_SLOT_PERIOD);
 }
 
 __attribute__((__inline__)) void timerStop() {
-	co_timer -> stop();
+	TIMER.stop();
 }

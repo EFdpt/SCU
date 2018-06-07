@@ -9,6 +9,7 @@
 #include "common.h"
 #include "states.h"
 #include "nmt.h"
+#include "radio.h"
 
 /**
  *  @mainpage FastChargeSAE SCU firmware
@@ -63,7 +64,9 @@ void setup() {
     initialisation();
     slaveSendBootUp();  
     preOperational();
+    operational();
 }
+
 
 /**
  *  @brief      This function is called into endless while main loop
@@ -72,7 +75,13 @@ void setup() {
  *  @param      None
  *  @retval     None
  */
+__attribute__((__inline__))
 void loop() {
-    /* Go in Wait For Interrupt mode for reducing power consumption */
-    __asm__("WFI");
+    if (radio_transmit) {
+        radio_transmit = false;
+        radio_send_model();
+    } else {
+        /* Go in Wait For Interrupt mode for reducing power consumption */
+        __WFI();
+    }
 }
