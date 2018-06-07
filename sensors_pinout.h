@@ -40,6 +40,9 @@
 	#define RT_DX_SUSP_PIN		    	A3
 	#define RT_DX_ADC_CHAN_NUM    		ADC_CHER_CH4  // AD4
 
+	#define RADIO_CSN_PIN				7
+	#define RADIO_CE_PIN				8
+
 #endif
 
 #endif /* _SENSORS_PINOUT_ */
