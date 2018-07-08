@@ -1,8 +1,21 @@
+/** 
+ *  @file           CO_can.cpp
+ *  @author         Arella Matteo <br/>
+ *                  (mail: arella.1646983@studenti.uniroma1.it)
+ *  @date           2018
+ *  @brief          CANOpen main module implementation file
+ */
+
 #include <due_can.h>
 
 #include "CO_can.h"
 #include "states.h"
 #include "common.h"
+
+/**
+ *  @addtogroup CAN_network_module
+ *   @{
+ */
 
 void canSend(Message* m) {
 	CAN_FRAME frame;
@@ -52,3 +65,7 @@ void initCAN() {
         CAN_PORT.mailbox_set_mode(i, CAN_MB_TX_MODE);
 #endif
 }
+
+/**
+ *  @}
+ */

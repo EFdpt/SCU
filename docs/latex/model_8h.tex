@@ -1,0 +1,78 @@
+\hypertarget{model_8h}{}\section{model.\+h File Reference}
+\label{model_8h}\index{model.\+h@{model.\+h}}
+
+
+Board model header file.  
+
+
+{\ttfamily \#include \char`\"{}sensors\+\_\+pinout.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
+Include dependency graph for model.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{model_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___board__model__group_gafd34b4e5a1067ffe9bfb1cb18b5973e6}{S\+U\+S\+P\+\_\+\+S\+T\+R\+O\+K\+E\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}}~75.\+0
+\begin{DoxyCompactList}\small\item\em Maximum suspension stroke \mbox{[} $mm$\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga77eb7343baa6cbfd81673dcbd03ac125}{get\+\_\+fr\+\_\+sx\+\_\+rpm}} ()
+\begin{DoxyCompactList}\small\item\em If rpm value is lower than \mbox{\hyperlink{group___board__model__group_gafc05771487f188ffa40b6620afc1a9bc}{R\+P\+M\+\_\+\+M\+IN}}, output is forced to zero. \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga3f71b1feaa9b3356080597de5de12f7b}{get\+\_\+fr\+\_\+dx\+\_\+rpm}} ()
+\begin{DoxyCompactList}\small\item\em If rpm value is lower than \mbox{\hyperlink{group___board__model__group_gafc05771487f188ffa40b6620afc1a9bc}{R\+P\+M\+\_\+\+M\+IN}}, output is forced to zero. \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga81c1dfd585ff1f0b26b38148909e064c}{get\+\_\+rt\+\_\+sx\+\_\+rpm}} ()
+\begin{DoxyCompactList}\small\item\em This function returns retro left wheel velocity \mbox{[} $rpm$\mbox{]}. \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga812f59d2bf258b811a7ff9184ba23e78}{get\+\_\+rt\+\_\+dx\+\_\+rpm}} ()
+\begin{DoxyCompactList}\small\item\em This function returns retro right wheel velocity \mbox{[} $rpm$\mbox{]}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___board__model__group_gace5a444da39d4366693503c53f0841c2}{model\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em This function initializes hardware board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___board__model__group_ga1d42f28ccf027a3243fad064fa47ef81}{tps1\+\_\+percentage}}
+\begin{DoxyCompactList}\small\item\em First A\+P\+PS percentage value retrieved by tps1 signal (\mbox{\hyperlink{group___board__pinout__group_gae9aa914854f611488701c96a330b0bd4}{T\+P\+S1\+\_\+\+P\+IN}}) \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___board__model__group_gaf69d82f83885abc5adbd5fcbf4c421cf}{tps2\+\_\+percentage}}
+\begin{DoxyCompactList}\small\item\em Second A\+P\+PS percentage value retrieved by tps2 signal (\mbox{\hyperlink{group___board__pinout__group_gab13a816bae3ca994897fc6f1cb590a67}{T\+P\+S2\+\_\+\+P\+IN}}) \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___board__model__group_ga8e50a30864da7026531520887968d4c0}{brake\+\_\+percentage}}
+\begin{DoxyCompactList}\small\item\em Brake pedal position sensor percentage value retrieved by brake signal (\mbox{\hyperlink{group___board__pinout__group_gad632b56bf4c6259a390c3db91607078e}{B\+R\+A\+K\+E\+\_\+\+P\+IN}}) \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___board__model__group_gaa9de48f5a49bc92a608ed315c087f3a6}{apps\+\_\+plausibility}}
+\begin{DoxyCompactList}\small\item\em A\+P\+PS plausibility status. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___board__model__group_gae505d69d6ac9d4e7e3c2268ca6cb20b3}{brake\+\_\+plausibility}}
+\begin{DoxyCompactList}\small\item\em Brake plausibility status. \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___board__model__group_ga90c23c0b7f858714327ef390c73f6424}{fr\+\_\+sx\+\_\+susp}}
+\begin{DoxyCompactList}\small\item\em Frontal left suspension stroke \mbox{[} $mm$\mbox{]}. \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___board__model__group_ga4c01ad4d4fed642cd36faa3afcc78ffc}{fr\+\_\+dx\+\_\+susp}}
+\begin{DoxyCompactList}\small\item\em Frontal right suspension stroke \mbox{[} $mm$\mbox{]}. \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___board__model__group_ga9a397cb2df09e12e11a80e4f3fee8a1e}{acc\+\_\+x\+\_\+value}}
+\begin{DoxyCompactList}\small\item\em Accelerometer X value \mbox{[} $m/s^{2}$\mbox{]}. \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___board__model__group_ga4779043af8ceac73610675efc457aaaf}{acc\+\_\+z\+\_\+value}}
+\begin{DoxyCompactList}\small\item\em Accelerometer Z value \mbox{[} $m/s^{2}$\mbox{]}. \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___board__model__group_gaf3ea4d8836939176bd6b4f994518e4c8}{rt\+\_\+sx\+\_\+susp}}
+\begin{DoxyCompactList}\small\item\em Retro left suspension stroke \mbox{[} $mm$\mbox{]}. \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___board__model__group_ga6b55629e8341a3f0e9143ec931712dba}{rt\+\_\+dx\+\_\+susp}}
+\begin{DoxyCompactList}\small\item\em Retro right suspension stroke \mbox{[} $mm$\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Board model header file. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}

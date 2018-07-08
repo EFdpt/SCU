@@ -1,0 +1,37 @@
+\hypertarget{_s_c_u_8ino}{}\section{S\+C\+U.\+ino File Reference}
+\label{_s_c_u_8ino}\index{S\+C\+U.\+ino@{S\+C\+U.\+ino}}
+
+
+Main module file.  
+
+
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}states.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nmt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}radio.\+h\char`\"{}}\newline
+Include dependency graph for S\+C\+U.\+ino\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{_s_c_u_8ino__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___main__group__module_ga4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\begin{DoxyCompactList}\small\item\em This function perform basic board setup. Upon power-\/up S\+CU (C\+A\+Nopen slave node) goes into initialization. It initializes the entire application, C\+A\+N/\+C\+A\+Nopen interfaces and communication. At the end of the initialization the node tries to transmit boot-\/up message. As soon as it is transmitted successfully, the node switches to Pre-\/operational state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___main__group__module_gafe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\begin{DoxyCompactList}\small\item\em This function is called into endless while main loop. It takes care of sending data through radio, if enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main module file. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}

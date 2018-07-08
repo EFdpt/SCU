@@ -1,0 +1,33 @@
+S\+C\+Us are based on an Atmel S\+A\+M3\+X8E board with an A\+RM Cortex-\/\+M3 microprocessor.
+
+Analog input signals managed from S\+C\+Us are\+:~\newline
+ \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ N\+O\+DE  }&\textbf{ Signal   }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ N\+O\+DE  }&\textbf{ Signal   }\\\cline{1-2}
+\endhead
+\multirow{7}{\linewidth}{$SCU_{Frontal}$  }&First A\+P\+PS   \\\cline{2-2}
+&Second A\+P\+PS   \\\cline{2-2}
+&Brake   \\\cline{2-2}
+&Right phonic wheel   \\\cline{2-2}
+&Left phonic wheel   \\\cline{2-2}
+&Right suspension   \\\cline{2-2}
+&Left suspension   \\\cline{1-2}
+\multirow{6}{\linewidth}{$SCU_{Rear}$  }&Accel. X   \\\cline{2-2}
+&Accel. Z   \\\cline{2-2}
+&Right suspension   \\\cline{2-2}
+&Left suspension   \\\cline{2-2}
+&Right phonic wheel   \\\cline{2-2}
+&Left phonic wheel   \\\cline{1-2}
+\end{longtabu}
+
+
+Board pinout is described in \mbox{\hyperlink{group___board__model__group}{Board module}}.
+
+Output rpm are returned following this formula\+:~\newline
+ \[ rpm = NORMALIZE\_RPM * (\frac{60}{COGS\_NUMBER\ *\ \Delta_{TIMESTAMP}}) \] where $NORMALIZE\_RPM$ normalizes $TIMESTAMP$ in seconds. 

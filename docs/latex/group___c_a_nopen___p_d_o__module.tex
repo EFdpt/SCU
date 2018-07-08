@@ -1,0 +1,70 @@
+\hypertarget{group___c_a_nopen___p_d_o__module}{}\section{C\+A\+Nopen P\+DO module}
+\label{group___c_a_nopen___p_d_o__module}\index{C\+A\+Nopen P\+D\+O module@{C\+A\+Nopen P\+D\+O module}}
+Collaboration diagram for C\+A\+Nopen P\+DO module\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{group___c_a_nopen___p_d_o__module}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___c_a_nopen___p_d_o__module_gac0ec660dbbba1d5ab27615147f369caf}{build\+P\+DO}} (uint8\+\_\+t P\+D\+Otype, \mbox{\hyperlink{struct_message}{Message}} $\ast$pdo)
+\begin{DoxyCompactList}\small\item\em This function serializes data to send into P\+DO message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_a_nopen___p_d_o__module_ga91f92516824d9dc33dc8cf83b34726e1}{proceed\+P\+DO}} (\mbox{\hyperlink{struct_message}{Message}} $\ast$pdo)
+\begin{DoxyCompactList}\small\item\em This function manages P\+DO message receive, deserializing data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Data into P\+D\+Os are configured according \mbox{\hyperlink{_c_a_n_network_page_TPDO_configuration}{T\+P\+D\+O\+\_\+configuration}}. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___c_a_nopen___p_d_o__module_gac0ec660dbbba1d5ab27615147f369caf}\label{group___c_a_nopen___p_d_o__module_gac0ec660dbbba1d5ab27615147f369caf}} 
+\index{C\+A\+Nopen P\+D\+O module@{C\+A\+Nopen P\+D\+O module}!build\+P\+DO@{build\+P\+DO}}
+\index{build\+P\+DO@{build\+P\+DO}!C\+A\+Nopen P\+D\+O module@{C\+A\+Nopen P\+D\+O module}}
+\subsubsection{\texorpdfstring{build\+P\+D\+O()}{buildPDO()}}
+{\footnotesize\ttfamily void build\+P\+DO (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{P\+D\+Otype,  }\item[{\mbox{\hyperlink{struct_message}{Message}} $\ast$}]{pdo }\end{DoxyParamCaption})}
+
+
+
+This function serializes data to send into P\+DO message. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it})
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em P\+D\+Otype} & P\+DO type according to \mbox{\hyperlink{group___c_a_nopen___func___codes}{C\+A\+Nopen Function Codes}}. \\
+\hline
+\mbox{\tt in}  & {\em pdo} & C\+A\+Nopen message to build \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 19 of file pdo.\+cpp.
+
+\mbox{\Hypertarget{group___c_a_nopen___p_d_o__module_ga91f92516824d9dc33dc8cf83b34726e1}\label{group___c_a_nopen___p_d_o__module_ga91f92516824d9dc33dc8cf83b34726e1}} 
+\index{C\+A\+Nopen P\+D\+O module@{C\+A\+Nopen P\+D\+O module}!proceed\+P\+DO@{proceed\+P\+DO}}
+\index{proceed\+P\+DO@{proceed\+P\+DO}!C\+A\+Nopen P\+D\+O module@{C\+A\+Nopen P\+D\+O module}}
+\subsubsection{\texorpdfstring{proceed\+P\+D\+O()}{proceedPDO()}}
+{\footnotesize\ttfamily void proceed\+P\+DO (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_message}{Message}} $\ast$}]{pdo }\end{DoxyParamCaption})}
+
+
+
+This function manages P\+DO message receive, deserializing data. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it})
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pdo} & C\+A\+Nopen message to manage \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 56 of file pdo.\+cpp.
+

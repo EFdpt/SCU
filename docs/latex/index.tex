@@ -1,0 +1,19 @@
+C\+AN network arises from the need to digitize all those signals necessary for the operation of the car.
+
+Two Arduino Due prototyping boards have been adopted for signal digitalization\+: first one located at the front of the vehicle, reserved for the acquisition of pedals, frontal suspensions and frontal wheel groups, the second one placed an the rear of the vehicle, to acquire rear suspensions, rear wheels and accelerometers.
+
+Sensor acquisition boards will now be named S\+CU (Sensors Control Unit) and S\+CU F\+R\+O\+N\+T\+AL, S\+CU R\+E\+AR respectively for S\+CU located at the front and at the back of the vehicle.
+
+Each board performs mainly two actions\+:
+\begin{DoxyItemize}
+\item Sensor acquisition
+\item Data transmission over C\+AN servizi network and over radio (for real time telemetry)
+\end{DoxyItemize}
+
+A protocol layer above the data link layer (C\+AN protocol) is implemented inspired by the C\+A\+N\+Open communication protocol; each node is addressable at the network level using a specific and unique ID for every node.
+
+Each S\+CU board can be represented by a finite state machine with the following statuses\+: Initialisation, Pre-\/operational, Operational, Stopped. During power-\/up each node is in the Initialization state. At the end of this phase, it attempts to send a boot-\/up message. As soon as it has been successfully sent, it is placed in the pre-\/operational state. Using an N\+MT master message, the V\+CU can make the various S\+C\+Us pass between the various Pre-\/operational, Operational and Stopped states.
+
+Each S\+CU sends P\+D\+Os with sensor data in synchronous mode only if it is in the Operational state.
+
+The firmware for each node is selectable during the precompilation of the code from the directives present in \mbox{\hyperlink{group___s_c_u__firmware__selection}{S\+CU firmware selection}}. 

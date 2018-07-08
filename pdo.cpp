@@ -1,7 +1,20 @@
+/** 
+ *  @file           pdo.cpp
+ *  @author         Arella Matteo <br/>
+ *                  (mail: arella.1646983@studenti.uniroma1.it)
+ *  @date           2018
+ *  @brief          CANopen PDO support header file
+ */
+
 #include "pdo.h"
 #include "states.h"
 
 #include "model.h"
+
+/**
+ *  @addtogroup CANopen_PDO_module
+ *   @{
+ */
 
 void buildPDO(uint8_t PDOtype, Message* pdo) {
     pdo -> cob_id = (SET_FUNC_CODE(PDOtype) | getNodeId());
@@ -59,3 +72,7 @@ void proceedPDO(Message* m) {
     }
 }
 #endif
+
+/**
+ *  @}
+ */

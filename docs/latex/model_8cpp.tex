@@ -1,0 +1,165 @@
+\hypertarget{model_8cpp}{}\section{model.\+cpp File Reference}
+\label{model_8cpp}\index{model.\+cpp@{model.\+cpp}}
+
+
+Board model implementation file.  
+
+
+{\ttfamily \#include \char`\"{}model.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}filter.\+h\char`\"{}}\newline
+Include dependency graph for model.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{model_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___board__model__group_ga602abb8ec84dcb3b6f854a738310ea46}{A\+D\+C\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}}~128
+\begin{DoxyCompactList}\small\item\em Size (bytes) of buffer for store each A\+DC channel data with D\+MA. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_gaabe0f927d44a09f458bd5fe5ab4e2f7f}{B\+U\+F\+F\+E\+RS}}~4
+\begin{DoxyCompactList}\small\item\em Number of D\+MA buffers. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_gaf0098a1eafb8a60a1c65773e1064d595}{A\+D\+C\+\_\+\+M\+IN}}~0
+\begin{DoxyCompactList}\small\item\em A\+DC lower bound value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_ga555a695bf58df062dc03f0e892d95cd7}{A\+D\+C\+\_\+\+M\+AX}}~4095
+\begin{DoxyCompactList}\small\item\em A\+DC upper bound value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_ga6741cba3daf129b6f73eed1b1db09519}{T\+P\+S1\+\_\+\+U\+P\+P\+E\+R\+\_\+\+B\+O\+U\+ND}}~2482
+\begin{DoxyCompactList}\small\item\em First A\+P\+PS max output voltage (2V) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_ga9c9aa914f6b372d9ef3f15ce4108da6a}{T\+P\+S1\+\_\+\+L\+O\+W\+E\+R\+\_\+\+B\+O\+U\+ND}}~993
+\begin{DoxyCompactList}\small\item\em First A\+P\+PS min output voltage (0.\+8V) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_gac8be8d89c699c40b79d04c0fdf6238f4}{T\+P\+S2\+\_\+\+U\+P\+P\+E\+R\+\_\+\+B\+O\+U\+ND}}~1241
+\begin{DoxyCompactList}\small\item\em Second A\+P\+PS max output voltage (1V) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_gadfcc723e175ac44e73e38407299ac875}{T\+P\+S2\+\_\+\+L\+O\+W\+E\+R\+\_\+\+B\+O\+U\+ND}}~497
+\begin{DoxyCompactList}\small\item\em Second A\+P\+PS min output voltage (0.\+4V) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_ga891de03ab9e1bd9a92ffffe69a1b10ca}{B\+R\+A\+K\+E\+\_\+\+U\+P\+P\+E\+R\+\_\+\+B\+O\+U\+ND}}~0
+\begin{DoxyCompactList}\small\item\em Brake sensor max output voltage (T\+O\+DO\+: check Voutmax) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_ga0aed20cafcc206360abda47b125432c7}{B\+R\+A\+K\+E\+\_\+\+L\+O\+W\+E\+R\+\_\+\+B\+O\+U\+ND}}~\mbox{\hyperlink{group___board__model__group_ga555a695bf58df062dc03f0e892d95cd7}{A\+D\+C\+\_\+\+M\+AX}}
+\begin{DoxyCompactList}\small\item\em Brake sensor min output voltage (T\+O\+DO\+: check Voutmin) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_ga2445bb784c1bcde9b88c5f81fc814055}{S\+U\+S\+P\+E\+N\+S\+I\+O\+N\+S\+\_\+\+M\+IN}}~0
+\begin{DoxyCompactList}\small\item\em Minimum suspension stroke \mbox{[} $mm$\mbox{]}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_gaf662e0e156dae3a519648a2f10fa3635}{S\+U\+S\+P\+E\+N\+S\+I\+O\+N\+S\+\_\+\+A\+D\+C\+\_\+\+M\+AX}}~\mbox{\hyperlink{group___board__model__group_ga555a695bf58df062dc03f0e892d95cd7}{A\+D\+C\+\_\+\+M\+AX}}
+\begin{DoxyCompactList}\small\item\em Maximum suspension sensor $V_{OUT}$. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_gadad409d745f70ca3c312ca3914a43822}{S\+U\+S\+P\+\_\+\+S\+T\+R\+O\+K\+E\+\_\+\+N\+O\+R\+M\+A\+L\+I\+ZE}}~(\mbox{\hyperlink{group___board__model__group_gafd34b4e5a1067ffe9bfb1cb18b5973e6}{S\+U\+S\+P\+\_\+\+S\+T\+R\+O\+K\+E\+\_\+\+E\+X\+T\+E\+N\+S\+I\+ON}} / \mbox{\hyperlink{group___board__model__group_gaf662e0e156dae3a519648a2f10fa3635}{S\+U\+S\+P\+E\+N\+S\+I\+O\+N\+S\+\_\+\+A\+D\+C\+\_\+\+M\+AX}})
+\begin{DoxyCompactList}\small\item\em Suspension stroke voltage normalizer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_gab4fd15d90627818134453e8399055f7d}{C\+O\+G\+S\+\_\+\+N\+U\+M\+B\+ER}}~30.\+0d
+\begin{DoxyCompactList}\small\item\em Number of phonic wheel\textquotesingle{}s cogs. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_ga579e1065b83e6aef14ce222295f8b7eb}{N\+O\+R\+M\+A\+L\+I\+Z\+E\+\_\+\+R\+PM}}~1000000.\+0d
+\begin{DoxyCompactList}\small\item\em Normalize time domain \mbox{[} $\mu s$\mbox{]}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_gafc05771487f188ffa40b6620afc1a9bc}{R\+P\+M\+\_\+\+M\+IN}}~10
+\begin{DoxyCompactList}\small\item\em Rpm lower bound under that rpm are forced to zero. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_gaa8634c7b040cfe3e016765395a38efa3}{A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+M\+A\+X\+\_\+G}}~5.\+0d
+\begin{DoxyCompactList}\small\item\em Accelerometer sensor maximum value \mbox{[} $m/s^{2}$\mbox{]}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_ga5b18e6cd4163d6006ddf3c1f8a1e2a72}{A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+N\+O\+R\+M\+A\+L\+I\+ZE}}~2.\+0d $\ast$ A\+C\+C\+E\+L\+E\+R\+O\+M\+E\+T\+E\+R\+\_\+\+M\+A\+X\+\_\+\+G / A\+D\+C\+\_\+\+M\+AX
+\begin{DoxyCompactList}\small\item\em Accelerometer sensor voltage normalizer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_ga3e1022cd2e2154437b583f7ff83f2960}{A\+P\+P\+S\+\_\+\+P\+L\+A\+U\+S\+\_\+\+R\+A\+N\+GE}}~10
+\begin{DoxyCompactList}\small\item\em Maximum percentage deviation of pedal travel between two A\+P\+PS. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_ga99f732ac210a4d6b6635ed58681d3d71}{S\+C\+U\+\_\+\+F\+R\+O\+N\+T\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+LS}}~5
+\begin{DoxyCompactList}\small\item\em Number of A\+DC channels used in frontal S\+CU board. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_ga1b36d02d5fef3342ea7159722fa50ff3}{S\+C\+U\+\_\+\+F\+R\+O\+N\+T\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+L\+I\+ST}}~\mbox{\hyperlink{group___board__pinout__group_ga99b2a7dadaf495e3c559a46440f9141f}{T\+P\+S1\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+\_\+\+N\+UM}} $\vert$ \mbox{\hyperlink{group___board__pinout__group_ga4cecb8c10512873904099a1a88d69ed3}{T\+P\+S2\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+\_\+\+N\+UM}} $\vert$ \mbox{\hyperlink{group___board__pinout__group_ga310547321c4a016c4ad19922920fadfd}{B\+R\+A\+K\+E\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+\_\+\+N\+UM}} $\vert$ \mbox{\hyperlink{group___board__pinout__group_gab536d8e8e876dfd8764cc1d31620803a}{F\+R\+\_\+\+S\+X\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+\_\+\+N\+UM}} $\vert$ \mbox{\hyperlink{group___board__pinout__group_ga9d0085cf869db954c00e9c13d9661d51}{F\+R\+\_\+\+D\+X\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+\_\+\+N\+UM}}
+\begin{DoxyCompactList}\small\item\em List of A\+DC channels dedicated to each IO port in frontal S\+CU board. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_gadedc78ae5ed236e74a4e12c031209d29}{S\+C\+U\+\_\+\+R\+E\+T\+R\+O\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+LS}}~4
+\begin{DoxyCompactList}\small\item\em Number of A\+DC channels used in rear S\+CU board. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_ga5190c5da456959fb6c7132518a51f12f}{S\+C\+U\+\_\+\+R\+E\+T\+R\+O\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+L\+I\+ST}}~A\+C\+C\+\_\+\+X\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+\_\+\+N\+UM $\vert$ A\+C\+C\+\_\+\+Z\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+\_\+\+N\+UM $\vert$ R\+T\+\_\+\+S\+X\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+\_\+\+N\+UM $\vert$ R\+T\+\_\+\+D\+X\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+\_\+\+N\+UM
+\begin{DoxyCompactList}\small\item\em List of A\+DC channels dedicated to each IO port in retro S\+CU board. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_ga7ce02d79fba23321a377a26a963e2bdf}{T\+P\+S1\+\_\+\+A\+D\+C\+\_\+\+O\+F\+F\+S\+ET}}~0
+\begin{DoxyCompactList}\small\item\em Offset from D\+MA buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_ga24019e59e805c7acf8f816e141d3d689}{T\+P\+S2\+\_\+\+A\+D\+C\+\_\+\+O\+F\+F\+S\+ET}}~1
+\begin{DoxyCompactList}\small\item\em Offset from D\+MA buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_gade98eccd60c9b68cde78ca4c0009a84c}{B\+R\+A\+K\+E\+\_\+\+A\+D\+C\+\_\+\+O\+F\+F\+S\+ET}}~2
+\begin{DoxyCompactList}\small\item\em Offset from D\+MA buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_gad2f9dcce783b10da16c47480a6ee69c2}{F\+R\+\_\+\+S\+X\+\_\+\+A\+D\+C\+\_\+\+O\+F\+F\+S\+ET}}~3
+\begin{DoxyCompactList}\small\item\em Offset from D\+MA buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_gae4816219f422d1c427c5f1ee5464ff54}{F\+R\+\_\+\+D\+X\+\_\+\+A\+D\+C\+\_\+\+O\+F\+F\+S\+ET}}~4
+\begin{DoxyCompactList}\small\item\em Offset from D\+MA buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_ga88bac7626143add751ec06d0a6f4f969}{A\+C\+C\+\_\+\+X\+\_\+\+A\+D\+C\+\_\+\+O\+F\+F\+S\+ET}}~0
+\begin{DoxyCompactList}\small\item\em Offset from D\+MA buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_ga9712a0d42e65367ee89093f6153ed0f5}{A\+C\+C\+\_\+\+Z\+\_\+\+A\+D\+C\+\_\+\+O\+F\+F\+S\+ET}}~1
+\begin{DoxyCompactList}\small\item\em Offset from D\+MA buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_gaf318359d2387fb8fb87719ef9575b4b5}{R\+T\+\_\+\+S\+X\+\_\+\+A\+D\+C\+\_\+\+O\+F\+F\+S\+ET}}~2
+\begin{DoxyCompactList}\small\item\em Offset from D\+MA buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_gae702ce1b301d77d1f4e9b28d8ba12972}{R\+T\+\_\+\+D\+X\+\_\+\+A\+D\+C\+\_\+\+O\+F\+F\+S\+ET}}~3
+\begin{DoxyCompactList}\small\item\em Offset from D\+MA buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___board__model__group_gaf7b7dc9a200cb1404c280bd500fd1551}{B\+U\+F\+F\+E\+R\+\_\+\+L\+E\+N\+G\+TH}}~\mbox{\hyperlink{group___board__model__group_ga602abb8ec84dcb3b6f854a738310ea46}{A\+D\+C\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}} $\ast$ A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+LS
+\begin{DoxyCompactList}\small\item\em Length, in bytes, of each D\+MA buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___board__model__group_ga40f87aeb451c092cf21baf57defc516e}{fr\+\_\+sx\+\_\+pulse}} ()
+\begin{DoxyCompactList}\small\item\em E\+X\+TI I\+RQ handler. External interrupt handler executed when frontal left wheel encoder finds a hole into phonic wheel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___board__model__group_ga809e754563f2877e3264fd49483ceac9}{fr\+\_\+dx\+\_\+pulse}} ()
+\begin{DoxyCompactList}\small\item\em E\+X\+TI I\+RQ handler. External interrupt handler executed when frontal right wheel encoder finds a hole into phonic wheel. \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga77eb7343baa6cbfd81673dcbd03ac125}{get\+\_\+fr\+\_\+sx\+\_\+rpm}} ()
+\begin{DoxyCompactList}\small\item\em If rpm value is lower than \mbox{\hyperlink{group___board__model__group_gafc05771487f188ffa40b6620afc1a9bc}{R\+P\+M\+\_\+\+M\+IN}}, output is forced to zero. \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga3f71b1feaa9b3356080597de5de12f7b}{get\+\_\+fr\+\_\+dx\+\_\+rpm}} ()
+\begin{DoxyCompactList}\small\item\em If rpm value is lower than \mbox{\hyperlink{group___board__model__group_gafc05771487f188ffa40b6620afc1a9bc}{R\+P\+M\+\_\+\+M\+IN}}, output is forced to zero. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___board__model__group_gaedc241164d501dcbc52cde232333c9cf}{A\+D\+C\+\_\+\+Handler}} ()
+\begin{DoxyCompactList}\small\item\em A\+DC I\+RQ handler. When A\+DC buffer is filled D\+MA pointer is linked to next buffer available. Then acquired data are filtered. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___board__model__group_gace5a444da39d4366693503c53f0841c2}{model\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em This function initializes hardware board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile int \mbox{\hyperlink{group___board__model__group_gad2658b77f345b15c03759c02d1ba0e81}{bufn}}
+\begin{DoxyCompactList}\small\item\em D\+MA buffer pointer. \end{DoxyCompactList}\item 
+volatile int \mbox{\hyperlink{group___board__model__group_gafef4d6ed48b3edc5f7a74defba82e7d8}{obufn}}
+\begin{DoxyCompactList}\small\item\em D\+MA buffer pointer. \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga2bab0e665606eb5a547deb0d23446f41}{buf}} \mbox{[}\mbox{\hyperlink{group___board__model__group_gaabe0f927d44a09f458bd5fe5ab4e2f7f}{B\+U\+F\+F\+E\+RS}}\mbox{]}\mbox{[}\mbox{\hyperlink{group___board__model__group_gaf7b7dc9a200cb1404c280bd500fd1551}{B\+U\+F\+F\+E\+R\+\_\+\+L\+E\+N\+G\+TH}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em D\+MA buffers\+: \mbox{\hyperlink{group___board__model__group_gaabe0f927d44a09f458bd5fe5ab4e2f7f}{B\+U\+F\+F\+E\+RS}} number of buffers each of \mbox{\hyperlink{group___board__model__group_gaf7b7dc9a200cb1404c280bd500fd1551}{B\+U\+F\+F\+E\+R\+\_\+\+L\+E\+N\+G\+TH}} size; D\+MA is configured in cyclic mode\+: after one of \mbox{\hyperlink{group___board__model__group_gaabe0f927d44a09f458bd5fe5ab4e2f7f}{B\+U\+F\+F\+E\+RS}} is filled then D\+MA transfer head moves to next buffer in circular indexing. \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga3d6043851868b7da3c1d6381f835a559}{tps1\+\_\+value}} = 0
+\begin{DoxyCompactList}\small\item\em First A\+P\+PS value retrieved directly by analog tps1 signal (\mbox{\hyperlink{group___board__pinout__group_gae9aa914854f611488701c96a330b0bd4}{T\+P\+S1\+\_\+\+P\+IN}}) and filtered after D\+MA buffer is filled entirely. \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_gaa8a9b03858f40eadfd5d3d6c3e266834}{tps2\+\_\+value}} = 0
+\begin{DoxyCompactList}\small\item\em Second A\+P\+PS value retrieved directly by analog tps2 signal (\mbox{\hyperlink{group___board__pinout__group_gab13a816bae3ca994897fc6f1cb590a67}{T\+P\+S2\+\_\+\+P\+IN}}) and filtered after D\+MA buffer is filled entirely. \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_gad7966e70fb4bebc6947eb3fbb059a3c9}{brake\+\_\+value}} = 0
+\begin{DoxyCompactList}\small\item\em Brake pedal position sensor value retrieved directly by analog brake signal (\mbox{\hyperlink{group___board__pinout__group_gad632b56bf4c6259a390c3db91607078e}{B\+R\+A\+K\+E\+\_\+\+P\+IN}}) and filtered after D\+MA buffer is filled entirely. \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_gaf1d46fb483b2a63c3da25c11688af7c4}{tps1\+\_\+max}} = \mbox{\hyperlink{group___board__model__group_ga6741cba3daf129b6f73eed1b1db09519}{T\+P\+S1\+\_\+\+U\+P\+P\+E\+R\+\_\+\+B\+O\+U\+ND}}
+\begin{DoxyCompactList}\small\item\em First A\+P\+PS max output voltage (equals to \mbox{\hyperlink{group___board__model__group_ga6741cba3daf129b6f73eed1b1db09519}{T\+P\+S1\+\_\+\+U\+P\+P\+E\+R\+\_\+\+B\+O\+U\+ND}}) \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_gab7d6ace1f9174e39ed6abbe4aaceb7f4}{tps1\+\_\+min}} = \mbox{\hyperlink{group___board__model__group_ga9c9aa914f6b372d9ef3f15ce4108da6a}{T\+P\+S1\+\_\+\+L\+O\+W\+E\+R\+\_\+\+B\+O\+U\+ND}}
+\begin{DoxyCompactList}\small\item\em First A\+P\+PS min output voltage (equals to \mbox{\hyperlink{group___board__model__group_ga9c9aa914f6b372d9ef3f15ce4108da6a}{T\+P\+S1\+\_\+\+L\+O\+W\+E\+R\+\_\+\+B\+O\+U\+ND}}) \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga53381436ea8db96c356db8b305bec988}{tps2\+\_\+max}} = \mbox{\hyperlink{group___board__model__group_gac8be8d89c699c40b79d04c0fdf6238f4}{T\+P\+S2\+\_\+\+U\+P\+P\+E\+R\+\_\+\+B\+O\+U\+ND}}
+\begin{DoxyCompactList}\small\item\em Second A\+P\+PS max output voltage (equals to \mbox{\hyperlink{group___board__model__group_gac8be8d89c699c40b79d04c0fdf6238f4}{T\+P\+S2\+\_\+\+U\+P\+P\+E\+R\+\_\+\+B\+O\+U\+ND}}) \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga4e7715668b19738d8bfd47f2420aff02}{tps2\+\_\+min}} = \mbox{\hyperlink{group___board__model__group_gadfcc723e175ac44e73e38407299ac875}{T\+P\+S2\+\_\+\+L\+O\+W\+E\+R\+\_\+\+B\+O\+U\+ND}}
+\begin{DoxyCompactList}\small\item\em Second A\+P\+PS min output voltage (equals to \mbox{\hyperlink{group___board__model__group_gadfcc723e175ac44e73e38407299ac875}{T\+P\+S2\+\_\+\+L\+O\+W\+E\+R\+\_\+\+B\+O\+U\+ND}}) \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga744857a9bc060647cfc4ad47017c5bee}{brake\+\_\+max}} = \mbox{\hyperlink{group___board__model__group_ga891de03ab9e1bd9a92ffffe69a1b10ca}{B\+R\+A\+K\+E\+\_\+\+U\+P\+P\+E\+R\+\_\+\+B\+O\+U\+ND}}
+\begin{DoxyCompactList}\small\item\em Brake sensor max output voltage (equals to \mbox{\hyperlink{group___board__model__group_ga891de03ab9e1bd9a92ffffe69a1b10ca}{B\+R\+A\+K\+E\+\_\+\+U\+P\+P\+E\+R\+\_\+\+B\+O\+U\+ND}}) \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga779ee9b904930e3cfb165e70edfecd02}{brake\+\_\+min}} = \mbox{\hyperlink{group___board__model__group_ga0aed20cafcc206360abda47b125432c7}{B\+R\+A\+K\+E\+\_\+\+L\+O\+W\+E\+R\+\_\+\+B\+O\+U\+ND}}
+\begin{DoxyCompactList}\small\item\em Brake sensor min output voltage (equals to \mbox{\hyperlink{group___board__model__group_ga0aed20cafcc206360abda47b125432c7}{B\+R\+A\+K\+E\+\_\+\+L\+O\+W\+E\+R\+\_\+\+B\+O\+U\+ND}}) \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___board__model__group_ga1d42f28ccf027a3243fad064fa47ef81}{tps1\+\_\+percentage}} = 0
+\begin{DoxyCompactList}\small\item\em First A\+P\+PS percentage value retrieved by tps1 signal (\mbox{\hyperlink{group___board__pinout__group_gae9aa914854f611488701c96a330b0bd4}{T\+P\+S1\+\_\+\+P\+IN}}) \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___board__model__group_gaf69d82f83885abc5adbd5fcbf4c421cf}{tps2\+\_\+percentage}} = 0
+\begin{DoxyCompactList}\small\item\em Second A\+P\+PS percentage value retrieved by tps2 signal (\mbox{\hyperlink{group___board__pinout__group_gab13a816bae3ca994897fc6f1cb590a67}{T\+P\+S2\+\_\+\+P\+IN}}) \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___board__model__group_ga8e50a30864da7026531520887968d4c0}{brake\+\_\+percentage}} = 0
+\begin{DoxyCompactList}\small\item\em Brake pedal position sensor percentage value retrieved by brake signal (\mbox{\hyperlink{group___board__pinout__group_gad632b56bf4c6259a390c3db91607078e}{B\+R\+A\+K\+E\+\_\+\+P\+IN}}) \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___board__model__group_gaa9de48f5a49bc92a608ed315c087f3a6}{apps\+\_\+plausibility}} = true
+\begin{DoxyCompactList}\small\item\em A\+P\+PS plausibility status. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___board__model__group_ga6fcde78da6b331e3fb04abace1b4dd68}{brake\+\_\+plausibility}} = true
+\begin{DoxyCompactList}\small\item\em Brake plausibility status. \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___board__model__group_ga90c23c0b7f858714327ef390c73f6424}{fr\+\_\+sx\+\_\+susp}}
+\begin{DoxyCompactList}\small\item\em Frontal left suspension stroke \mbox{[} $mm$\mbox{]}. \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___board__model__group_ga4c01ad4d4fed642cd36faa3afcc78ffc}{fr\+\_\+dx\+\_\+susp}}
+\begin{DoxyCompactList}\small\item\em Frontal right suspension stroke \mbox{[} $mm$\mbox{]}. \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga60aba8dcb458993e90d55d74c2b78f61}{fr\+\_\+sx\+\_\+rpm}} = 0
+\begin{DoxyCompactList}\small\item\em Frontal left wheel velocity \mbox{[} $rpm$\mbox{]}. \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga7ef4b53bcdb3160d25627fcf012408ea}{fr\+\_\+dx\+\_\+rpm}} = 0
+\begin{DoxyCompactList}\small\item\em Frontal right wheel velocity \mbox{[} $rpm$\mbox{]}. \end{DoxyCompactList}\item 
+volatile unsigned long \mbox{\hyperlink{group___board__model__group_ga908422e0b6bd109d89c0bc0fc857cc99}{fr\+\_\+sx\+\_\+prev}}
+\begin{DoxyCompactList}\small\item\em Frontal left wheel encoder previous timestamp. \end{DoxyCompactList}\item 
+volatile unsigned long \mbox{\hyperlink{group___board__model__group_ga175cffcd8d91b98bb52c76fd892c7edd}{fr\+\_\+sx\+\_\+curr}}
+\begin{DoxyCompactList}\small\item\em Frontal left wheel encoder current timestamp. \end{DoxyCompactList}\item 
+volatile unsigned long \mbox{\hyperlink{group___board__model__group_ga0e39646ad4505ba7272e9b4b4c984c46}{fr\+\_\+dx\+\_\+prev}}
+\begin{DoxyCompactList}\small\item\em Frontal right wheel encoder previous timestamp. \end{DoxyCompactList}\item 
+volatile unsigned long \mbox{\hyperlink{group___board__model__group_gaa36d66b7949255c16db3f417c4ecf4cf}{fr\+\_\+dx\+\_\+curr}}
+\begin{DoxyCompactList}\small\item\em Frontal right wheel encoder current timestamp. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Board model implementation file. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}

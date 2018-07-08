@@ -1,0 +1,70 @@
+\hypertarget{group___c_a_nopen___n_m_t__group}{}\section{C\+A\+Nopen N\+MT module}
+\label{group___c_a_nopen___n_m_t__group}\index{C\+A\+Nopen N\+M\+T module@{C\+A\+Nopen N\+M\+T module}}
+Collaboration diagram for C\+A\+Nopen N\+MT module\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group___c_a_nopen___n_m_t__group}
+\end{center}
+\end{figure}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___c_a_nopen___n_m_t__speficications}{C\+A\+Nopen N\+M\+T Command Specifiers}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___c_a_nopen___n_m_t__group_ga4f3ea874d17be7eefe09f3d8fcd9fc76}{proceed\+N\+M\+Tstate\+Change}} (\mbox{\hyperlink{struct_message}{Message}} $\ast$m)
+\begin{DoxyCompactList}\small\item\em According to \mbox{\hyperlink{group___c_a_nopen___n_m_t__speficications}{C\+A\+Nopen N\+MT Command Specifiers}}, upon N\+MT reception from V\+CU master node, S\+CU change current state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_a_nopen___n_m_t__group_ga26588b389853484f581977032c0e1021}{slave\+Send\+Boot\+Up}} ()
+\begin{DoxyCompactList}\small\item\em This function sends a slave boot-\/up message over C\+AN servizi network. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___c_a_nopen___n_m_t__group_ga4f3ea874d17be7eefe09f3d8fcd9fc76}\label{group___c_a_nopen___n_m_t__group_ga4f3ea874d17be7eefe09f3d8fcd9fc76}} 
+\index{C\+A\+Nopen N\+M\+T module@{C\+A\+Nopen N\+M\+T module}!proceed\+N\+M\+Tstate\+Change@{proceed\+N\+M\+Tstate\+Change}}
+\index{proceed\+N\+M\+Tstate\+Change@{proceed\+N\+M\+Tstate\+Change}!C\+A\+Nopen N\+M\+T module@{C\+A\+Nopen N\+M\+T module}}
+\subsubsection{\texorpdfstring{proceed\+N\+M\+Tstate\+Change()}{proceedNMTstateChange()}}
+{\footnotesize\ttfamily void proceed\+N\+M\+Tstate\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_message}{Message}} $\ast$}]{m }\end{DoxyParamCaption})}
+
+
+
+According to \mbox{\hyperlink{group___c_a_nopen___n_m_t__speficications}{C\+A\+Nopen N\+MT Command Specifiers}}, upon N\+MT reception from V\+CU master node, S\+CU change current state. 
+
+This function manages an N\+MT request from master node on C\+AN servizi network.
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it})
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & Received N\+MT message \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 26 of file nmt.\+cpp.
+
+\mbox{\Hypertarget{group___c_a_nopen___n_m_t__group_ga26588b389853484f581977032c0e1021}\label{group___c_a_nopen___n_m_t__group_ga26588b389853484f581977032c0e1021}} 
+\index{C\+A\+Nopen N\+M\+T module@{C\+A\+Nopen N\+M\+T module}!slave\+Send\+Boot\+Up@{slave\+Send\+Boot\+Up}}
+\index{slave\+Send\+Boot\+Up@{slave\+Send\+Boot\+Up}!C\+A\+Nopen N\+M\+T module@{C\+A\+Nopen N\+M\+T module}}
+\subsubsection{\texorpdfstring{slave\+Send\+Boot\+Up()}{slaveSendBootUp()}}
+{\footnotesize\ttfamily void slave\+Send\+Boot\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function sends a slave boot-\/up message over C\+AN servizi network. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
+\end{DoxyAuthor}
+
+
+Definition at line 59 of file nmt.\+cpp.
+
