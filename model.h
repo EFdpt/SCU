@@ -31,9 +31,6 @@ extern volatile uint8_t  brake_percentage;
 extern volatile uint8_t fr_sx_susp;
 extern volatile uint8_t fr_dx_susp;
 
-extern volatile uint16_t fr_sx_rpm;
-extern volatile uint16_t fr_dx_rpm;
-
 volatile uint16_t get_fr_sx_rpm();
 volatile uint16_t get_fr_dx_rpm();
 
