@@ -44,7 +44,7 @@ volatile char generate_random_char() {
     return (volatile char) TRNG->TRNG_ODATA;
 }
 
-// Generate a random initialization vector
+// Generate a randomized initialization vector
 void generate_iv(char* buffer, uint16_t len) {
     uint16_t i = 0;
     for (; i < len; i++)
@@ -102,7 +102,7 @@ void radio_send_model() {
     JsonObject& accelerometers = root.createNestedObject("accelerometers");
 
     pedals["tps1"] = tps1_percentage;
-    pedals["tps2"] = tps1_percentage;
+    pedals["tps2"] = tps2_percentage;
     pedals["brake"] = brake_percentage;
     pedals["apps_plaus"] = apps_plausibility;
     pedals["brake_plaus"] = brake_plausibility;
