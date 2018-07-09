@@ -2,7 +2,7 @@
 <area shape="rect" id="node2" href="$filter_8h.html" title="Filter module header file. " alt="" coords="47,80,104,107"/>
 <area shape="rect" id="node4" href="$model_8cpp.html" title="Board model implementation file. " alt="" coords="101,155,183,181"/>
 <area shape="rect" id="node5" href="$pdo_8cpp.html" title="CANopen PDO support header file. " alt="" coords="180,80,248,107"/>
-<area shape="rect" id="node6" href="$radio_8cpp_source.html" title="radio.cpp" alt="" coords="273,80,347,107"/>
-<area shape="rect" id="node7" href="$states_8cpp_source.html" title="states.cpp" alt="" coords="371,80,454,107"/>
+<area shape="rect" id="node6" href="$radio_8cpp.html" title="Radio implementation file. " alt="" coords="273,80,347,107"/>
+<area shape="rect" id="node7" href="$states_8cpp.html" title="CANopen finite state machine implementation file. " alt="" coords="371,80,454,107"/>
 <area shape="rect" id="node3" href="$filter_8cpp.html" title="Filter module implementation file. " alt="" coords="5,155,76,181"/>
 </map>

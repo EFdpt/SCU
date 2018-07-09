@@ -1,0 +1,67 @@
+\hypertarget{timer_8cpp}{}\section{timer.\+cpp File Reference}
+\label{timer_8cpp}\index{timer.\+cpp@{timer.\+cpp}}
+
+
+C\+A\+Nopen timer implementation file.  
+
+
+{\ttfamily \#include $<$Due\+Timer.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}timer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pdo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}C\+O\+\_\+can.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}radio.\+h\char`\"{}}\newline
+Include dependency graph for timer.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{timer_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___c_a_nopen__timer__module_ga5bb58b675652213c5b20458ab611f9fb}{S\+C\+U\+\_\+\+F\+R\+O\+N\+T\+\_\+\+F\+I\+R\+S\+T\+\_\+\+S\+L\+OT}}~0
+\begin{DoxyCompactList}\small\item\em First time slot for $SCU_{Frontal}$. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_a_nopen__timer__module_gae5482bf356c02f4af400a276980e8bbc}{S\+C\+U\+\_\+\+F\+R\+O\+N\+T\+\_\+\+S\+E\+C\+O\+N\+D\+\_\+\+S\+L\+OT}}~1
+\begin{DoxyCompactList}\small\item\em Second time slot for $SCU_{Frontal}$. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_a_nopen__timer__module_gaf913e12f6687d34f5ad716d130416dc8}{S\+C\+U\+\_\+\+R\+E\+A\+R\+\_\+\+S\+L\+OT}}~2
+\begin{DoxyCompactList}\small\item\em Time slot for $SCU_{Rear}$. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_a_nopen__timer__module_ga266f975ed5b87594263f8a2bf8257cdf}{T\+C\+S\+\_\+\+S\+L\+OT}}~3
+\begin{DoxyCompactList}\small\item\em Time slot for $TCU$. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_a_nopen__timer__module_gaab4fadccdeb20ba1f44ed01296b7e560}{T\+I\+M\+E\+\_\+\+S\+L\+O\+T\+\_\+\+M\+A\+SK}}~3
+\begin{DoxyCompactList}\small\item\em Time slot mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_a_nopen__timer__module_gaf3ebceeca1e0dded3572b4367c5d6413}{R\+A\+D\+I\+O\+\_\+\+S\+L\+O\+T\+\_\+\+M\+A\+SK}}~7
+\begin{DoxyCompactList}\small\item\em Radio submit slot mask\+: number of $SCU_{Rear}$ time slots between one submit and successive one (\mbox{\hyperlink{group___common__defines__group_ga09c95853fd002fab968d94c5bc44e823}{T\+I\+M\+E\+\_\+\+S\+L\+O\+T\+\_\+\+P\+E\+R\+I\+OD}} $\ast$ \mbox{\hyperlink{group___c_a_nopen__timer__module_gaf3ebceeca1e0dded3572b4367c5d6413}{R\+A\+D\+I\+O\+\_\+\+S\+L\+O\+T\+\_\+\+M\+A\+SK}} $\ast$ num. time slots between previous and current $SCU_{Rear}$) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___c_a_nopen__timer__module_gafa75192a3238525618f8cb83004930cc}{Time\+Dispatch}} ()
+\begin{DoxyCompactList}\small\item\em Dispatch time slot for each C\+A\+Nopen node according to \mbox{\hyperlink{_c_a_n_network_page_TPDO_Timer}{T\+P\+D\+O\+\_\+\+Timer}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_a_nopen__timer__module_gaf927959e78504fd1afe1be1e10791ae0}{timer\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize timer for periodic submit of T\+P\+D\+Os. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_a_nopen__timer__module_gaddf92f4b7b741f7b9fbc827d2e4f2a8b}{timer\+Start}} ()
+\begin{DoxyCompactList}\small\item\em Start timer for periodic submit of T\+P\+D\+Os. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_a_nopen__timer__module_gaecc39b6c4a6a4d79a46ac2b6371221c5}{timer\+Stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop timer for periodic submit of T\+P\+D\+Os. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___c_a_nopen__timer__module_ga38a43dbb3c9d41a62672688eb57fa33f}{t\+\_\+slot}} = \mbox{\hyperlink{group___c_a_nopen__timer__module_ga5bb58b675652213c5b20458ab611f9fb}{S\+C\+U\+\_\+\+F\+R\+O\+N\+T\+\_\+\+F\+I\+R\+S\+T\+\_\+\+S\+L\+OT}}
+\begin{DoxyCompactList}\small\item\em Current time slot. \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___c_a_nopen__timer__module_gac230d484e56093c9ba05a68a6f954ae6}{radio\+\_\+slot}} = 0
+\begin{DoxyCompactList}\small\item\em Current radio time slot. \end{DoxyCompactList}\item 
+Due\+Timer $\ast$ \mbox{\hyperlink{group___c_a_nopen__timer__module_ga76a145cc4b1fbdcbf86505111dfc6b21}{timer}}
+\begin{DoxyCompactList}\small\item\em Timer for periodic T\+P\+DO submit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+C\+A\+Nopen timer implementation file. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}

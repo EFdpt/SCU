@@ -102,6 +102,18 @@ extern volatile uint8_t fr_sx_susp;
 extern volatile uint8_t fr_dx_susp;
 
 /**
+ *  @var volatile uint16_t  fr_sx_rpm;
+ *  @brief Frontal left wheel velocity [\f$rpm\f$]
+ */
+extern volatile uint16_t fr_sx_rpm;
+
+/**
+ *  @var volatile uint16_t  fr_dx_rpm;
+ *  @brief Frontal right wheel velocity [\f$rpm\f$]
+ */
+extern volatile uint16_t fr_dx_rpm;
+
+/**
  *  @brief      This function returns frontal left wheel velocity [\f$rpm\f$].
  *              
  *  @author     Arella Matteo <br/>

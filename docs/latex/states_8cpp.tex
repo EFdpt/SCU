@@ -1,0 +1,57 @@
+\hypertarget{states_8cpp}{}\section{states.\+cpp File Reference}
+\label{states_8cpp}\index{states.\+cpp@{states.\+cpp}}
+
+
+C\+A\+Nopen finite state machine implementation file.  
+
+
+{\ttfamily \#include \char`\"{}timer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pdo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}states.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nmt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}C\+O\+\_\+can.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}model.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}radio.\+h\char`\"{}}\newline
+Include dependency graph for states.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{states_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}} \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga2802a8c3f0174f4e54dd2381968212a0}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Return current state on the \mbox{\hyperlink{_f_s_m_page}{Finite State Machine (F\+SM)}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga47cb7615bbcf2c96cc4a7656f9a76bab}{set\+State}} (\mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}} new\+State)
+\begin{DoxyCompactList}\small\item\em Set current state on the \mbox{\hyperlink{_f_s_m_page}{Finite State Machine (F\+SM)}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_gabbbb23c086599a8d9432a2121ee82192}{can\+Dispatch}} (\mbox{\hyperlink{struct_message}{Message}} $\ast$m)
+\begin{DoxyCompactList}\small\item\em Called by driver when receiving C\+A\+Nopen messages. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_gadfffb3be7aa80aea898ada67e93d2388}{initialisation}} ()
+\begin{DoxyCompactList}\small\item\em Initialize \mbox{\hyperlink{group___board__model__group}{Board module}}. If rear S\+CU firmware is selected (according to \mbox{\hyperlink{group___s_c_u__firmware__selection}{S\+CU firmware selection}}) radio is initialized. It initializes the entire application, C\+A\+N/\+C\+A\+Nopen interfaces and communication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_gaf9e8e3744244bcb2f8b6a8583c0bec0c}{pre\+Operational}} ()
+\begin{DoxyCompactList}\small\item\em pre\+Operational state task on the F\+SM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga003b28d176774c489577f471a7b5f946}{operational}} ()
+\begin{DoxyCompactList}\small\item\em Start timer for periodic T\+P\+DO transmit according to \mbox{\hyperlink{_c_a_n_network_page}{C\+AN Servizi network}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_gad134c6ce7186d3f2e9cb314839fd63ad}{stopped}} ()
+\begin{DoxyCompactList}\small\item\em Stop timer for periodic T\+P\+DO transmit according to \mbox{\hyperlink{_c_a_n_network_page}{C\+AN Servizi network}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}} \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga924e56dabe104382db4ee1a3bb507ed9}{current\+\_\+state}} = \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646aeb3ae26d7a1629aa0fc6c83f46306cf5}{Initialisation}}
+\begin{DoxyCompactList}\small\item\em Current state of F\+SM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+C\+A\+Nopen finite state machine implementation file. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}

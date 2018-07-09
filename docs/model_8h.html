@@ -99,8 +99,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" id="node2" href="filter_8h.html" title="Filter module header file. " alt="" coords="47,80,104,107"/>
 <area shape="rect" id="node4" href="model_8cpp.html" title="Board model implementation file. " alt="" coords="101,155,183,181"/>
 <area shape="rect" id="node5" href="pdo_8cpp.html" title="CANopen PDO support header file. " alt="" coords="180,80,248,107"/>
-<area shape="rect" id="node6" href="radio_8cpp_source.html" title="radio.cpp" alt="" coords="273,80,347,107"/>
-<area shape="rect" id="node7" href="states_8cpp_source.html" title="states.cpp" alt="" coords="371,80,454,107"/>
+<area shape="rect" id="node6" href="radio_8cpp.html" title="Radio implementation file. " alt="" coords="273,80,347,107"/>
+<area shape="rect" id="node7" href="states_8cpp.html" title="CANopen finite state machine implementation file. " alt="" coords="371,80,454,107"/>
 <area shape="rect" id="node3" href="filter_8cpp.html" title="Filter module implementation file. " alt="" coords="5,155,76,181"/>
 </map>
 </div>
@@ -157,6 +157,14 @@ volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga4c01ad4d4fed642cd36faa3afcc78ffc">fr_dx_susp</a></td></tr>
 <tr class="memdesc:ga4c01ad4d4fed642cd36faa3afcc78ffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frontal right suspension stroke [ \(mm\)]. <br /></td></tr>
 <tr class="separator:ga4c01ad4d4fed642cd36faa3afcc78ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga60aba8dcb458993e90d55d74c2b78f61"><td class="memItemLeft" align="right" valign="top">
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga60aba8dcb458993e90d55d74c2b78f61">fr_sx_rpm</a></td></tr>
+<tr class="memdesc:ga60aba8dcb458993e90d55d74c2b78f61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frontal left wheel velocity [ \(rpm\)]. <br /></td></tr>
+<tr class="separator:ga60aba8dcb458993e90d55d74c2b78f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7ef4b53bcdb3160d25627fcf012408ea"><td class="memItemLeft" align="right" valign="top">
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga7ef4b53bcdb3160d25627fcf012408ea">fr_dx_rpm</a></td></tr>
+<tr class="memdesc:ga7ef4b53bcdb3160d25627fcf012408ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frontal right wheel velocity [ \(rpm\)]. <br /></td></tr>
+<tr class="separator:ga7ef4b53bcdb3160d25627fcf012408ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9a397cb2df09e12e11a80e4f3fee8a1e"><td class="memItemLeft" align="right" valign="top">
 volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga9a397cb2df09e12e11a80e4f3fee8a1e">acc_x_value</a></td></tr>
 <tr class="memdesc:ga9a397cb2df09e12e11a80e4f3fee8a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accelerometer X value [ \(m/s^{2}\)]. <br /></td></tr>
@@ -184,7 +192,7 @@ volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 9 2018 00:01:06 for Sensors Control Unit (SCU) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 9 2018 12:46:42 for Sensors Control Unit (SCU) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.14
 </small></address>

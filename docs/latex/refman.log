@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.23)  9 JUL 2018 00:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.23)  9 JUL 2018 12:44
 entering extended mode
 **./refman.tex
 (refman.tex
@@ -1047,6 +1047,14 @@ LaTeX Warning: Label `group___board__model__group_ga4c01ad4d4fed642cd36faa3afcc
 78ffc' multiply defined.
 
 
+LaTeX Warning: Label `group___board__model__group_ga60aba8dcb458993e90d55d74c2b
+78f61' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga7ef4b53bcdb3160d25627fcf012
+408ea' multiply defined.
+
+
 LaTeX Warning: Label `group___board__model__group_gaa9de48f5a49bc92a608ed315c08
 7f3a6' multiply defined.
 
@@ -1063,7 +1071,13 @@ LaTeX Warning: Label `group___board__model__group_gaf69d82f83885abc5adbd5fcbf4c
 421cf' multiply defined.
 
 ) (group___c_a_nopen___n_m_t__group.aux) (group___c_a_nopen___p_d_o__module.aux
-) (group___main__group__module.aux) (group___board__pinout__group.aux))
+) (group___radio__module.aux
+
+LaTeX Warning: Label `group___radio__module_gaaebbe13533cac0f28446c13ae32b1cb2'
+ multiply defined.
+
+) (group___main__group__module.aux) (group___board__pinout__group.aux)
+(group___c_a_nopen___f_s_m__module.aux) (group___c_a_nopen__timer__module.aux))
 \openout1 = `refman.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
@@ -1080,7 +1094,6 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 121.
 LaTeX Font Info:    ... okay on input line 121.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 121.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 121.
-
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -1220,19 +1233,20 @@ LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 22.39185pt on input line 155.
  (refman.toc
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.29996pt on input line 11.
+(Font)              scaled to size 6.29996pt on input line 13.
 
 [3]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 44.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 44.
+(Font)              scaled to size 7.19995pt on input line 49.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 49.
  ("D:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [4] [5])
+) [4] [5] [6]
+[7])
 \tf@toc=\write5
 \openout5 = `refman.toc'.
 
- [6]
+ [8]
 Package hyperref Info: Option `pageanchor' set `true' on input line 158.
 
 Chapter 1.
@@ -1272,174 +1286,174 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--6
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 10.79993pt on input line 25.
+(Font)              scaled to size 10.79993pt on input line 29.
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--32
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 29--32
+Underfull \hbox (badness 10000) in paragraph at lines 33--36
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--44
+Underfull \hbox (badness 10000) in paragraph at lines 33--36
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
 
  []
 
 LaTeX Font Info:    Font shape `TS1/phv/bx/n' in size <10> not available
-(Font)              Font shape `TS1/phv/b/n' tried instead on input line 47.
+(Font)              Font shape `TS1/phv/b/n' tried instead on input line 51.
 LaTeX Font Info:    Font shape `TS1/phv/b/n' will be
-(Font)              scaled to size 8.99994pt on input line 47.
+(Font)              scaled to size 8.99994pt on input line 51.
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--50
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 47--50
+Underfull \hbox (badness 10000) in paragraph at lines 51--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
+Underfull \hbox (badness 10000) in paragraph at lines 51--54
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 65--68
+Underfull \hbox (badness 10000) in paragraph at lines 71--74
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--68
+Underfull \hbox (badness 10000) in paragraph at lines 71--74
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--116
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
 [] \T1/phv/b/n/10 Data
  []
 
 
-Underfull \hbox (badness 1297) in paragraph at lines 116--116
+Underfull \hbox (badness 1297) in paragraph at lines 122--122
 [] \T1/phv/b/n/10 Data Off-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--116
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
 [] \T1/phv/b/n/10 #[]C[]AN
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--116
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
 [] \T1/phv/b/n/10 To-tal
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--116
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
 [] \T1/phv/b/n/10 Data
  []
 
 
-Underfull \hbox (badness 1297) in paragraph at lines 116--116
+Underfull \hbox (badness 1297) in paragraph at lines 122--122
 [] \T1/phv/b/n/10 Data Off-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--116
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
 [] \T1/phv/b/n/10 #[]C[]AN
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--116
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
 [] \T1/phv/b/n/10 To-tal
  []
 
 
-Overfull \hbox (3.26608pt too wide) in paragraph at lines 116--116
+Overfull \hbox (5.76157pt too wide) in paragraph at lines 122--122
 []|$\OML/cmm/m/it/10 SCU[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--116
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
 []\T1/phv/m/n/10 Right
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--116
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
 \T1/phv/m/n/10 phonic
  []
 
 
-Underfull \hbox (badness 1281) in paragraph at lines 116--116
+Underfull \hbox (badness 1281) in paragraph at lines 122--122
 []\T1/phv/m/n/10 Left phonic
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--116
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
 []\T1/phv/m/n/10 Right sus-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--116
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
 []\T1/phv/m/n/10 Left sus-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--116
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
 []\T1/phv/m/n/10 Right sus-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--116
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
 []\T1/phv/m/n/10 Left sus-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--116
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
 []\T1/phv/m/n/10 Right
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--116
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
 \T1/phv/m/n/10 phonic
  []
 
 
-Underfull \hbox (badness 1281) in paragraph at lines 116--116
+Underfull \hbox (badness 1281) in paragraph at lines 122--122
 []\T1/phv/m/n/10 Left phonic
  []
 
 
-Underfull \hbox (badness 896) in paragraph at lines 116--116
+Underfull \hbox (badness 896) in paragraph at lines 122--122
 []\T1/phv/m/n/10 Torque lim-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--116
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
 []\T1/phv/m/n/10 T[]P[]D[]O1 +
  []
 
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 117.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 123.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.99994pt on input line 117.
+(Font)              scaled to size 8.99994pt on input line 123.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 117.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 123.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 6.29996pt on input line 117.
+(Font)              scaled to size 6.29996pt on input line 123.
 ) [4]
 Chapter 3.
 (_model_page.tex
@@ -1458,125 +1472,148 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
 ]
 Chapter 4.
-(modules.tex
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 12.9599pt on input line 1.
-) [7] [8
+(_radio_page.tex) [7] [8
 
 ]
 Chapter 5.
-(annotated.tex) [9] [10
+(_f_s_m_page.tex
+<fsm_diagram.pdf, id=916, 471.7625pt x 381.425pt>
+File: fsm_diagram.pdf Graphic file (type pdf)
+<use fsm_diagram.pdf>
+Package pdftex.def Info: fsm_diagram.pdf  used on input line 7.
+(pdftex.def)             Requested size: 284.52756pt x 230.04405pt.
+) [9 <./fsm_diagram.pdf>] [10
 
 ]
 Chapter 6.
-(files.tex
-
-LaTeX Warning: Reference `radio_8cpp' on page 11 undefined on input line 16.
-
-
-LaTeX Warning: Reference `radio_8h' on page 11 undefined on input line 17.
-
-
-LaTeX Warning: Reference `states_8cpp' on page 11 undefined on input line 20.
-
-
-LaTeX Warning: Reference `states_8h' on page 11 undefined on input line 21.
-
-
-LaTeX Warning: Reference `timer_8cpp' on page 11 undefined on input line 22.
-
-
-LaTeX Warning: Reference `timer_8h' on page 11 undefined on input line 23.
-
+(modules.tex
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 12.9599pt on input line 1.
 ) [11] [12
 
 ]
 Chapter 7.
+(annotated.tex) [13] [14
+
+]
+Chapter 8.
+(files.tex [15]) [16]
+Chapter 9.
 (group___c_a_n__network__module.tex
-<group___c_a_n__network__module.pdf, id=719, 353.32pt x 214.8025pt>
+<group___c_a_n__network__module.pdf, id=1037, 353.32pt x 303.1325pt>
 File: group___c_a_n__network__module.pdf Graphic file (type pdf)
 <use group___c_a_n__network__module.pdf>
 Package pdftex.def Info: group___c_a_n__network__module.pdf  used on input line
  7.
-(pdftex.def)             Requested size: 350.0pt x 212.78622pt.
+(pdftex.def)             Requested size: 350.0pt x 300.28711pt.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.09995pt on input line 25.
+(Font)              scaled to size 8.09995pt on input line 29.
+ [17
+
+ <./group___c_a_n__network__module.pdf>]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 25.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 25.
- [13 <./group___c_a_n__network__module.pdf>]
+(Font)              scaled to size 8.09995pt on input line 29.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 51.
+(Font)              scaled to size 8.99994pt on input line 64.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 52.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 65.
 
-Underfull \hbox (badness 10000) detected at line 58
+Underfull \hbox (badness 10000) detected at line 71
+[][][]
+ []
+
+[18]
+Underfull \hbox (badness 10000) detected at line 94
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 81
+Underfull \hbox (badness 10000) detected at line 117
 [][][]
  []
 
-) [14]
+
+Underfull \hbox (badness 10000) detected at line 121
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 138
+[][][]
+ []
+
+[19]
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 150.
+
+Underfull \hbox (badness 10000) detected at line 156
+[][][]
+ []
+
+
+Overfull \hbox (1.47571pt too wide) in paragraph at lines 164--164
+[]\T1/phv/m/sl/10 node[] 
+ []
+
+) [20]
 \openout2 = `group___c_a_n___i_d.aux'.
 
  (group___c_a_n___i_d.tex
-<group___c_a_n___i_d.pdf, id=766, 342.27875pt x 100.375pt>
+<group___c_a_n___i_d.pdf, id=1111, 342.27875pt x 100.375pt>
 File: group___c_a_n___i_d.pdf Graphic file (type pdf)
 <use group___c_a_n___i_d.pdf>
 Package pdftex.def Info: group___c_a_n___i_d.pdf  used on input line 7.
 (pdftex.def)             Requested size: 341.0pt x 100.00716pt.
-) [15
+) [21
 
  <./group___c_a_n___i_d.pdf>]
 \openout2 = `group___common__defines__group.aux'.
 
 
 (group___common__defines__group.tex
-<group___common__defines__group.pdf, id=790, 326.21875pt x 100.375pt>
+<group___common__defines__group.pdf, id=1136, 326.21875pt x 100.375pt>
 File: group___common__defines__group.pdf Graphic file (type pdf)
 <use group___common__defines__group.pdf>
 Package pdftex.def Info: group___common__defines__group.pdf  used on input line
  7.
 (pdftex.def)             Requested size: 325.0pt x 100.00868pt.
-) [16
+) [22
 
 
  <./group___common__defines__group.pdf>]
 \openout2 = `group___s_c_u__firmware__selection.aux'.
 
  (group___s_c_u__firmware__selection.tex
-<group___s_c_u__firmware__selection.pdf, id=817, 326.21875pt x 100.375pt>
+<group___s_c_u__firmware__selection.pdf, id=1163, 326.21875pt x 100.375pt>
 File: group___s_c_u__firmware__selection.pdf Graphic file (type pdf)
 <use group___s_c_u__firmware__selection.pdf>
 Package pdftex.def Info: group___s_c_u__firmware__selection.pdf  used on input 
 line 7.
 (pdftex.def)             Requested size: 325.0pt x 100.00868pt.
-) [17
+) [23
 
 
  <./group___s_c_u__firmware__selection.pdf>]
 \openout2 = `group___c_a_nopen___func___codes.aux'.
 
  (group___c_a_nopen___func___codes.tex
-<group___c_a_nopen___func___codes.pdf, id=838, 353.32pt x 100.375pt>
+<group___c_a_nopen___func___codes.pdf, id=1183, 353.32pt x 100.375pt>
 File: group___c_a_nopen___func___codes.pdf Graphic file (type pdf)
 <use group___c_a_nopen___func___codes.pdf>
 Package pdftex.def Info: group___c_a_nopen___func___codes.pdf  used on input li
 ne 7.
 (pdftex.def)             Requested size: 350.0pt x 99.4328pt.
-) [18
+) [24
 
 
  <./group___c_a_nopen___func___codes.pdf>]
 \openout2 = `group___c_a_nopen___n_m_t__speficications.aux'.
 
  (group___c_a_nopen___n_m_t__speficications.tex
-<group___c_a_nopen___n_m_t__speficications.pdf, id=888, 361.35pt x 111.41624pt>
-
+<group___c_a_nopen___n_m_t__speficications.pdf, id=1233, 361.35pt x 111.41624pt
+>
 File: group___c_a_nopen___n_m_t__speficications.pdf Graphic file (type pdf)
 <use group___c_a_nopen___n_m_t__speficications.pdf>
 Package pdftex.def Info: group___c_a_nopen___n_m_t__speficications.pdf  used on
@@ -1586,14 +1623,14 @@ LaTeX Font Info:    Font shape `TS1/phv/m/it' in size <9> not available
 (Font)              Font shape `TS1/phv/m/sl' tried instead on input line 15.
 LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 15.
-) [19
+) [25
 
 
  <./group___c_a_nopen___n_m_t__speficications.pdf>]
 \openout2 = `group___filter__module__group.aux'.
 
  (group___filter__module__group.tex
-<group___filter__module__group.pdf, id=915, 299.1175pt x 100.375pt>
+<group___filter__module__group.pdf, id=1260, 299.1175pt x 100.375pt>
 File: group___filter__module__group.pdf Graphic file (type pdf)
 <use group___filter__module__group.pdf>
 Package pdftex.def Info: group___filter__module__group.pdf  used on input line 
@@ -1604,7 +1641,7 @@ Underfull \hbox (badness 10000) detected at line 40
 [][][]
  []
 
-[20
+[26
 
 
  <./group___filter__module__group.pdf>]
@@ -1612,143 +1649,157 @@ Underfull \hbox (badness 10000) detected at line 53
 [][][]
  []
 
-) [21]
+) [27]
 \openout2 = `group___board__model__group.aux'.
 
  (group___board__model__group.tex
-<group___board__model__group.pdf, id=945, 299.1175pt x 138.5175pt>
+<group___board__model__group.pdf, id=1291, 299.1175pt x 138.5175pt>
 File: group___board__model__group.pdf Graphic file (type pdf)
 <use group___board__model__group.pdf>
 Package pdftex.def Info: group___board__model__group.pdf  used on input line 7.
 
 (pdftex.def)             Requested size: 298.0pt x 138.00987pt.
- [22
+ [28
 
 
- <./group___board__model__group.pdf>] [23] [24] [25pdfTeX warning (ext4): desti
+ <./group___board__model__group.pdf>] [29] [30] [31pdfTeX warning (ext4): desti
 nation with the same identifier (name{group___board__model__group_ga90c23c0b7f8
 58714327ef390c73f6424}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.255 N
-       umber of D\+MA buffers.pdfTeX warning (ext4): destination with the same 
-identifier (name{group___board__model__group_ga4c01ad4d4fed642cd36faa3afcc78ffc
-}) has been already used, duplicate ignored
+l.256 \subsubsection
+                    {\texorpdfstring{B\+U\+F\+F\+E\+RS}{BUFFERS}}pdfTeX warning
+ (ext4): destination with the same identifier (name{group___board__model__group
+_ga4c01ad4d4fed642cd36faa3afcc78ffc}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.255 N
-       umber of D\+MA buffers.]
-Underfull \hbox (badness 10000) detected at line 257
+l.256 \subsubsection
+                    {\texorpdfstring{B\+U\+F\+F\+E\+RS}{BUFFERS}}pdfTeX warning
+ (ext4): destination with the same identifier (name{group___board__model__group
+_ga60aba8dcb458993e90d55d74c2b78f61}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.256 \subsubsection
+                    {\texorpdfstring{B\+U\+F\+F\+E\+RS}{BUFFERS}}pdfTeX warning
+ (ext4): destination with the same identifier (name{group___board__model__group
+_ga7ef4b53bcdb3160d25627fcf012408ea}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.256 \subsubsection
+                    {\texorpdfstring{B\+U\+F\+F\+E\+RS}{BUFFERS}}]
+Underfull \hbox (badness 10000) detected at line 263
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 277
+Underfull \hbox (badness 10000) detected at line 283
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 295
+Underfull \hbox (badness 10000) detected at line 301
+[][][]
+ []
+
+[32]
+Underfull \hbox (badness 10000) detected at line 319
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 313
-[][][]
- []
-
-[26]
-Underfull \hbox (badness 10000) detected at line 333
+Underfull \hbox (badness 10000) detected at line 339
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 337
+Underfull \hbox (badness 10000) detected at line 343
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 356
+Underfull \hbox (badness 10000) detected at line 362
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 360
+Underfull \hbox (badness 10000) detected at line 366
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 377
+Underfull \hbox (badness 10000) detected at line 383
 [][][]
  []
 
-[27]
-Underfull \hbox (badness 10000) detected at line 381
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 394
+[33]
+Underfull \hbox (badness 10000) detected at line 387
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 398
+Underfull \hbox (badness 10000) detected at line 400
 [][][]
  []
 
 
-Overfull \hbox (42.45622pt too wide) in paragraph at lines 415--416
+Underfull \hbox (badness 10000) detected at line 404
+[][][]
+ []
+
+
+Overfull \hbox (42.45622pt too wide) in paragraph at lines 421--422
 []\T1/phv/m/n/10 A[]DC chan-nels are en-abled ac-cord-ing to [] or []. 
  []
 
 
-Underfull \hbox (badness 10000) detected at line 421
+Underfull \hbox (badness 10000) detected at line 427
 [][][]
  []
 
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 7.19995pt on input line 438.
+(Font)              scaled to size 7.19995pt on input line 444.
 
 LaTeX Font Warning: Font shape `T1/pcr/bc/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 438.
+(Font)              using `T1/pcr/m/n' instead on input line 444.
 
-[28] [29pdfTeX warning (ext4): destination with the same identifier (name{group
+[34] [35pdfTeX warning (ext4): destination with the same identifier (name{group
 ___board__model__group_gaa9de48f5a49bc92a608ed315c087f3a6}) has been already us
 ed, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.517 D
+l.523 D
        efinition at line 344 of file model.\+cpp.pdfTeX warning (ext4): destina
 tion with the same identifier (name{group___board__model__group_ga8e50a30864da7
 026531520887968d4c0}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.517 D
-       efinition at line 344 of file model.\+cpp.]) [30pdfTeX warning (ext4): d
+l.523 D
+       efinition at line 344 of file model.\+cpp.]) [36pdfTeX warning (ext4): d
 estination with the same identifier (name{group___board__model__group_ga1d42f28
 ccf027a3243fad064fa47ef81}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.185 \include{group___board__model__group}
+l.193 \include{group___board__model__group}
                                            pdfTeX warning (ext4): destination w
 ith the same identifier (name{group___board__model__group_gaf69d82f83885abc5adb
 d5fcbf4c421cf}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.185 \include{group___board__model__group}
+l.193 \include{group___board__model__group}
                                            ]
 \openout2 = `group___c_a_nopen___n_m_t__group.aux'.
 
 
 (group___c_a_nopen___n_m_t__group.tex
-<group___c_a_nopen___n_m_t__group.pdf, id=1218, 504.88625pt x 111.41624pt>
+<group___c_a_nopen___n_m_t__group.pdf, id=1565, 504.88625pt x 111.41624pt>
 File: group___c_a_nopen___n_m_t__group.pdf Graphic file (type pdf)
 <use group___c_a_nopen___n_m_t__group.pdf>
 Package pdftex.def Info: group___c_a_nopen___n_m_t__group.pdf  used on input li
@@ -1763,7 +1814,7 @@ Underfull \hbox (badness 10000) detected at line 40
 Overfull \vbox (6.34085pt too high) has occurred while \output is active []
 
 
-[31
+[37
 
 
  <./group___c_a_nopen___n_m_t__group.pdf>]
@@ -1771,18 +1822,16 @@ Underfull \hbox (badness 10000) detected at line 63
 [][][]
  []
 
-) [32]
+) [38]
 \openout2 = `group___c_a_nopen___p_d_o__module.aux'.
 
  (group___c_a_nopen___p_d_o__module.tex
-<group___c_a_nopen___p_d_o__module.pdf, id=1251, 340.27126pt x 100.375pt>
+<group___c_a_nopen___p_d_o__module.pdf, id=1598, 340.27126pt x 100.375pt>
 File: group___c_a_nopen___p_d_o__module.pdf Graphic file (type pdf)
 <use group___c_a_nopen___p_d_o__module.pdf>
 Package pdftex.def Info: group___c_a_nopen___p_d_o__module.pdf  used on input l
 ine 7.
 (pdftex.def)             Requested size: 339.0pt x 100.00562pt.
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 27.
 
 Underfull \hbox (badness 10000) detected at line 33
 [][][]
@@ -1791,7 +1840,7 @@ Underfull \hbox (badness 10000) detected at line 33
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [33
+ [39
 
 
  <./group___c_a_nopen___p_d_o__module.pdf>]
@@ -1799,7 +1848,82 @@ Underfull \hbox (badness 10000) detected at line 58
 [][][]
  []
 
-) [34]
+) [40]
+\openout2 = `group___radio__module.aux'.
+
+ (group___radio__module.tex [41
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{group___radio
+__module_gaaebbe13533cac0f28446c13ae32b1cb2}) has been already used, duplicate 
+ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.68 \subsubsection
+                   {\texorpdfstring{C\+I\+P\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+L...
+]
+Underfull \hbox (badness 10000) detected at line 75
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+\T1/pcr/bc/n/8 #define J[]S[]O[]N[]_[][]B[]U[]F[]F[]E[]R[]_[][]S[]I[]ZE J[]S[]O
+[]N[]_[][]O[]B[]J[]E[]C[]T[]_[][]S[]I[]ZE(2) + 3 $\OMS/cmsy/m/n/8 $ \T1/pcr/bc
+/n/8 J[]S[]O[]N[]_[][]O[]B[]J[]E[]C[]T[]_[][]S[]I[]ZE(4) + J[]S[]O[]N[]_[][]O[]
+B[]J[]E[]C[]T[]_[][]S[]I[]ZE(5) +
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 116
+[][][]
+ []
+
+[42]
+Underfull \hbox (badness 10000) detected at line 143
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 172
+[][][]
+ []
+
+[43]
+Underfull \hbox (badness 10000) detected at line 197
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 201
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 218
+[][][]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [44]
+Underfull \hbox (badness 10000) detected at line 247
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 277
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 301
+[][][]
+ []
+
+) [45]
 \openout2 = `group___main__group__module.aux'.
 
  (group___main__group__module.tex
@@ -1812,101 +1936,202 @@ Underfull \hbox (badness 10000) detected at line 44
 [][][]
  []
 
-) [35
+) [46
 
 
 ]
 \openout2 = `group___board__pinout__group.aux'.
 
  (group___board__pinout__group.tex
-<group___board__pinout__group.pdf, id=1300, 264.99pt x 100.375pt>
+<group___board__pinout__group.pdf, id=1729, 264.99pt x 100.375pt>
 File: group___board__pinout__group.pdf Graphic file (type pdf)
 <use group___board__pinout__group.pdf>
 Package pdftex.def Info: group___board__pinout__group.pdf  used on input line 7
 .
 (pdftex.def)             Requested size: 264.0pt x 100.00716pt.
-) [36
+) [47
 
 
  <./group___board__pinout__group.pdf>]
-Chapter 8.
-(struct_message.tex [37
+\openout2 = `group___c_a_nopen___f_s_m__module.aux'.
+
+ (group___c_a_nopen___f_s_m__module.tex
+<group___c_a_nopen___f_s_m__module.pdf, id=1763, 335.2525pt x 111.41624pt>
+File: group___c_a_nopen___f_s_m__module.pdf Graphic file (type pdf)
+<use group___c_a_nopen___f_s_m__module.pdf>
+Package pdftex.def Info: group___c_a_nopen___f_s_m__module.pdf  used on input l
+ine 7.
+(pdftex.def)             Requested size: 334.0pt x 110.99945pt.
+ [48
 
 
-]) [38]
-Chapter 9.
-(_c_a_n___i_d_8h.tex
-<_c_a_n___i_d_8h__dep__incl.pdf, id=1350, 612.2875pt x 381.425pt>
-File: _c_a_n___i_d_8h__dep__incl.pdf Graphic file (type pdf)
-<use _c_a_n___i_d_8h__dep__incl.pdf>
-Package pdftex.def Info: _c_a_n___i_d_8h__dep__incl.pdf  used on input line 12.
-
-(pdftex.def)             Requested size: 350.0pt x 218.03143pt.
- [39
-
- <./_c_a_n___i_d_8h__dep__incl.pdf>]
-Underfull \hbox (badness 10000) detected at line 31
+ <./group___c_a_nopen___f_s_m__module.pdf>] [49]
+Underfull \hbox (badness 10000) detected at line 129
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 35
+Underfull \hbox (badness 10000) detected at line 152
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 156
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 175
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 195
+[][][]
+ []
+
+[50]
+Underfull \hbox (badness 10000) detected at line 213
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 231
+[][][]
+ []
+
+[51]
+Underfull \hbox (badness 10000) detected at line 256
+[][][]
+ []
+
+) [52]
+\openout2 = `group___c_a_nopen__timer__module.aux'.
+
+ (group___c_a_nopen__timer__module.tex
+<group___c_a_nopen__timer__module.pdf, id=1869, 343.2825pt x 100.375pt>
+File: group___c_a_nopen__timer__module.pdf Graphic file (type pdf)
+<use group___c_a_nopen__timer__module.pdf>
+Package pdftex.def Info: group___c_a_nopen__timer__module.pdf  used on input li
+ne 7.
+(pdftex.def)             Requested size: 342.0pt x 99.9995pt.
+
+Underfull \hbox (badness 3713) in paragraph at lines 30--30
+[]\T1/phv/m/sl/9 Radio sub-mit slot mask[]: num-ber of $\OML/cmm/m/it/9 SCU[]$ 
+\T1/phv/m/sl/9 time slots be-tween one sub-mit and suc-ces-sive one
+ []
+
+[53
+
+
+ <./group___c_a_nopen__timer__module.pdf>]
+Underfull \hbox (badness 10000) detected at line 70
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 88
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 106
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 124
+[][][]
+ []
+
+) [54]
+Chapter 10.
+(struct_message.tex [55
+
+
+]) [56]
+Chapter 11.
+(_c_a_n___i_d_8h.tex
+<_c_a_n___i_d_8h__incl.pdf, id=1943, 142.5325pt x 156.585pt>
+File: _c_a_n___i_d_8h__incl.pdf Graphic file (type pdf)
+<use _c_a_n___i_d_8h__incl.pdf>
+Package pdftex.def Info: _c_a_n___i_d_8h__incl.pdf  used on input line 13.
+(pdftex.def)             Requested size: 142.0pt x 155.99922pt.
+<_c_a_n___i_d_8h__dep__incl.pdf, id=1944, 760.8425pt x 381.425pt>
+File: _c_a_n___i_d_8h__dep__incl.pdf Graphic file (type pdf)
+<use _c_a_n___i_d_8h__dep__incl.pdf>
+Package pdftex.def Info: _c_a_n___i_d_8h__dep__incl.pdf  used on input line 20.
+
+(pdftex.def)             Requested size: 350.0pt x 175.46344pt.
+ [57
+
+ <./_c_a_n___i_d_8h__incl.pdf> <./_c_a_n___i_d_8h__dep__incl.pdf
+
+pdfTeX warning: pdflatex (file ./_c_a_n___i_d_8h__dep__incl.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+>]
+Underfull \hbox (badness 10000) detected at line 39
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 43
 [][][]
  []
 
 ) (_c_o__can_8cpp.tex
-<_c_o__can_8cpp__incl.pdf, id=1371, 331.2375pt x 269.005pt>
+<_c_o__can_8cpp__incl.pdf, id=1974, 373.395pt x 325.215pt>
 File: _c_o__can_8cpp__incl.pdf Graphic file (type pdf)
 <use _c_o__can_8cpp__incl.pdf>
-Package pdftex.def Info: _c_o__can_8cpp__incl.pdf  used on input line 16.
-(pdftex.def)             Requested size: 330.0pt x 268.01099pt.
- [40 <./_c_o__can_8cpp__incl.pdf>]
-Underfull \hbox (badness 10000) detected at line 33
+Package pdftex.def Info: _c_o__can_8cpp__incl.pdf  used on input line 17.
+(pdftex.def)             Requested size: 350.0pt x 304.85358pt.
+ [58]
+Underfull \hbox (badness 10000) detected at line 43
 [][][]
  []
 
-
-Underfull \hbox (badness 10000) detected at line 37
+[59 <./_c_o__can_8cpp__incl.pdf>]
+Underfull \hbox (badness 10000) detected at line 47
 [][][]
  []
 
 ) (_c_o__can_8h.tex
-<_c_o__can_8h__incl.pdf, id=1391, 140.525pt x 156.585pt>
+<_c_o__can_8h__incl.pdf, id=2006, 217.81375pt x 212.795pt>
 File: _c_o__can_8h__incl.pdf Graphic file (type pdf)
 <use _c_o__can_8h__incl.pdf>
-Package pdftex.def Info: _c_o__can_8h__incl.pdf  used on input line 13.
-(pdftex.def)             Requested size: 140.0pt x 156.00879pt.
-<_c_o__can_8h__dep__incl.pdf, id=1392, 519.9425pt x 212.795pt>
+Package pdftex.def Info: _c_o__can_8h__incl.pdf  used on input line 14.
+(pdftex.def)             Requested size: 217.0pt x 211.99895pt.
+<_c_o__can_8h__dep__incl.pdf, id=2007, 519.9425pt x 212.795pt>
 File: _c_o__can_8h__dep__incl.pdf Graphic file (type pdf)
 <use _c_o__can_8h__dep__incl.pdf>
-Package pdftex.def Info: _c_o__can_8h__dep__incl.pdf  used on input line 20.
+Package pdftex.def Info: _c_o__can_8h__dep__incl.pdf  used on input line 21.
 (pdftex.def)             Requested size: 350.0pt x 143.24402pt.
- [41 <./_c_o__can_8h__incl.pdf> <./_c_o__can_8h__dep__incl.pdf
+ [60 <./_c_o__can_8h__incl.pdf> <./_c_o__can_8h__dep__incl.pdf
 
 pdfTeX warning: pdflatex (file ./_c_o__can_8h__dep__incl.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
 >]
-Underfull \hbox (badness 10000) detected at line 45
+Underfull \hbox (badness 10000) detected at line 50
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 49
+Underfull \hbox (badness 10000) detected at line 54
 [][][]
  []
 
 ) (common_8h.tex
-<common_8h__incl.pdf, id=1423, 142.5325pt x 156.585pt>
+<common_8h__incl.pdf, id=2040, 142.5325pt x 156.585pt>
 File: common_8h__incl.pdf Graphic file (type pdf)
 <use common_8h__incl.pdf>
 Package pdftex.def Info: common_8h__incl.pdf  used on input line 13.
 (pdftex.def)             Requested size: 142.0pt x 155.99922pt.
-<common_8h__dep__incl.pdf, id=1424, 612.2875pt x 325.215pt>
+<common_8h__dep__incl.pdf, id=2041, 750.805pt x 381.425pt>
 File: common_8h__dep__incl.pdf Graphic file (type pdf)
 <use common_8h__dep__incl.pdf>
 Package pdftex.def Info: common_8h__dep__incl.pdf  used on input line 20.
-(pdftex.def)             Requested size: 350.0pt x 185.90048pt.
- [42 <./common_8h__incl.pdf>]
+(pdftex.def)             Requested size: 350.0pt x 177.80893pt.
+ [61 <./common_8h__incl.pdf>]
 Underfull \hbox (badness 10000) detected at line 43
 [][][]
  []
@@ -1917,12 +2142,12 @@ Underfull \hbox (badness 10000) detected at line 47
  []
 
 ) (def_8h.tex
-<def_8h__dep__incl.pdf, id=1449, 288.07625pt x 212.795pt>
+<def_8h__dep__incl.pdf, id=2066, 288.07625pt x 212.795pt>
 File: def_8h__dep__incl.pdf Graphic file (type pdf)
 <use def_8h__dep__incl.pdf>
 Package pdftex.def Info: def_8h__dep__incl.pdf  used on input line 12.
 (pdftex.def)             Requested size: 287.0pt x 212.00868pt.
- [43 <./common_8h__dep__incl.pdf>] [44 <./def_8h__dep__incl.pdf>]
+ [62 <./common_8h__dep__incl.pdf>] [63 <./def_8h__dep__incl.pdf>]
 Underfull \hbox (badness 10000) detected at line 67
 [][][]
  []
@@ -1933,28 +2158,28 @@ Underfull \hbox (badness 10000) detected at line 71
  []
 
 ) (filter_8cpp.tex
-<filter_8cpp__incl.pdf, id=1503, 241.90375pt x 381.425pt>
+<filter_8cpp__incl.pdf, id=2121, 241.90375pt x 381.425pt>
 File: filter_8cpp__incl.pdf Graphic file (type pdf)
 <use filter_8cpp__incl.pdf>
 Package pdftex.def Info: filter_8cpp__incl.pdf  used on input line 13.
 (pdftex.def)             Requested size: 241.0pt x 380.0156pt.
- [45]
+ [64]
 Underfull \hbox (badness 10000) detected at line 33
 [][][]
  []
 
-[46 <./filter_8cpp__incl.pdf>]
+[65 <./filter_8cpp__incl.pdf>]
 Underfull \hbox (badness 10000) detected at line 37
 [][][]
  []
 
 ) (filter_8h.tex
-<filter_8h__incl.pdf, id=1528, 241.90375pt x 325.215pt>
+<filter_8h__incl.pdf, id=2146, 241.90375pt x 325.215pt>
 File: filter_8h__incl.pdf Graphic file (type pdf)
 <use filter_8h__incl.pdf>
 Package pdftex.def Info: filter_8h__incl.pdf  used on input line 14.
 (pdftex.def)             Requested size: 241.0pt x 324.0133pt.
-<filter_8h__dep__incl.pdf, id=1529, 214.8025pt x 156.585pt>
+<filter_8h__dep__incl.pdf, id=2147, 214.8025pt x 156.585pt>
 File: filter_8h__dep__incl.pdf Graphic file (type pdf)
 <use filter_8h__dep__incl.pdf>
 Package pdftex.def Info: filter_8h__dep__incl.pdf  used on input line 21.
@@ -1962,7 +2187,7 @@ Package pdftex.def Info: filter_8h__dep__incl.pdf  used on input line 21.
 
 Underfull \vbox (badness 1748) has occurred while \output is active []
 
- [47 <./filter_8h__incl.pdf>]
+ [66 <./filter_8h__incl.pdf>]
 Underfull \hbox (badness 10000) detected at line 34
 [][][]
  []
@@ -1973,12 +2198,12 @@ Underfull \hbox (badness 10000) detected at line 38
  []
 
 ) (model_8cpp.tex
-<model_8cpp__incl.pdf, id=1547, 255.95625pt x 381.425pt>
+<model_8cpp__incl.pdf, id=2164, 255.95625pt x 381.425pt>
 File: model_8cpp__incl.pdf Graphic file (type pdf)
 <use model_8cpp__incl.pdf>
 Package pdftex.def Info: model_8cpp__incl.pdf  used on input line 14.
 (pdftex.def)             Requested size: 255.0pt x 379.99814pt.
- [48 <./filter_8h__dep__incl.pdf>] [49 <./model_8cpp__incl.pdf>] [50] [51]
+ [67 <./filter_8h__dep__incl.pdf>] [68 <./model_8cpp__incl.pdf>] [69] [70]
 Underfull \hbox (badness 10000) detected at line 159
 [][][]
  []
@@ -1989,38 +2214,38 @@ Underfull \hbox (badness 10000) detected at line 163
  []
 
 ) (model_8h.tex
-<model_8h__incl.pdf, id=1688, 231.86626pt x 269.005pt>
+<model_8h__incl.pdf, id=2306, 231.86626pt x 269.005pt>
 File: model_8h__incl.pdf Graphic file (type pdf)
 <use model_8h__incl.pdf>
 Package pdftex.def Info: model_8h__incl.pdf  used on input line 14.
 (pdftex.def)             Requested size: 231.0pt x 268.00688pt.
- [52]
-<model_8h__dep__incl.pdf, id=1693, 418.56375pt x 212.795pt>
+ [71]
+<model_8h__dep__incl.pdf, id=2311, 418.56375pt x 212.795pt>
 File: model_8h__dep__incl.pdf Graphic file (type pdf)
 <use model_8h__dep__incl.pdf>
 Package pdftex.def Info: model_8h__dep__incl.pdf  used on input line 21.
 (pdftex.def)             Requested size: 350.0pt x 177.93481pt.
- [53 <./model_8h__incl.pdf> <./model_8h__dep__incl.pdf
+ [72 <./model_8h__incl.pdf> <./model_8h__dep__incl.pdf
 
 pdfTeX warning: pdflatex (file ./model_8h__dep__incl.pdf): PDF inclusion: multi
 ple pdfs with page group included in a single page
 >]
-Underfull \hbox (badness 10000) detected at line 72
-[][][]
- []
-
-
 Underfull \hbox (badness 10000) detected at line 76
 [][][]
  []
 
+
+Underfull \hbox (badness 10000) detected at line 80
+[][][]
+ []
+
 ) (nmt_8cpp.tex
-<nmt_8cpp__incl.pdf, id=1743, 248.93pt x 269.005pt>
+<nmt_8cpp__incl.pdf, id=2362, 257.96375pt x 325.215pt>
 File: nmt_8cpp__incl.pdf Graphic file (type pdf)
 <use nmt_8cpp__incl.pdf>
 Package pdftex.def Info: nmt_8cpp__incl.pdf  used on input line 15.
-(pdftex.def)             Requested size: 248.0pt x 268.00688pt.
- [54]
+(pdftex.def)             Requested size: 257.0pt x 324.02818pt.
+ [73]
 Underfull \hbox (badness 10000) detected at line 30
 [][][]
  []
@@ -2030,19 +2255,18 @@ Underfull \hbox (badness 10000) detected at line 34
 [][][]
  []
 
-) (nmt_8h.tex
-<nmt_8h__incl.pdf, id=1754, 140.525pt x 212.795pt>
+) (nmt_8h.tex [74 <./nmt_8cpp__incl.pdf>]
+<nmt_8h__incl.pdf, id=2388, 217.81375pt x 269.005pt>
 File: nmt_8h__incl.pdf Graphic file (type pdf)
 <use nmt_8h__incl.pdf>
 Package pdftex.def Info: nmt_8h__incl.pdf  used on input line 13.
-(pdftex.def)             Requested size: 140.0pt x 212.01193pt.
- [55 <./nmt_8cpp__incl.pdf>]
-<nmt_8h__dep__incl.pdf, id=1770, 285.065pt x 156.585pt>
+(pdftex.def)             Requested size: 217.0pt x 267.99867pt.
+<nmt_8h__dep__incl.pdf, id=2389, 285.065pt x 156.585pt>
 File: nmt_8h__dep__incl.pdf Graphic file (type pdf)
 <use nmt_8h__dep__incl.pdf>
 Package pdftex.def Info: nmt_8h__dep__incl.pdf  used on input line 20.
 (pdftex.def)             Requested size: 284.0pt x 155.99922pt.
- [56 <./nmt_8h__incl.pdf> <./nmt_8h__dep__incl.pdf
+ [75 <./nmt_8h__incl.pdf> <./nmt_8h__dep__incl.pdf
 
 pdfTeX warning: pdflatex (file ./nmt_8h__dep__incl.pdf): PDF inclusion: multipl
 e pdfs with page group included in a single page
@@ -2057,12 +2281,12 @@ Underfull \hbox (badness 10000) detected at line 39
  []
 
 ) (pdo_8cpp.tex
-<pdo_8cpp__incl.pdf, id=1800, 366.36874pt x 325.215pt>
+<pdo_8cpp__incl.pdf, id=2420, 359.3425pt x 325.215pt>
 File: pdo_8cpp__incl.pdf Graphic file (type pdf)
 <use pdo_8cpp__incl.pdf>
 Package pdftex.def Info: pdo_8cpp__incl.pdf  used on input line 15.
-(pdftex.def)             Requested size: 350.0pt x 310.70421pt.
- [57 <./pdo_8cpp__incl.pdf>]
+(pdftex.def)             Requested size: 350.0pt x 316.78313pt.
+ [76 <./pdo_8cpp__incl.pdf>]
 Underfull \hbox (badness 10000) detected at line 30
 [][][]
  []
@@ -2073,21 +2297,17 @@ Underfull \hbox (badness 10000) detected at line 34
  []
 
 ) (pdo_8h.tex
-<pdo_8h__incl.pdf, id=1821, 277.035pt x 212.795pt>
+<pdo_8h__incl.pdf, id=2441, 238.8925pt x 269.005pt>
 File: pdo_8h__incl.pdf Graphic file (type pdf)
 <use pdo_8h__incl.pdf>
 Package pdftex.def Info: pdo_8h__incl.pdf  used on input line 15.
-(pdftex.def)             Requested size: 276.0pt x 212.0022pt.
-<pdo_8h__dep__incl.pdf, id=1822, 288.07625pt x 156.585pt>
+(pdftex.def)             Requested size: 238.0pt x 267.99867pt.
+<pdo_8h__dep__incl.pdf, id=2442, 288.07625pt x 156.585pt>
 File: pdo_8h__dep__incl.pdf Graphic file (type pdf)
 <use pdo_8h__dep__incl.pdf>
 Package pdftex.def Info: pdo_8h__dep__incl.pdf  used on input line 22.
 (pdftex.def)             Requested size: 287.0pt x 156.0064pt.
- [58 <./pdo_8h__incl.pdf> <./pdo_8h__dep__incl.pdf
-
-pdfTeX warning: pdflatex (file ./pdo_8h__dep__incl.pdf): PDF inclusion: multipl
-e pdfs with page group included in a single page
->]
+ [77 <./pdo_8h__incl.pdf>]
 Underfull \hbox (badness 10000) detected at line 37
 [][][]
  []
@@ -2097,13 +2317,50 @@ Underfull \hbox (badness 10000) detected at line 41
 [][][]
  []
 
+) (radio_8cpp.tex
+<radio_8cpp__incl.pdf, id=2462, 740.7675pt x 325.215pt>
+File: radio_8cpp__incl.pdf Graphic file (type pdf)
+<use radio_8cpp__incl.pdf>
+Package pdftex.def Info: radio_8cpp__incl.pdf  used on input line 22.
+(pdftex.def)             Requested size: 350.0pt x 153.65993pt.
+ [78 <./pdo_8h__dep__incl.pdf>] [79 <./radio_8cpp__incl.pdf>]
+Underfull \hbox (badness 10000) detected at line 75
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 79
+[][][]
+ []
+
+) (radio_8h.tex
+<radio_8h__incl.pdf, id=2518, 142.5325pt x 212.795pt>
+File: radio_8h__incl.pdf Graphic file (type pdf)
+<use radio_8h__incl.pdf>
+Package pdftex.def Info: radio_8h__incl.pdf  used on input line 13.
+(pdftex.def)             Requested size: 142.0pt x 211.99895pt.
+<radio_8h__dep__incl.pdf, id=2519, 365.365pt x 156.585pt>
+File: radio_8h__dep__incl.pdf Graphic file (type pdf)
+<use radio_8h__dep__incl.pdf>
+Package pdftex.def Info: radio_8h__dep__incl.pdf  used on input line 20.
+(pdftex.def)             Requested size: 350.0pt x 150.00688pt.
+ [80 <./radio_8h__incl.pdf>]
+Underfull \hbox (badness 10000) detected at line 40
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 44
+[][][]
+ []
+
 ) (_s_c_u_8ino.tex
-<_s_c_u_8ino__incl.pdf, id=1851, 312.16624pt x 269.005pt>
+<_s_c_u_8ino__incl.pdf, id=2539, 271.0125pt x 269.005pt>
 File: _s_c_u_8ino__incl.pdf Graphic file (type pdf)
 <use _s_c_u_8ino__incl.pdf>
 Package pdftex.def Info: _s_c_u_8ino__incl.pdf  used on input line 16.
-(pdftex.def)             Requested size: 311.0pt x 268.00688pt.
- [59 <./_s_c_u_8ino__incl.pdf>]
+(pdftex.def)             Requested size: 270.0pt x 268.01099pt.
+ [81 <./radio_8h__dep__incl.pdf>]
 Underfull \hbox (badness 10000) detected at line 31
 [][][]
  []
@@ -2113,19 +2370,22 @@ Underfull \hbox (badness 10000) detected at line 35
 [][][]
  []
 
-) (sensors__pinout_8h.tex
-<sensors__pinout_8h__incl.pdf, id=1871, 218.8175pt x 212.795pt>
+) (sensors__pinout_8h.tex [82 <./_s_c_u_8ino__incl.pdf>]
+<sensors__pinout_8h__incl.pdf, id=2575, 218.8175pt x 212.795pt>
 File: sensors__pinout_8h__incl.pdf Graphic file (type pdf)
 <use sensors__pinout_8h__incl.pdf>
 Package pdftex.def Info: sensors__pinout_8h__incl.pdf  used on input line 14.
 (pdftex.def)             Requested size: 218.0pt x 212.0022pt.
-<sensors__pinout_8h__dep__incl.pdf, id=1872, 418.56375pt x 269.005pt>
+<sensors__pinout_8h__dep__incl.pdf, id=2576, 418.56375pt x 269.005pt>
 File: sensors__pinout_8h__dep__incl.pdf Graphic file (type pdf)
 <use sensors__pinout_8h__dep__incl.pdf>
 Package pdftex.def Info: sensors__pinout_8h__dep__incl.pdf  used on input line 
 21.
 (pdftex.def)             Requested size: 350.0pt x 224.93648pt.
- [60 <./sensors__pinout_8h__incl.pdf>] [61 <./sensors__pinout_8h__dep__incl.pdf
+ [83 <./sensors__pinout_8h__incl.pdf> <./sensors__pinout_8h__dep__incl.pdf
+
+pdfTeX warning: pdflatex (file ./sensors__pinout_8h__dep__incl.pdf): PDF inclus
+ion: multiple pdfs with page group included in a single page
 >]
 Underfull \hbox (badness 10000) detected at line 58
 [][][]
@@ -2136,46 +2396,122 @@ Underfull \hbox (badness 10000) detected at line 62
 [][][]
  []
 
-) [62] (refman.ind [63
+) (states_8cpp.tex
+<states_8cpp__incl.pdf, id=2615, 556.0775pt x 325.215pt>
+File: states_8cpp__incl.pdf Graphic file (type pdf)
+<use states_8cpp__incl.pdf>
+Package pdftex.def Info: states_8cpp__incl.pdf  used on input line 21.
+(pdftex.def)             Requested size: 350.0pt x 204.69795pt.
+ [84]
+Underfull \hbox (badness 10000) detected at line 51
+[][][]
+ []
+
+[85 <./states_8cpp__incl.pdf>]
+Underfull \hbox (badness 10000) detected at line 55
+[][][]
+ []
+
+) (states_8h.tex
+<states_8h__incl.pdf, id=2656, 217.81375pt x 269.005pt>
+File: states_8h__incl.pdf Graphic file (type pdf)
+<use states_8h__incl.pdf>
+Package pdftex.def Info: states_8h__incl.pdf  used on input line 13.
+(pdftex.def)             Requested size: 217.0pt x 267.99867pt.
+<states_8h__dep__incl.pdf, id=2657, 444.66125pt x 156.585pt>
+File: states_8h__dep__incl.pdf Graphic file (type pdf)
+<use states_8h__dep__incl.pdf>
+Package pdftex.def Info: states_8h__dep__incl.pdf  used on input line 20.
+(pdftex.def)             Requested size: 350.0pt x 123.2516pt.
+ [86 <./states_8h__incl.pdf> <./states_8h__dep__incl.pdf
+
+pdfTeX warning: pdflatex (file ./states_8h__dep__incl.pdf): PDF inclusion: mult
+iple pdfs with page group included in a single page
+>]
+Underfull \hbox (badness 10000) detected at line 65
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 69
+[][][]
+ []
+
+) (timer_8cpp.tex
+<timer_8cpp__incl.pdf, id=2709, 446.66875pt x 269.005pt>
+File: timer_8cpp__incl.pdf Graphic file (type pdf)
+<use timer_8cpp__incl.pdf>
+Package pdftex.def Info: timer_8cpp__incl.pdf  used on input line 18.
+(pdftex.def)             Requested size: 350.0pt x 210.79175pt.
+ [87]
+Underfull \hbox (badness 3713) in paragraph at lines 35--35
+[]\T1/phv/m/sl/9 Radio sub-mit slot mask[]: num-ber of $\OML/cmm/m/it/9 SCU[]$ 
+\T1/phv/m/sl/9 time slots be-tween one sub-mit and suc-ces-sive one
+ []
+
+[88 <./timer_8cpp__incl.pdf>]
+Underfull \hbox (badness 10000) detected at line 61
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 65
+[][][]
+ []
+
+) (timer_8h.tex
+<timer_8h__dep__incl.pdf, id=2752, 218.8175pt x 156.585pt>
+File: timer_8h__dep__incl.pdf Graphic file (type pdf)
+<use timer_8h__dep__incl.pdf>
+Package pdftex.def Info: timer_8h__dep__incl.pdf  used on input line 12.
+(pdftex.def)             Requested size: 218.0pt x 156.00162pt.
+ [89 <./timer_8h__dep__incl.pdf>]
+Underfull \hbox (badness 10000) detected at line 31
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 35
+[][][]
+ []
+
+) [90] (refman.ind [91
 
 
 
-] [64
-
-])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 218.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 218.
+] [92])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 235.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 235.
  (refman.aux (group___c_a_n___i_d.aux)
 (group___common__defines__group.aux) (group___s_c_u__firmware__selection.aux)
 (group___c_a_nopen___func___codes.aux)
 (group___c_a_nopen___n_m_t__speficications.aux)
 (group___filter__module__group.aux) (group___board__model__group.aux)
 (group___c_a_nopen___n_m_t__group.aux) (group___c_a_nopen___p_d_o__module.aux)
-(group___main__group__module.aux) (group___board__pinout__group.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 218.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 218.
+(group___radio__module.aux) (group___main__group__module.aux)
+(group___board__pinout__group.aux) (group___c_a_nopen___f_s_m__module.aux)
+(group___c_a_nopen__timer__module.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 235.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 235.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 362DBC1C599F802BD3C3FB0439673671;20859.
+(rerunfilecheck)             Checksum: 4064EDD710BF125DBC64FCEA58C4953B;32059.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 218.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 235.
  ) 
 Here is how much of TeX's memory you used:
- 16099 strings out of 493305
- 248568 string characters out of 3138874
- 353451 words of memory out of 3000000
- 18815 multiletter control sequences out of 15000+200000
- 69664 words of font info for 94 fonts, out of 3000000 for 9000
+ 16518 strings out of 493305
+ 262835 string characters out of 3138874
+ 358962 words of memory out of 3000000
+ 18989 multiletter control sequences out of 15000+200000
+ 70584 words of font info for 97 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 53i,16n,92p,1007b,639s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 53i,16n,92p,2111b,639s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<D:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Program Files/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/Program Files/MiKTeX 2.9/fonts/ty
@@ -2186,14 +2522,15 @@ s/cm/cmr10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6
 rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/Program Files/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Program Files/MiKTeX 2.9/fo
-nts/type1/urw/courier/ucrr8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/c
-ourier/ucrro8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a
-.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8ac.pfb><D:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><D:/Program Files/MiKT
-eX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (72 pages, 1019011 bytes).
+nts/type1/public/amsfonts/cm/cmsy9.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1
+/urw/courier/ucrr8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/uc
+rro8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><D:/
+Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8ac.pfb><D:/Program Files
+/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><D:/Program Files/MiKTeX 2.9/fo
+nts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (102 pages, 1420404 bytes).
 PDF statistics:
- 2156 PDF objects out of 2487 (max. 8388607)
- 434 named destinations out of 1000 (max. 500000)
- 1038 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3116 PDF objects out of 3580 (max. 8388607)
+ 628 named destinations out of 1000 (max. 500000)
+ 1522 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -9,6 +9,8 @@
 #ifndef _CAN_ID_H_
 #define _CAN_ID_H_
 
+#include "common.h"
+
 /**
  *  @defgroup CAN_network_module CAN Servizi Network
  *   @{

@@ -5,16 +5,20 @@ Each node connected to C\+AN servizi network has an unique ID into that network,
  \tabulinesep=1mm
 \begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
 \hline
-\rowcolor{\tableheadbgcolor}\textbf{ N\+O\+DE  }&\textbf{ N\+O\+D\+E-\/\+ID   }\\\cline{1-2}
+\rowcolor{\tableheadbgcolor}\textbf{ \label{_c_a_n_network_page_NODE-ID}%
+\Hypertarget{_c_a_n_network_page_NODE-ID}%
+N\+O\+DE  }&\textbf{ N\+O\+D\+E-\/\+ID   }\\\cline{1-2}
 \endfirsthead
 \hline
 \endfoot
 \hline
-\rowcolor{\tableheadbgcolor}\textbf{ N\+O\+DE  }&\textbf{ N\+O\+D\+E-\/\+ID   }\\\cline{1-2}
+\rowcolor{\tableheadbgcolor}\textbf{ \label{_c_a_n_network_page_NODE-ID}%
+\Hypertarget{_c_a_n_network_page_NODE-ID}%
+N\+O\+DE  }&\textbf{ N\+O\+D\+E-\/\+ID   }\\\cline{1-2}
 \endhead
-$SCU_{Frontal}$  &1   \\\cline{1-2}
+$SCU_{FRONTAL}$  &1   \\\cline{1-2}
 $VCU$  &2   \\\cline{1-2}
-$SCU_{Rear}$  &3   \\\cline{1-2}
+$SCU_{REAR}$  &3   \\\cline{1-2}
 $TCU$  &4   \\\cline{1-2}
 \end{longtabu}
 ~\newline
@@ -62,7 +66,9 @@ $TCU$  &4   \\\cline{1-2}
  
 
 
-\item {\bfseries periodically send T\+P\+D\+Os with sensors\textquotesingle{} data} Each node starts a timer with \mbox{\hyperlink{group___common__defines__group_ga09c95853fd002fab968d94c5bc44e823}{T\+I\+M\+E\+\_\+\+S\+L\+O\+T\+\_\+\+P\+E\+R\+I\+OD}} period. In this way one slot (or more) of \mbox{\hyperlink{group___common__defines__group_ga09c95853fd002fab968d94c5bc44e823}{T\+I\+M\+E\+\_\+\+S\+L\+O\+T\+\_\+\+P\+E\+R\+I\+OD}} is assigned to each node for transmission, so as to reduce C\+AN bus load.~\newline
+\item {\bfseries \label{_c_a_n_network_page_TPDO_Timer}%
+\Hypertarget{_c_a_n_network_page_TPDO_Timer}%
+periodically send T\+P\+D\+Os with sensors\textquotesingle{} data} Each node starts a timer with \mbox{\hyperlink{group___common__defines__group_ga09c95853fd002fab968d94c5bc44e823}{T\+I\+M\+E\+\_\+\+S\+L\+O\+T\+\_\+\+P\+E\+R\+I\+OD}} period. In this way one slot (or more) of \mbox{\hyperlink{group___common__defines__group_ga09c95853fd002fab968d94c5bc44e823}{T\+I\+M\+E\+\_\+\+S\+L\+O\+T\+\_\+\+P\+E\+R\+I\+OD}} is assigned to each node for transmission, so as to reduce C\+AN bus load.~\newline
 ~\newline
  \tabulinesep=1mm
 \begin{longtabu} spread 0pt [c]{*{5}{|X[-1]}|}
@@ -74,7 +80,7 @@ $TCU$  &4   \\\cline{1-2}
 \hline
 \rowcolor{\tableheadbgcolor}\textbf{ S\+T\+A\+RT T\+I\+M\+ER  }&\textbf{ packet \#1  }&\textbf{ packet \#2  }&\textbf{ packet \#3  }&\textbf{ packet \#4   }\\\cline{1-5}
 \endhead
-$VCU$  &$SCU_{Frontal}$  &$SCU_{Frontal}$  &$SCU_{Rear}$  &$TCU$   \\\cline{1-5}
+$VCU$  &$SCU_{FRONTAL}$  &$SCU_{FRONTAL}$  &$SCU_{REAR}$  &$TCU$   \\\cline{1-5}
 &\multicolumn{4}{p{(\linewidth-\tabcolsep*5-\arrayrulewidth*2)*4/5}|}{T\+R\+A\+N\+S\+M\+I\+S\+S\+I\+ON P\+E\+R\+I\+OD   }\\\cline{1-5}
 \end{longtabu}
 ~\newline
@@ -97,7 +103,7 @@ T\+P\+DO configuration}
 \hline
 \rowcolor{\tableheadbgcolor}\textbf{ TX N\+O\+DE  }&\textbf{ Data  }&\textbf{ Unit  }&\textbf{ Data Length  }&\textbf{ Data Offset  }&\textbf{ \#\+C\+AN packet  }&\textbf{ ID  }&\textbf{ Total Length   }\\\cline{1-8}
 \endhead
-\multirow{9}{\linewidth}{$SCU_{Frontal}$  }&First A\+P\+PS  &$\%$  &$1\ Byte$  &$[0:7]$  &\multirow{5}{\linewidth}{\#1  }&\multirow{5}{\linewidth}{T\+P\+D\+O1 + N\+O\+D\+E-\/\+ID  }&\multirow{5}{\linewidth}{4   }\\\cline{2-5}
+\multirow{9}{\linewidth}{$SCU_{FRONT}$  }&First A\+P\+PS  &$\%$  &$1\ Byte$  &$[0:7]$  &\multirow{5}{\linewidth}{\#1  }&\multirow{5}{\linewidth}{T\+P\+D\+O1 + N\+O\+D\+E-\/\+ID  }&\multirow{5}{\linewidth}{4   }\\\cline{2-5}
 &Second A\+P\+PS  &$\%$  &$1\ Byte$  &$[8:15]$   &\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}\\\cline{2-5}
 &Brake  &$\%$  &$1\ Byte$  &$[16:23]$   &\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}\\\cline{2-5}
 &A\+P\+PS plausibility  &$bool$  &$4\ bit$  &$[24:27]$   &\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}\\\cline{2-5}
@@ -106,7 +112,7 @@ T\+P\+DO configuration}
 &Left phonic wheel  &$rpm$  &$2\ Bytes$  &$[16:31]$   &\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}\\\cline{2-5}
 &Right suspension  &$mm$  &$1\ Byte$  &$[32:39]$   &\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}\\\cline{2-5}
 &Left suspension  &$mm$  &$1\ Byte$  &$[40:47]$   &\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}\\\cline{1-8}
-\multirow{6}{\linewidth}{$SCU_{Rear}$  }&Accel. X  &$m/s^{2}$  &$1\ Byte$  &$[0:7]$  &\multirow{6}{\linewidth}{\#3  }&\multirow{6}{\linewidth}{T\+P\+D\+O1 + N\+O\+D\+E-\/\+ID  }&\multirow{6}{\linewidth}{8   }\\\cline{2-5}
+\multirow{6}{\linewidth}{$SCU_{REAR}$  }&Accel. X  &$m/s^{2}$  &$1\ Byte$  &$[0:7]$  &\multirow{6}{\linewidth}{\#3  }&\multirow{6}{\linewidth}{T\+P\+D\+O1 + N\+O\+D\+E-\/\+ID  }&\multirow{6}{\linewidth}{8   }\\\cline{2-5}
 &Accel. Z  &$m/s^{2}$  &$1\ Byte$  &$[8:15]$   &\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}\\\cline{2-5}
 &Right suspension  &$mm$  &$1\ Byte$  &$[16:23]$   &\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}\\\cline{2-5}
 &Left suspension  &$mm$  &$1\ Byte$  &$[24:31]$   &\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}\\\cline{2-5}

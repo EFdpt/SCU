@@ -77,13 +77,13 @@ $(function() {
 <br />
  </p><table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">NODE  </th><th class="markdownTableHeadCenter">NODE-ID   </th></tr>
+<th class="markdownTableHeadCenter"><a class="anchor" id="NODE-ID"></a>NODE  </th><th class="markdownTableHeadCenter">NODE-ID   </th></tr>
 <tr class="markdownTableBody" class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">\(SCU_{Frontal}\)  </td><td class="markdownTableBodyCenter">1   </td></tr>
+<td class="markdownTableBodyCenter">\(SCU_{FRONTAL}\)  </td><td class="markdownTableBodyCenter">1   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">\(VCU\)  </td><td class="markdownTableBodyCenter">2   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">\(SCU_{Rear}\)  </td><td class="markdownTableBodyCenter">3   </td></tr>
+<td class="markdownTableBodyCenter">\(SCU_{REAR}\)  </td><td class="markdownTableBodyCenter">3   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">\(TCU\)  </td><td class="markdownTableBodyCenter">4   </td></tr>
 </table>
@@ -113,13 +113,13 @@ $(function() {
 <br />
  <hr/>
 </li>
-<li><b>periodically send TPDOs with sensors' data</b> Each node starts a timer with <a class="el" href="group___common__defines__group.html#ga09c95853fd002fab968d94c5bc44e823" title="Timer period [ ]. ">TIME_SLOT_PERIOD</a> period. In this way one slot (or more) of <a class="el" href="group___common__defines__group.html#ga09c95853fd002fab968d94c5bc44e823" title="Timer period [ ]. ">TIME_SLOT_PERIOD</a> is assigned to each node for transmission, so as to reduce CAN bus load.<br />
+<li><b><a class="anchor" id="TPDO_Timer"></a>periodically send TPDOs with sensors' data</b> Each node starts a timer with <a class="el" href="group___common__defines__group.html#ga09c95853fd002fab968d94c5bc44e823" title="Timer period [ ]. ">TIME_SLOT_PERIOD</a> period. In this way one slot (or more) of <a class="el" href="group___common__defines__group.html#ga09c95853fd002fab968d94c5bc44e823" title="Timer period [ ]. ">TIME_SLOT_PERIOD</a> is assigned to each node for transmission, so as to reduce CAN bus load.<br />
 <br />
  <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadCenter">START TIMER  </th><th class="markdownTableHeadCenter">packet #1  </th><th class="markdownTableHeadCenter">packet #2  </th><th class="markdownTableHeadCenter">packet #3  </th><th class="markdownTableHeadCenter">packet #4   </th></tr>
 <tr class="markdownTableBody" class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">\(VCU\)  </td><td class="markdownTableBodyCenter">\(SCU_{Frontal}\)  </td><td class="markdownTableBodyCenter">\(SCU_{Frontal}\)  </td><td class="markdownTableBodyCenter">\(SCU_{Rear}\)  </td><td class="markdownTableBodyCenter">\(TCU\)   </td></tr>
+<td class="markdownTableBodyCenter">\(VCU\)  </td><td class="markdownTableBodyCenter">\(SCU_{FRONTAL}\)  </td><td class="markdownTableBodyCenter">\(SCU_{FRONTAL}\)  </td><td class="markdownTableBodyCenter">\(SCU_{REAR}\)  </td><td class="markdownTableBodyCenter">\(TCU\)   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowEven">
 <td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter" colspan="4">TRANSMISSION PERIOD   </td></tr>
 </table>
@@ -132,7 +132,7 @@ $(function() {
 <tr class="markdownTableHead">
 <th class="markdownTableHeadCenter">TX NODE  </th><th class="markdownTableHeadCenter">Data  </th><th class="markdownTableHeadCenter">Unit  </th><th class="markdownTableHeadCenter">Data Length  </th><th class="markdownTableHeadCenter">Data Offset  </th><th class="markdownTableHeadCenter">#CAN packet  </th><th class="markdownTableHeadCenter">ID  </th><th class="markdownTableHeadCenter">Total Length   </th></tr>
 <tr class="markdownTableBody" class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter" rowspan="9">\(SCU_{Frontal}\)  </td><td class="markdownTableBodyCenter">First APPS  </td><td class="markdownTableBodyCenter">\(\%\)  </td><td class="markdownTableBodyCenter">\(1\ Byte\)  </td><td class="markdownTableBodyCenter">\([0:7]\)  </td><td class="markdownTableBodyCenter" rowspan="5">#1  </td><td class="markdownTableBodyCenter" rowspan="5">TPDO1 + NODE-ID  </td><td class="markdownTableBodyCenter" rowspan="5">4   </td></tr>
+<td class="markdownTableBodyCenter" rowspan="9">\(SCU_{FRONT}\)  </td><td class="markdownTableBodyCenter">First APPS  </td><td class="markdownTableBodyCenter">\(\%\)  </td><td class="markdownTableBodyCenter">\(1\ Byte\)  </td><td class="markdownTableBodyCenter">\([0:7]\)  </td><td class="markdownTableBodyCenter" rowspan="5">#1  </td><td class="markdownTableBodyCenter" rowspan="5">TPDO1 + NODE-ID  </td><td class="markdownTableBodyCenter" rowspan="5">4   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">Second APPS  </td><td class="markdownTableBodyCenter">\(\%\)  </td><td class="markdownTableBodyCenter">\(1\ Byte\)  </td><td class="markdownTableBodyCenter">\([8:15]\)   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowOdd">
@@ -150,7 +150,7 @@ $(function() {
 <tr class="markdownTableBody" class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">Left suspension  </td><td class="markdownTableBodyCenter">\(mm\)  </td><td class="markdownTableBodyCenter">\(1\ Byte\)  </td><td class="markdownTableBodyCenter">\([40:47]\)   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowEven">
-<td class="markdownTableBodyCenter" rowspan="6">\(SCU_{Rear}\)  </td><td class="markdownTableBodyCenter">Accel. X  </td><td class="markdownTableBodyCenter">\(m/s^{2}\)  </td><td class="markdownTableBodyCenter">\(1\ Byte\)  </td><td class="markdownTableBodyCenter">\([0:7]\)  </td><td class="markdownTableBodyCenter" rowspan="6">#3  </td><td class="markdownTableBodyCenter" rowspan="6">TPDO1 + NODE-ID  </td><td class="markdownTableBodyCenter" rowspan="6">8   </td></tr>
+<td class="markdownTableBodyCenter" rowspan="6">\(SCU_{REAR}\)  </td><td class="markdownTableBodyCenter">Accel. X  </td><td class="markdownTableBodyCenter">\(m/s^{2}\)  </td><td class="markdownTableBodyCenter">\(1\ Byte\)  </td><td class="markdownTableBodyCenter">\([0:7]\)  </td><td class="markdownTableBodyCenter" rowspan="6">#3  </td><td class="markdownTableBodyCenter" rowspan="6">TPDO1 + NODE-ID  </td><td class="markdownTableBodyCenter" rowspan="6">8   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">Accel. Z  </td><td class="markdownTableBodyCenter">\(m/s^{2}\)  </td><td class="markdownTableBodyCenter">\(1\ Byte\)  </td><td class="markdownTableBodyCenter">\([8:15]\)   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowEven">
@@ -168,7 +168,7 @@ $(function() {
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 9 2018 00:01:06 for Sensors Control Unit (SCU) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 9 2018 12:46:42 for Sensors Control Unit (SCU) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.14
 </small></address>

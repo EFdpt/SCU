@@ -79,11 +79,16 @@ $(function() {
 
 <p>CANOpen main module header.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="_c_a_n___i_d_8h_source.html">CAN_ID.h</a>&quot;</code><br />
+<code>#include &lt;Arduino.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for CO_can.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="_c_o__can_8h__incl.png" border="0" usemap="#_c_o__can_8h" alt=""/></div>
+<map name="_c_o__can_8h" id="_c_o__can_8h">
+<area shape="rect" id="node2" href="_c_a_n___i_d_8h.html" title="CAN servizi nodeIDs module header. " alt="" coords="7,80,86,107"/>
+<area shape="rect" id="node3" href="common_8h.html" title="This file contains some common macro definitions for configuring main relevants parameters. " alt="" coords="5,155,88,181"/>
+</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -91,11 +96,11 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="center"><img src="_c_o__can_8h__dep__incl.png" border="0" usemap="#_c_o__can_8hdep" alt=""/></div>
 <map name="_c_o__can_8hdep" id="_c_o__can_8hdep">
 <area shape="rect" id="node2" href="_c_o__can_8cpp.html" title="CANOpen main module implementation file. " alt="" coords="5,155,100,181"/>
-<area shape="rect" id="node3" href="states_8h_source.html" title="states.h" alt="" coords="205,80,274,107"/>
-<area shape="rect" id="node7" href="states_8cpp_source.html" title="states.cpp" alt="" coords="406,155,489,181"/>
+<area shape="rect" id="node3" href="states_8h.html" title="CANopen finite state machine header file. " alt="" coords="205,80,274,107"/>
+<area shape="rect" id="node7" href="states_8cpp.html" title="CANopen finite state machine implementation file. " alt="" coords="406,155,489,181"/>
 <area shape="rect" id="node8" href="nmt_8h.html" title="CANOpen NMT module header. " alt="" coords="299,80,353,107"/>
 <area shape="rect" id="node9" href="pdo_8h.html" title="CANopen PDO support header file. " alt="" coords="429,80,484,107"/>
-<area shape="rect" id="node10" href="timer_8cpp_source.html" title="timer.cpp" alt="" coords="513,155,589,181"/>
+<area shape="rect" id="node10" href="timer_8cpp.html" title="CANopen timer implementation file. " alt="" coords="513,155,589,181"/>
 <area shape="rect" id="node4" href="nmt_8cpp.html" title="CANOpen NMT module implementation file. " alt="" coords="125,155,194,181"/>
 <area shape="rect" id="node5" href="pdo_8cpp.html" title="CANopen PDO support header file. " alt="" coords="313,155,381,181"/>
 <area shape="rect" id="node6" href="_s_c_u_8ino.html" title="Main module file. " alt="" coords="219,155,289,181"/>
@@ -125,6 +130,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga44cc9b79c50c2c8eef6b98bac0d24dc9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_a_n__network__module.html#ga44cc9b79c50c2c8eef6b98bac0d24dc9">canSend</a> (<a class="el" href="struct_message.html">Message</a> *m)</td></tr>
 <tr class="memdesc:ga44cc9b79c50c2c8eef6b98bac0d24dc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function send a CANopen message over CAN servizi network.  <a href="group___c_a_n__network__module.html#ga44cc9b79c50c2c8eef6b98bac0d24dc9">More...</a><br /></td></tr>
 <tr class="separator:ga44cc9b79c50c2c8eef6b98bac0d24dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabf47bce7c4c8d2166fe3e25ac404d7c7"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_a_n__network__module.html#gabf47bce7c4c8d2166fe3e25ac404d7c7">getNodeId</a> ()</td></tr>
+<tr class="memdesc:gabf47bce7c4c8d2166fe3e25ac404d7c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns node ID into CAN servizi network.  <a href="group___c_a_n__network__module.html#gabf47bce7c4c8d2166fe3e25ac404d7c7">More...</a><br /></td></tr>
+<tr class="separator:gabf47bce7c4c8d2166fe3e25ac404d7c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9c3b7582805e01be4b88b6648b42837e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_a_n__network__module.html#ga9c3b7582805e01be4b88b6648b42837e">setNodeId</a> (uint8_t <a class="el" href="group___c_a_n__network__module.html#gafe80bdea5c10c0d32fb3261a4e513fa9">nodeId</a>)</td></tr>
+<tr class="memdesc:ga9c3b7582805e01be4b88b6648b42837e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function sets node ID into CAN servizi network.  <a href="group___c_a_n__network__module.html#ga9c3b7582805e01be4b88b6648b42837e">More...</a><br /></td></tr>
+<tr class="separator:ga9c3b7582805e01be4b88b6648b42837e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>CANOpen main module header. </p>
@@ -136,7 +147,7 @@ Functions</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 9 2018 00:01:06 for Sensors Control Unit (SCU) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 9 2018 12:46:42 for Sensors Control Unit (SCU) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.14
 </small></address>

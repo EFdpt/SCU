@@ -1,0 +1,263 @@
+\hypertarget{group___c_a_nopen___f_s_m__module}{}\section{C\+A\+Nopen Finite State Machine module}
+\label{group___c_a_nopen___f_s_m__module}\index{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}}
+Collaboration diagram for C\+A\+Nopen Finite State Machine module\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{group___c_a_nopen___f_s_m__module}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga3136d2815abe9d284f985e0a7ec68646}{enum\+\_\+node\+State}} \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga3136d2815abe9d284f985e0a7ec68646}{enum\+\_\+node\+State}} \{ \newline
+\mbox{\hyperlink{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646aeb3ae26d7a1629aa0fc6c83f46306cf5}{Initialisation}} = 0x00, 
+\mbox{\hyperlink{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646a84ab0fbbb76a8c897feb1cd806d56443}{Disconnected}} = 0x01, 
+\mbox{\hyperlink{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646a6ea90df6fe966852496b4846da497fb0}{Connecting}} = 0x02, 
+\mbox{\hyperlink{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646a95fc3c631fbad8ca3dc8d5b69a3e0d5b}{Preparing}} = 0x02, 
+\newline
+\mbox{\hyperlink{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646a4d049c6d45e08a294523df186ad77a75}{Stopped}} = 0x04, 
+\mbox{\hyperlink{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646aa80594b1522cb686b981f56bbec45124}{Operational}} = 0x05, 
+\mbox{\hyperlink{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646ac747c16a9c4d7dec65cdab6e38df99b7}{Pre\+\_\+operational}} = 0x7F, 
+\mbox{\hyperlink{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646acb4b5cb64be091d76f846380eb0afe59}{Unknown\+\_\+state}} = 0x0F
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}} \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga2802a8c3f0174f4e54dd2381968212a0}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Return current state on the \mbox{\hyperlink{_f_s_m_page}{Finite State Machine (F\+SM)}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga47cb7615bbcf2c96cc4a7656f9a76bab}{set\+State}} (\mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}} new\+State)
+\begin{DoxyCompactList}\small\item\em Set current state on the \mbox{\hyperlink{_f_s_m_page}{Finite State Machine (F\+SM)}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_gabbbb23c086599a8d9432a2121ee82192}{can\+Dispatch}} (\mbox{\hyperlink{struct_message}{Message}} $\ast$m)
+\begin{DoxyCompactList}\small\item\em Called by driver when receiving C\+A\+Nopen messages. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_gadfffb3be7aa80aea898ada67e93d2388}{initialisation}} ()
+\begin{DoxyCompactList}\small\item\em Initialize \mbox{\hyperlink{group___board__model__group}{Board module}}. If rear S\+CU firmware is selected (according to \mbox{\hyperlink{group___s_c_u__firmware__selection}{S\+CU firmware selection}}) radio is initialized. It initializes the entire application, C\+A\+N/\+C\+A\+Nopen interfaces and communication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_gaf9e8e3744244bcb2f8b6a8583c0bec0c}{pre\+Operational}} ()
+\begin{DoxyCompactList}\small\item\em pre\+Operational state task on the F\+SM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga003b28d176774c489577f471a7b5f946}{operational}} ()
+\begin{DoxyCompactList}\small\item\em Start timer for periodic T\+P\+DO transmit according to \mbox{\hyperlink{_c_a_n_network_page}{C\+AN Servizi network}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_gad134c6ce7186d3f2e9cb314839fd63ad}{stopped}} ()
+\begin{DoxyCompactList}\small\item\em Stop timer for periodic T\+P\+DO transmit according to \mbox{\hyperlink{_c_a_n_network_page}{C\+AN Servizi network}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___c_a_nopen___f_s_m__module_ga924e56dabe104382db4ee1a3bb507ed9}\label{group___c_a_nopen___f_s_m__module_ga924e56dabe104382db4ee1a3bb507ed9}} 
+volatile \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}} \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga924e56dabe104382db4ee1a3bb507ed9}{current\+\_\+state}} = \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646aeb3ae26d7a1629aa0fc6c83f46306cf5}{Initialisation}}
+\begin{DoxyCompactList}\small\item\em Current state of F\+SM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{group___c_a_nopen___f_s_m__module_ga5891f63a4c9243179838389a93d084e2}\label{group___c_a_nopen___f_s_m__module_ga5891f63a4c9243179838389a93d084e2}} 
+\index{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!e\+\_\+node\+State@{e\+\_\+node\+State}}
+\index{e\+\_\+node\+State@{e\+\_\+node\+State}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}}
+\subsubsection{\texorpdfstring{e\+\_\+node\+State}{e\_nodeState}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga3136d2815abe9d284f985e0a7ec68646}{enum\+\_\+node\+State}} \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}}}
+
+F\+SM states typedef 
+
+Definition at line 55 of file states.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group___c_a_nopen___f_s_m__module_ga3136d2815abe9d284f985e0a7ec68646}\label{group___c_a_nopen___f_s_m__module_ga3136d2815abe9d284f985e0a7ec68646}} 
+\index{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!enum\+\_\+node\+State@{enum\+\_\+node\+State}}
+\index{enum\+\_\+node\+State@{enum\+\_\+node\+State}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}}
+\subsubsection{\texorpdfstring{enum\+\_\+node\+State}{enum\_nodeState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga3136d2815abe9d284f985e0a7ec68646}{enum\+\_\+node\+State}}}
+
+F\+SM states enum \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Initialisation@{Initialisation}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}}\index{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!Initialisation@{Initialisation}}}\mbox{\Hypertarget{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646aeb3ae26d7a1629aa0fc6c83f46306cf5}\label{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646aeb3ae26d7a1629aa0fc6c83f46306cf5}} 
+Initialisation&Initialisation state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Disconnected@{Disconnected}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}}\index{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!Disconnected@{Disconnected}}}\mbox{\Hypertarget{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646a84ab0fbbb76a8c897feb1cd806d56443}\label{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646a84ab0fbbb76a8c897feb1cd806d56443}} 
+Disconnected&Disconnected state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Connecting@{Connecting}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}}\index{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!Connecting@{Connecting}}}\mbox{\Hypertarget{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646a6ea90df6fe966852496b4846da497fb0}\label{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646a6ea90df6fe966852496b4846da497fb0}} 
+Connecting&Connecting state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Preparing@{Preparing}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}}\index{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!Preparing@{Preparing}}}\mbox{\Hypertarget{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646a95fc3c631fbad8ca3dc8d5b69a3e0d5b}\label{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646a95fc3c631fbad8ca3dc8d5b69a3e0d5b}} 
+Preparing&Preparing state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Stopped@{Stopped}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}}\index{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!Stopped@{Stopped}}}\mbox{\Hypertarget{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646a4d049c6d45e08a294523df186ad77a75}\label{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646a4d049c6d45e08a294523df186ad77a75}} 
+Stopped&Stopped state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Operational@{Operational}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}}\index{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!Operational@{Operational}}}\mbox{\Hypertarget{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646aa80594b1522cb686b981f56bbec45124}\label{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646aa80594b1522cb686b981f56bbec45124}} 
+Operational&Operational state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Pre\+\_\+operational@{Pre\+\_\+operational}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}}\index{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!Pre\+\_\+operational@{Pre\+\_\+operational}}}\mbox{\Hypertarget{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646ac747c16a9c4d7dec65cdab6e38df99b7}\label{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646ac747c16a9c4d7dec65cdab6e38df99b7}} 
+Pre\+\_\+operational&Pre\+Operational state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unknown\+\_\+state@{Unknown\+\_\+state}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}}\index{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!Unknown\+\_\+state@{Unknown\+\_\+state}}}\mbox{\Hypertarget{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646acb4b5cb64be091d76f846380eb0afe59}\label{group___c_a_nopen___f_s_m__module_gga3136d2815abe9d284f985e0a7ec68646acb4b5cb64be091d76f846380eb0afe59}} 
+Unknown\+\_\+state&Unknown state \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 43 of file states.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___c_a_nopen___f_s_m__module_gabbbb23c086599a8d9432a2121ee82192}\label{group___c_a_nopen___f_s_m__module_gabbbb23c086599a8d9432a2121ee82192}} 
+\index{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!can\+Dispatch@{can\+Dispatch}}
+\index{can\+Dispatch@{can\+Dispatch}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}}
+\subsubsection{\texorpdfstring{can\+Dispatch()}{canDispatch()}}
+{\footnotesize\ttfamily void can\+Dispatch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_message}{Message}} $\ast$}]{m }\end{DoxyParamCaption})}
+
+
+
+Called by driver when receiving C\+A\+Nopen messages. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it})
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & Received C\+A\+Nopen message \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 45 of file states.\+cpp.
+
+\mbox{\Hypertarget{group___c_a_nopen___f_s_m__module_ga2802a8c3f0174f4e54dd2381968212a0}\label{group___c_a_nopen___f_s_m__module_ga2802a8c3f0174f4e54dd2381968212a0}} 
+\index{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!get\+State@{get\+State}}
+\index{get\+State@{get\+State}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}}
+\subsubsection{\texorpdfstring{get\+State()}{getState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}} get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return current state on the \mbox{\hyperlink{_f_s_m_page}{Finite State Machine (F\+SM)}}. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it})
+\end{DoxyAuthor}
+\begin{DoxyReturn}{Returns}
+current state on the F\+SM 
+\end{DoxyReturn}
+
+
+Definition at line 35 of file states.\+cpp.
+
+\mbox{\Hypertarget{group___c_a_nopen___f_s_m__module_gadfffb3be7aa80aea898ada67e93d2388}\label{group___c_a_nopen___f_s_m__module_gadfffb3be7aa80aea898ada67e93d2388}} 
+\index{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!initialisation@{initialisation}}
+\index{initialisation@{initialisation}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}}
+\subsubsection{\texorpdfstring{initialisation()}{initialisation()}}
+{\footnotesize\ttfamily void initialisation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize \mbox{\hyperlink{group___board__model__group}{Board module}}. If rear S\+CU firmware is selected (according to \mbox{\hyperlink{group___s_c_u__firmware__selection}{S\+CU firmware selection}}) radio is initialized. It initializes the entire application, C\+A\+N/\+C\+A\+Nopen interfaces and communication. 
+
+Initialisation state task on the F\+SM.
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
+\end{DoxyAuthor}
+
+
+Definition at line 71 of file states.\+cpp.
+
+\mbox{\Hypertarget{group___c_a_nopen___f_s_m__module_ga003b28d176774c489577f471a7b5f946}\label{group___c_a_nopen___f_s_m__module_ga003b28d176774c489577f471a7b5f946}} 
+\index{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!operational@{operational}}
+\index{operational@{operational}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}}
+\subsubsection{\texorpdfstring{operational()}{operational()}}
+{\footnotesize\ttfamily void operational (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start timer for periodic T\+P\+DO transmit according to \mbox{\hyperlink{_c_a_n_network_page}{C\+AN Servizi network}}. 
+
+Operational state task on the F\+SM.
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
+\end{DoxyAuthor}
+
+
+Definition at line 95 of file states.\+cpp.
+
+\mbox{\Hypertarget{group___c_a_nopen___f_s_m__module_gaf9e8e3744244bcb2f8b6a8583c0bec0c}\label{group___c_a_nopen___f_s_m__module_gaf9e8e3744244bcb2f8b6a8583c0bec0c}} 
+\index{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!pre\+Operational@{pre\+Operational}}
+\index{pre\+Operational@{pre\+Operational}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}}
+\subsubsection{\texorpdfstring{pre\+Operational()}{preOperational()}}
+{\footnotesize\ttfamily void pre\+Operational (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+pre\+Operational state task on the F\+SM. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
+\end{DoxyAuthor}
+
+
+Definition at line 83 of file states.\+cpp.
+
+\mbox{\Hypertarget{group___c_a_nopen___f_s_m__module_ga47cb7615bbcf2c96cc4a7656f9a76bab}\label{group___c_a_nopen___f_s_m__module_ga47cb7615bbcf2c96cc4a7656f9a76bab}} 
+\index{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!set\+State@{set\+State}}
+\index{set\+State@{set\+State}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}}
+\subsubsection{\texorpdfstring{set\+State()}{setState()}}
+{\footnotesize\ttfamily void set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___c_a_nopen___f_s_m__module_ga5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}}}]{new\+State }\end{DoxyParamCaption})}
+
+
+
+Set current state on the \mbox{\hyperlink{_f_s_m_page}{Finite State Machine (F\+SM)}}. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it})
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em new\+State} & New state transition \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 40 of file states.\+cpp.
+
+\mbox{\Hypertarget{group___c_a_nopen___f_s_m__module_gad134c6ce7186d3f2e9cb314839fd63ad}\label{group___c_a_nopen___f_s_m__module_gad134c6ce7186d3f2e9cb314839fd63ad}} 
+\index{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!stopped@{stopped}}
+\index{stopped@{stopped}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}}
+\subsubsection{\texorpdfstring{stopped()}{stopped()}}
+{\footnotesize\ttfamily void stopped (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stop timer for periodic T\+P\+DO transmit according to \mbox{\hyperlink{_c_a_n_network_page}{C\+AN Servizi network}}. 
+
+Stopped state task on the F\+SM.
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
+\end{DoxyAuthor}
+
+
+Definition at line 108 of file states.\+cpp.
+

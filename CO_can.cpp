@@ -11,11 +11,28 @@
 #include "CO_can.h"
 #include "states.h"
 #include "common.h"
+#include "sensors_pinout.h"
 
 /**
  *  @addtogroup CAN_network_module
  *   @{
  */
+
+/**
+ *  @var    uint8_t nodeId;
+ *  @brief  Board node ID into CAN servizi network according to @ref NODE-ID.
+ */
+uint8_t     nodeId;
+
+__attribute__((__inline__))
+uint8_t getNodeId() {
+    return nodeId;
+}
+
+__attribute__((__inline__))
+void setNodeId(uint8_t nodeId) {
+    nodeId = nodeId;
+}
 
 void canSend(Message* m) {
 	CAN_FRAME frame;
@@ -28,6 +45,15 @@ void canSend(Message* m) {
 	CAN_PORT.sendFrame(frame);
 }
 
+/**
+ *  @brief      This function manage CAN frame receiption and dispatch CANopen
+ *              message.
+ *              
+ *  @author     Arella Matteo <br/>
+ *                  (mail: arella.1646983@studenti.uniroma1.it)
+ *
+ *  @param[in] frame CAN received frame.
+ */
 void CAN_general_callback(CAN_FRAME* frame) {
     Message m = Message_Initializer;
 

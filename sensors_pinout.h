@@ -73,11 +73,11 @@
 	#define FR_SX_SUSP_PIN        		A3
 
 	/**
-	 *  @def FR_SX_ADC_CHAN_NUM
+	 *  @def FR_SX_SUSP_ADC_CHAN_NUM
 	 *  @brief GPIO pin on the Atmel SAM3X8E processor corresponding to frontal
 	 *         left suspension signal (AD4)
 	 */
-	#define FR_SX_ADC_CHAN_NUM    		ADC_CHER_CH4
+	#define FR_SX_SUSP_ADC_CHAN_NUM    		ADC_CHER_CH4
 
 	/**
 	 *  @def FR_DX_SUSP_PIN
@@ -86,11 +86,11 @@
 	#define FR_DX_SUSP_PIN        		A4
 
 	/**
-	 *  @def FR_DX_ADC_CHAN_NUM
+	 *  @def FR_DX_SUSP_ADC_CHAN_NUM
 	 *  @brief GPIO pin on the Atmel SAM3X8E processor corresponding to frontal
 	 *         right suspension signal (AD3)
 	 */
-	#define FR_DX_ADC_CHAN_NUM    		ADC_CHER_CH3
+	#define FR_DX_SUSP_ADC_CHAN_NUM    		ADC_CHER_CH3
 
 	/**
 	 *  @def FR_SX_PW_PIN

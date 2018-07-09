@@ -141,7 +141,7 @@
  *  @def SCU_FRONTAL_ADC_CHANNELS_LIST
  *  @brief List of ADC channels dedicated to each IO port in frontal SCU board
  */
-#define SCU_FRONTAL_ADC_CHANNELS_LIST   TPS1_ADC_CHAN_NUM | TPS2_ADC_CHAN_NUM | BRAKE_ADC_CHAN_NUM | FR_SX_ADC_CHAN_NUM | FR_DX_ADC_CHAN_NUM
+#define SCU_FRONTAL_ADC_CHANNELS_LIST   TPS1_ADC_CHAN_NUM | TPS2_ADC_CHAN_NUM | BRAKE_ADC_CHAN_NUM | FR_SX_SUSP_ADC_CHAN_NUM | FR_DX_SUSP_ADC_CHAN_NUM
 
 /**
  *  @def SCU_RETRO_ADC_CHANNELS
@@ -153,7 +153,7 @@
  *  @def SCU_RETRO_ADC_CHANNELS_LIST
  *  @brief List of ADC channels dedicated to each IO port in retro SCU board
  */
-#define SCU_RETRO_ADC_CHANNELS_LIST     ACC_X_ADC_CHAN_NUM | ACC_Z_ADC_CHAN_NUM | RT_SX_ADC_CHAN_NUM | RT_DX_ADC_CHAN_NUM   
+#define SCU_RETRO_ADC_CHANNELS_LIST     ACC_X_ADC_CHAN_NUM | ACC_Z_ADC_CHAN_NUM | RT_SX_SUSP_ADC_CHAN_NUM | RT_DX_SUSP_ADC_CHAN_NUM   
 
 /**
  *  @def TPS1_ADC_OFFSET
@@ -456,14 +456,6 @@ volatile uint16_t fr_dx_rpm = 0;
     volatile uint16_t rt_dx_rpm = 0;
 
 #endif
-
-/**
- * @var     volatile uint16_t   buf[#BUFFERS][#BUFFER_LENGTH];
- * @brief   DMA buffers: #BUFFERS number of buffers each of #BUFFER_LENGTH size;
- *          DMA is configured in cyclic mode: after one of #BUFFERS is filled then 
- *          DMA transfer head moves to next buffer in circular indexing.
- */
-volatile uint16_t buf[BUFFERS][BUFFER_LENGTH];
 
 #if defined(_FRONTAL_)
 

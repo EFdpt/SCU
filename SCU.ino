@@ -15,7 +15,7 @@
  *  @mainpage FastChargeSAE SCU firmware
  *
  *  CAN network arises from the need to digitize all those signals necessary 
- *  for the operation of the car.
+ *  for the operation of the vehicle.
  *
  *  Two Arduino Due prototyping boards have been adopted for signal digitalization:
  *  first one located at the front of the vehicle, reserved for the acquisition of 
@@ -24,8 +24,8 @@
  *  accelerometers.
  *
  *  Sensor acquisition boards will now be named SCU (Sensors Control Unit) and 
- *  SCU FRONTAL, SCU REAR respectively for SCU located at the front and at the 
- *  back of the vehicle.
+ *  \f$SCU_{FRONTAL}\f$, \f$SCU_{REAR}\f$ respectively for SCU located at the 
+ *  front and at the back of the vehicle.
  *
  *  Each board performs mainly two actions:
  *  -   Sensor acquisition
@@ -35,17 +35,6 @@
  *  A protocol layer above the data link layer (CAN protocol) is implemented 
  *  inspired by the CANOpen communication protocol; each node is addressable at 
  *  the network level using a specific and unique ID for every node.
- *
- *  Each SCU board can be represented by a finite state machine with the 
- *  following statuses: Initialisation, Pre-operational, Operational, Stopped.
- *  During power-up each node is in the Initialization state.
- *  At the end of this phase, it attempts to send a boot-up message. As soon as 
- *  it has been successfully sent, it is placed in the pre-operational state.
- *  Using an NMT master message, the VCU can make the various SCUs pass between
- *  the various Pre-operational, Operational and Stopped states.
- *
- *  Each SCU sends PDOs with sensor data in synchronous mode only if it is in 
- *  the Operational state.
  *
  *  The firmware for each node is selectable during the precompilation of the
  *  code from the directives present in @ref SCU_firmware_selection.
@@ -71,7 +60,7 @@ void setup() {
     #if defined(_FRONTAL_)
     setNodeId(SCU_FRONTAL_NODE_ID);
     #elif defined(_RETRO_)
-    setNodeId(SCU_RETRO_NODE_ID);
+    setNodeId(SCU_REAR_NODE_ID);
     #endif
     initialisation();
     slaveSendBootUp();  

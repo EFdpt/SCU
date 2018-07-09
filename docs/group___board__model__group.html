@@ -177,7 +177,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:ga99f732ac210a4d6b6635ed58681d3d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of ADC channels used in frontal SCU board. <br /></td></tr>
 <tr class="separator:ga99f732ac210a4d6b6635ed58681d3d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1b36d02d5fef3342ea7159722fa50ff3"><td class="memItemLeft" align="right" valign="top"><a id="ga1b36d02d5fef3342ea7159722fa50ff3"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga1b36d02d5fef3342ea7159722fa50ff3">SCU_FRONTAL_ADC_CHANNELS_LIST</a>&#160;&#160;&#160;<a class="el" href="group___board__pinout__group.html#ga99b2a7dadaf495e3c559a46440f9141f">TPS1_ADC_CHAN_NUM</a> | <a class="el" href="group___board__pinout__group.html#ga4cecb8c10512873904099a1a88d69ed3">TPS2_ADC_CHAN_NUM</a> | <a class="el" href="group___board__pinout__group.html#ga310547321c4a016c4ad19922920fadfd">BRAKE_ADC_CHAN_NUM</a> | <a class="el" href="group___board__pinout__group.html#gab536d8e8e876dfd8764cc1d31620803a">FR_SX_ADC_CHAN_NUM</a> | <a class="el" href="group___board__pinout__group.html#ga9d0085cf869db954c00e9c13d9661d51">FR_DX_ADC_CHAN_NUM</a></td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga1b36d02d5fef3342ea7159722fa50ff3">SCU_FRONTAL_ADC_CHANNELS_LIST</a>&#160;&#160;&#160;<a class="el" href="group___board__pinout__group.html#ga99b2a7dadaf495e3c559a46440f9141f">TPS1_ADC_CHAN_NUM</a> | <a class="el" href="group___board__pinout__group.html#ga4cecb8c10512873904099a1a88d69ed3">TPS2_ADC_CHAN_NUM</a> | <a class="el" href="group___board__pinout__group.html#ga310547321c4a016c4ad19922920fadfd">BRAKE_ADC_CHAN_NUM</a> | <a class="el" href="group___board__pinout__group.html#ga3582ac3b04abaa9d74b16da2b18a62f9">FR_SX_SUSP_ADC_CHAN_NUM</a> | <a class="el" href="group___board__pinout__group.html#ga0e9f0303c372af214367d86ad38f660d">FR_DX_SUSP_ADC_CHAN_NUM</a></td></tr>
 <tr class="memdesc:ga1b36d02d5fef3342ea7159722fa50ff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of ADC channels dedicated to each IO port in frontal SCU board. <br /></td></tr>
 <tr class="separator:ga1b36d02d5fef3342ea7159722fa50ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadedc78ae5ed236e74a4e12c031209d29"><td class="memItemLeft" align="right" valign="top"><a id="gadedc78ae5ed236e74a4e12c031209d29"></a>
@@ -185,7 +185,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:gadedc78ae5ed236e74a4e12c031209d29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of ADC channels used in rear SCU board. <br /></td></tr>
 <tr class="separator:gadedc78ae5ed236e74a4e12c031209d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5190c5da456959fb6c7132518a51f12f"><td class="memItemLeft" align="right" valign="top"><a id="ga5190c5da456959fb6c7132518a51f12f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga5190c5da456959fb6c7132518a51f12f">SCU_RETRO_ADC_CHANNELS_LIST</a>&#160;&#160;&#160;ACC_X_ADC_CHAN_NUM | ACC_Z_ADC_CHAN_NUM | RT_SX_ADC_CHAN_NUM | RT_DX_ADC_CHAN_NUM</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga5190c5da456959fb6c7132518a51f12f">SCU_RETRO_ADC_CHANNELS_LIST</a>&#160;&#160;&#160;ACC_X_ADC_CHAN_NUM | ACC_Z_ADC_CHAN_NUM | RT_SX_SUSP_ADC_CHAN_NUM | RT_DX_SUSP_ADC_CHAN_NUM</td></tr>
 <tr class="memdesc:ga5190c5da456959fb6c7132518a51f12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of ADC channels dedicated to each IO port in retro SCU board. <br /></td></tr>
 <tr class="separator:ga5190c5da456959fb6c7132518a51f12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7ce02d79fba23321a377a26a963e2bdf"><td class="memItemLeft" align="right" valign="top"><a id="ga7ce02d79fba23321a377a26a963e2bdf"></a>
@@ -270,10 +270,10 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#gafef4d6ed48b3edc5f7a74defba82e7d8">obufn</a></td></tr>
 <tr class="memdesc:gafef4d6ed48b3edc5f7a74defba82e7d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA buffer pointer. <br /></td></tr>
 <tr class="separator:gafef4d6ed48b3edc5f7a74defba82e7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2bab0e665606eb5a547deb0d23446f41"><td class="memItemLeft" align="right" valign="top"><a id="ga2bab0e665606eb5a547deb0d23446f41"></a>
-volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga2bab0e665606eb5a547deb0d23446f41">buf</a> [<a class="el" href="group___board__model__group.html#gaabe0f927d44a09f458bd5fe5ab4e2f7f">BUFFERS</a>][<a class="el" href="group___board__model__group.html#gaf7b7dc9a200cb1404c280bd500fd1551">BUFFER_LENGTH</a>]</td></tr>
-<tr class="memdesc:ga2bab0e665606eb5a547deb0d23446f41"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA buffers: <a class="el" href="group___board__model__group.html#gaabe0f927d44a09f458bd5fe5ab4e2f7f" title="Number of DMA buffers. ">BUFFERS</a> number of buffers each of <a class="el" href="group___board__model__group.html#gaf7b7dc9a200cb1404c280bd500fd1551" title="Length, in bytes, of each DMA buffer. ">BUFFER_LENGTH</a> size; DMA is configured in cyclic mode: after one of <a class="el" href="group___board__model__group.html#gaabe0f927d44a09f458bd5fe5ab4e2f7f" title="Number of DMA buffers. ">BUFFERS</a> is filled then DMA transfer head moves to next buffer in circular indexing. <br /></td></tr>
-<tr class="separator:ga2bab0e665606eb5a547deb0d23446f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa785fe4a3446344207127079a33a9ea6"><td class="memItemLeft" align="right" valign="top"><a id="gaa785fe4a3446344207127079a33a9ea6"></a>
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#gaa785fe4a3446344207127079a33a9ea6">buf</a> [<a class="el" href="group___board__model__group.html#gaabe0f927d44a09f458bd5fe5ab4e2f7f">BUFFERS</a>][<a class="el" href="group___board__model__group.html#gaf7b7dc9a200cb1404c280bd500fd1551">BUFFER_LENGTH</a>]</td></tr>
+<tr class="memdesc:gaa785fe4a3446344207127079a33a9ea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA buffers: <a class="el" href="group___board__model__group.html#gaabe0f927d44a09f458bd5fe5ab4e2f7f" title="Number of DMA buffers. ">BUFFERS</a> number of buffers each of <a class="el" href="group___board__model__group.html#gaf7b7dc9a200cb1404c280bd500fd1551" title="Length, in bytes, of each DMA buffer. ">BUFFER_LENGTH</a> size; DMA is configured in cyclic mode: after one of <a class="el" href="group___board__model__group.html#gaabe0f927d44a09f458bd5fe5ab4e2f7f" title="Number of DMA buffers. ">BUFFERS</a> is filled then DMA transfer head moves to next buffer in circular indexing. <br /></td></tr>
+<tr class="separator:gaa785fe4a3446344207127079a33a9ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3d6043851868b7da3c1d6381f835a559"><td class="memItemLeft" align="right" valign="top"><a id="ga3d6043851868b7da3c1d6381f835a559"></a>
 volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga3d6043851868b7da3c1d6381f835a559">tps1_value</a> = 0</td></tr>
 <tr class="memdesc:ga3d6043851868b7da3c1d6381f835a559"><td class="mdescLeft">&#160;</td><td class="mdescRight">First APPS value retrieved directly by analog tps1 signal (<a class="el" href="group___board__pinout__group.html#gae9aa914854f611488701c96a330b0bd4" title="Pin on board dedicated to first APPS (tps1) ">TPS1_PIN</a>) and filtered after DMA buffer is filled entirely. <br /></td></tr>
@@ -380,6 +380,14 @@ volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga4c01ad4d4fed642cd36faa3afcc78ffc">fr_dx_susp</a></td></tr>
 <tr class="memdesc:ga4c01ad4d4fed642cd36faa3afcc78ffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frontal right suspension stroke [ \(mm\)]. <br /></td></tr>
 <tr class="separator:ga4c01ad4d4fed642cd36faa3afcc78ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga60aba8dcb458993e90d55d74c2b78f61"><td class="memItemLeft" align="right" valign="top"><a id="ga60aba8dcb458993e90d55d74c2b78f61"></a>
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga60aba8dcb458993e90d55d74c2b78f61">fr_sx_rpm</a></td></tr>
+<tr class="memdesc:ga60aba8dcb458993e90d55d74c2b78f61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frontal left wheel velocity [ \(rpm\)]. <br /></td></tr>
+<tr class="separator:ga60aba8dcb458993e90d55d74c2b78f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7ef4b53bcdb3160d25627fcf012408ea"><td class="memItemLeft" align="right" valign="top"><a id="ga7ef4b53bcdb3160d25627fcf012408ea"></a>
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga7ef4b53bcdb3160d25627fcf012408ea">fr_dx_rpm</a></td></tr>
+<tr class="memdesc:ga7ef4b53bcdb3160d25627fcf012408ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frontal right wheel velocity [ \(rpm\)]. <br /></td></tr>
+<tr class="separator:ga7ef4b53bcdb3160d25627fcf012408ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9a397cb2df09e12e11a80e4f3fee8a1e"><td class="memItemLeft" align="right" valign="top"><a id="ga9a397cb2df09e12e11a80e4f3fee8a1e"></a>
 volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga9a397cb2df09e12e11a80e4f3fee8a1e">acc_x_value</a></td></tr>
 <tr class="memdesc:ga9a397cb2df09e12e11a80e4f3fee8a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accelerometer X value [ \(m/s^{2}\)]. <br /></td></tr>
@@ -438,7 +446,7 @@ volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <dl class="section author"><dt>Author</dt><dd>Arella Matteo <br />
  (mail: <a href="#" onclick="location.href='mai'+'lto:'+'are'+'ll'+'a.1'+'64'+'698'+'3@'+'stu'+'de'+'nti'+'.u'+'nir'+'om'+'a1.'+'it'; return false;">arell<span style="display: none;">.nosp@m.</span>a.16<span style="display: none;">.nosp@m.</span>46983<span style="display: none;">.nosp@m.</span>@stu<span style="display: none;">.nosp@m.</span>denti<span style="display: none;">.nosp@m.</span>.uni<span style="display: none;">.nosp@m.</span>roma1<span style="display: none;">.nosp@m.</span>.it</a>) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="model_8cpp_source.html#l00675">675</a> of file <a class="el" href="model_8cpp_source.html">model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="model_8cpp_source.html#l00667">667</a> of file <a class="el" href="model_8cpp_source.html">model.cpp</a>.</p>
 
 </div>
 </div>
@@ -461,7 +469,7 @@ volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <dl class="section author"><dt>Author</dt><dd>Arella Matteo <br />
  (mail: <a href="#" onclick="location.href='mai'+'lto:'+'are'+'ll'+'a.1'+'64'+'698'+'3@'+'stu'+'de'+'nti'+'.u'+'nir'+'om'+'a1.'+'it'; return false;">arell<span style="display: none;">.nosp@m.</span>a.16<span style="display: none;">.nosp@m.</span>46983<span style="display: none;">.nosp@m.</span>@stu<span style="display: none;">.nosp@m.</span>denti<span style="display: none;">.nosp@m.</span>.uni<span style="display: none;">.nosp@m.</span>roma1<span style="display: none;">.nosp@m.</span>.it</a>) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="model_8cpp_source.html#l00491">491</a> of file <a class="el" href="model_8cpp_source.html">model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="model_8cpp_source.html#l00483">483</a> of file <a class="el" href="model_8cpp_source.html">model.cpp</a>.</p>
 
 </div>
 </div>
@@ -484,7 +492,7 @@ volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <dl class="section author"><dt>Author</dt><dd>Arella Matteo <br />
  (mail: <a href="#" onclick="location.href='mai'+'lto:'+'are'+'ll'+'a.1'+'64'+'698'+'3@'+'stu'+'de'+'nti'+'.u'+'nir'+'om'+'a1.'+'it'; return false;">arell<span style="display: none;">.nosp@m.</span>a.16<span style="display: none;">.nosp@m.</span>46983<span style="display: none;">.nosp@m.</span>@stu<span style="display: none;">.nosp@m.</span>denti<span style="display: none;">.nosp@m.</span>.uni<span style="display: none;">.nosp@m.</span>roma1<span style="display: none;">.nosp@m.</span>.it</a>) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="model_8cpp_source.html#l00478">478</a> of file <a class="el" href="model_8cpp_source.html">model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="model_8cpp_source.html#l00470">470</a> of file <a class="el" href="model_8cpp_source.html">model.cpp</a>.</p>
 
 </div>
 </div>
@@ -509,7 +517,7 @@ volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el
  (mail: <a href="#" onclick="location.href='mai'+'lto:'+'are'+'ll'+'a.1'+'64'+'698'+'3@'+'stu'+'de'+'nti'+'.u'+'nir'+'om'+'a1.'+'it'; return false;">arell<span style="display: none;">.nosp@m.</span>a.16<span style="display: none;">.nosp@m.</span>46983<span style="display: none;">.nosp@m.</span>@stu<span style="display: none;">.nosp@m.</span>denti<span style="display: none;">.nosp@m.</span>.uni<span style="display: none;">.nosp@m.</span>roma1<span style="display: none;">.nosp@m.</span>.it</a>)</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Frontal right wheel rpm </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="model_8cpp_source.html#l00520">520</a> of file <a class="el" href="model_8cpp_source.html">model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="model_8cpp_source.html#l00512">512</a> of file <a class="el" href="model_8cpp_source.html">model.cpp</a>.</p>
 
 </div>
 </div>
@@ -534,7 +542,7 @@ volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el
  (mail: <a href="#" onclick="location.href='mai'+'lto:'+'are'+'ll'+'a.1'+'64'+'698'+'3@'+'stu'+'de'+'nti'+'.u'+'nir'+'om'+'a1.'+'it'; return false;">arell<span style="display: none;">.nosp@m.</span>a.16<span style="display: none;">.nosp@m.</span>46983<span style="display: none;">.nosp@m.</span>@stu<span style="display: none;">.nosp@m.</span>denti<span style="display: none;">.nosp@m.</span>.uni<span style="display: none;">.nosp@m.</span>roma1<span style="display: none;">.nosp@m.</span>.it</a>)</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Frontal left wheel rpm </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="model_8cpp_source.html#l00505">505</a> of file <a class="el" href="model_8cpp_source.html">model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="model_8cpp_source.html#l00497">497</a> of file <a class="el" href="model_8cpp_source.html">model.cpp</a>.</p>
 
 </div>
 </div>
@@ -609,7 +617,7 @@ volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 Arella Matteo <br />
  (mail: <a href="#" onclick="location.href='mai'+'lto:'+'are'+'ll'+'a.1'+'64'+'698'+'3@'+'stu'+'de'+'nti'+'.u'+'nir'+'om'+'a1.'+'it'; return false;">arell<span style="display: none;">.nosp@m.</span>a.16<span style="display: none;">.nosp@m.</span>46983<span style="display: none;">.nosp@m.</span>@stu<span style="display: none;">.nosp@m.</span>denti<span style="display: none;">.nosp@m.</span>.uni<span style="display: none;">.nosp@m.</span>roma1<span style="display: none;">.nosp@m.</span>.it</a>) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="model_8cpp_source.html#l00708">708</a> of file <a class="el" href="model_8cpp_source.html">model.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="model_8cpp_source.html#l00700">700</a> of file <a class="el" href="model_8cpp_source.html">model.cpp</a>.</p>
 
 </div>
 </div>
@@ -807,7 +815,7 @@ Arella Matteo <br />
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 9 2018 00:01:06 for Sensors Control Unit (SCU) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 9 2018 12:46:43 for Sensors Control Unit (SCU) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.14
 </small></address>

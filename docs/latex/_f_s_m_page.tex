@@ -1,0 +1,10 @@
+Each S\+CU board can be represented by a finite state machine with the following statuses\+: Initialisation, Pre-\/operational, Operational, Stopped. During power-\/up each node is in the Initialization state. At the end of this phase, it attempts to send a boot-\/up message. As soon as it has been successfully sent, it is placed in the pre-\/operational state. Using an N\+MT master message, the V\+CU can make the various S\+C\+Us pass between the various Pre-\/operational, Operational and Stopped states.
+
+Each S\+CU sends P\+D\+Os with sensor data in synchronous mode only if it is in the Operational state.
+
+ 
+\begin{DoxyImage}
+\includegraphics[width=10cm]{fsm_diagram}
+\doxyfigcaption{F\+SM diagram}
+\end{DoxyImage}
+ 

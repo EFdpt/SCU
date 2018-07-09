@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['rt_5fdx_5fsusp',['rt_dx_susp',['../group___board__model__group.html#ga6b55629e8341a3f0e9143ec931712dba',1,'model.h']]],
-  ['rt_5fsx_5fsusp',['rt_sx_susp',['../group___board__model__group.html#gaf3ea4d8836939176bd6b4f994518e4c8',1,'model.h']]]
+  ['len',['len',['../struct_message.html#a0e2f37b0ed471c18c4d1a71a23981c23',1,'Message']]]
 ];

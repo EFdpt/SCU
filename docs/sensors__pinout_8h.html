@@ -93,13 +93,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="sensors__pinout_8h__dep__incl.png" border="0" usemap="#sensors__pinout_8hdep" alt=""/></div>
 <map name="sensors__pinout_8hdep" id="sensors__pinout_8hdep">
-<area shape="rect" id="node2" href="model_8h.html" title="Board model header file. " alt="" coords="212,80,280,107"/>
-<area shape="rect" id="node7" href="radio_8cpp_source.html" title="radio.cpp" alt="" coords="379,155,454,181"/>
-<area shape="rect" id="node3" href="filter_8h.html" title="Filter module header file. " alt="" coords="47,155,104,181"/>
-<area shape="rect" id="node5" href="model_8cpp.html" title="Board model implementation file. " alt="" coords="101,229,183,256"/>
-<area shape="rect" id="node6" href="pdo_8cpp.html" title="CANopen PDO support header file. " alt="" coords="180,155,248,181"/>
-<area shape="rect" id="node8" href="states_8cpp_source.html" title="states.cpp" alt="" coords="273,155,355,181"/>
-<area shape="rect" id="node4" href="filter_8cpp.html" title="Filter module implementation file. " alt="" coords="5,229,76,256"/>
+<area shape="rect" id="node2" href="_c_o__can_8cpp.html" title="CANOpen main module implementation file. " alt="" coords="112,80,207,107"/>
+<area shape="rect" id="node3" href="model_8h.html" title="Board model header file. " alt="" coords="231,80,299,107"/>
+<area shape="rect" id="node8" href="radio_8cpp.html" title="Radio implementation file. " alt="" coords="379,155,454,181"/>
+<area shape="rect" id="node4" href="filter_8h.html" title="Filter module header file. " alt="" coords="47,155,104,181"/>
+<area shape="rect" id="node6" href="model_8cpp.html" title="Board model implementation file. " alt="" coords="101,229,183,256"/>
+<area shape="rect" id="node7" href="pdo_8cpp.html" title="CANopen PDO support header file. " alt="" coords="180,155,248,181"/>
+<area shape="rect" id="node9" href="states_8cpp.html" title="CANopen finite state machine implementation file. " alt="" coords="273,155,355,181"/>
+<area shape="rect" id="node5" href="filter_8cpp.html" title="Filter module implementation file. " alt="" coords="5,229,76,256"/>
 </map>
 </div>
 </div>
@@ -139,18 +140,18 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__pinout__group.html#ga26973930bb94d493970560d50ed5388f">FR_SX_SUSP_PIN</a>&#160;&#160;&#160;A3</td></tr>
 <tr class="memdesc:ga26973930bb94d493970560d50ed5388f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin on board dedicated to frontal left suspension sensor. <br /></td></tr>
 <tr class="separator:ga26973930bb94d493970560d50ed5388f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab536d8e8e876dfd8764cc1d31620803a"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__pinout__group.html#gab536d8e8e876dfd8764cc1d31620803a">FR_SX_ADC_CHAN_NUM</a>&#160;&#160;&#160;ADC_CHER_CH4</td></tr>
-<tr class="memdesc:gab536d8e8e876dfd8764cc1d31620803a"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO pin on the Atmel SAM3X8E processor corresponding to frontal left suspension signal (AD4) <br /></td></tr>
-<tr class="separator:gab536d8e8e876dfd8764cc1d31620803a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3582ac3b04abaa9d74b16da2b18a62f9"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__pinout__group.html#ga3582ac3b04abaa9d74b16da2b18a62f9">FR_SX_SUSP_ADC_CHAN_NUM</a>&#160;&#160;&#160;ADC_CHER_CH4</td></tr>
+<tr class="memdesc:ga3582ac3b04abaa9d74b16da2b18a62f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO pin on the Atmel SAM3X8E processor corresponding to frontal left suspension signal (AD4) <br /></td></tr>
+<tr class="separator:ga3582ac3b04abaa9d74b16da2b18a62f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac6b52ca09115f1f82aa92ffd31363c05"><td class="memItemLeft" align="right" valign="top">
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__pinout__group.html#gac6b52ca09115f1f82aa92ffd31363c05">FR_DX_SUSP_PIN</a>&#160;&#160;&#160;A4</td></tr>
 <tr class="memdesc:gac6b52ca09115f1f82aa92ffd31363c05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin on board dedicated to frontal right suspension sensor. <br /></td></tr>
 <tr class="separator:gac6b52ca09115f1f82aa92ffd31363c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9d0085cf869db954c00e9c13d9661d51"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__pinout__group.html#ga9d0085cf869db954c00e9c13d9661d51">FR_DX_ADC_CHAN_NUM</a>&#160;&#160;&#160;ADC_CHER_CH3</td></tr>
-<tr class="memdesc:ga9d0085cf869db954c00e9c13d9661d51"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO pin on the Atmel SAM3X8E processor corresponding to frontal right suspension signal (AD3) <br /></td></tr>
-<tr class="separator:ga9d0085cf869db954c00e9c13d9661d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e9f0303c372af214367d86ad38f660d"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__pinout__group.html#ga0e9f0303c372af214367d86ad38f660d">FR_DX_SUSP_ADC_CHAN_NUM</a>&#160;&#160;&#160;ADC_CHER_CH3</td></tr>
+<tr class="memdesc:ga0e9f0303c372af214367d86ad38f660d"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO pin on the Atmel SAM3X8E processor corresponding to frontal right suspension signal (AD3) <br /></td></tr>
+<tr class="separator:ga0e9f0303c372af214367d86ad38f660d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga283872484ffa2d7043a08a80ff7a6cbc"><td class="memItemLeft" align="right" valign="top">
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__pinout__group.html#ga283872484ffa2d7043a08a80ff7a6cbc">FR_SX_PW_PIN</a>&#160;&#160;&#160;36</td></tr>
 <tr class="memdesc:ga283872484ffa2d7043a08a80ff7a6cbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin on board dedicated to frontal left phonic wheel encoder. <br /></td></tr>
@@ -170,7 +171,7 @@ Macros</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 9 2018 00:01:06 for Sensors Control Unit (SCU) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 9 2018 12:46:42 for Sensors Control Unit (SCU) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.14
 </small></address>

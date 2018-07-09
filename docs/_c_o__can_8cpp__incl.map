@@ -1,6 +1,7 @@
 <map id="CO_can.cpp" name="CO_can.cpp">
-<area shape="rect" id="node3" href="$_c_o__can_8h.html" title="CANOpen main module header. " alt="" coords="119,155,199,181"/>
-<area shape="rect" id="node5" href="$states_8h_source.html" title="states.h" alt="" coords="163,80,232,107"/>
-<area shape="rect" id="node6" href="$common_8h.html" title="This file contains some common macro definitions for configuring main relevants parameters. " alt="" coords="256,80,339,107"/>
-<area shape="rect" id="node7" href="$_c_a_n___i_d_8h.html" title="CAN servizi nodeIDs module header. " alt="" coords="258,155,337,181"/>
+<area shape="rect" id="node3" href="$_c_o__can_8h.html" title="CANOpen main module header. " alt="" coords="309,155,389,181"/>
+<area shape="rect" id="node5" href="$common_8h.html" title="This file contains some common macro definitions for configuring main relevants parameters. " alt="" coords="224,304,307,331"/>
+<area shape="rect" id="node7" href="$states_8h.html" title="CANopen finite state machine header file. " alt="" coords="243,80,312,107"/>
+<area shape="rect" id="node8" href="$sensors__pinout_8h.html" title="Board pinout module header. " alt="" coords="163,155,285,181"/>
+<area shape="rect" id="node4" href="$_c_a_n___i_d_8h.html" title="CAN servizi nodeIDs module header. " alt="" coords="315,229,394,256"/>
 </map>

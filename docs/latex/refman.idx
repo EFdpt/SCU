@@ -1,90 +1,167 @@
-\indexentry{C\+A\+N Servizi Network@{C\+A\+N Servizi Network}|hyperpage}{13}
-\indexentry{C\+A\+N Servizi Network@{C\+A\+N Servizi Network}!can\+Send@{can\+Send}|hyperpage}{14}
-\indexentry{can\+Send@{can\+Send}!C\+A\+N Servizi Network@{C\+A\+N Servizi Network}|hyperpage}{14}
-\indexentry{C\+A\+N Servizi Network@{C\+A\+N Servizi Network}!init\+C\+AN@{init\+C\+AN}|hyperpage}{14}
-\indexentry{init\+C\+AN@{init\+C\+AN}!C\+A\+N Servizi Network@{C\+A\+N Servizi Network}|hyperpage}{14}
-\indexentry{C\+A\+N Network Nodes ID@{C\+A\+N Network Nodes ID}|hyperpage}{15}
-\indexentry{Common Defines@{Common Defines}|hyperpage}{16}
-\indexentry{S\+C\+U firmware selection@{S\+C\+U firmware selection}|hyperpage}{17}
-\indexentry{C\+A\+Nopen Function Codes@{C\+A\+Nopen Function Codes}|hyperpage}{18}
-\indexentry{C\+A\+Nopen N\+M\+T Command Specifiers@{C\+A\+Nopen N\+M\+T Command Specifiers}|hyperpage}{19}
-\indexentry{Data filtering module@{Data filtering module}|hyperpage}{20}
-\indexentry{Data filtering module@{Data filtering module}!filter\+\_\+buffer@{filter\+\_\+buffer}|hyperpage}{20}
-\indexentry{filter\+\_\+buffer@{filter\+\_\+buffer}!Data filtering module@{Data filtering module}|hyperpage}{20}
-\indexentry{Board module@{Board module}|hyperpage}{22}
-\indexentry{Board module@{Board module}!B\+U\+F\+F\+E\+RS@{B\+U\+F\+F\+E\+RS}|hyperpage}{25}
-\indexentry{B\+U\+F\+F\+E\+RS@{B\+U\+F\+F\+E\+RS}!Board module@{Board module}|hyperpage}{25}
-\indexentry{Board module@{Board module}!A\+D\+C\+\_\+\+Handler@{A\+D\+C\+\_\+\+Handler}|hyperpage}{26}
-\indexentry{A\+D\+C\+\_\+\+Handler@{A\+D\+C\+\_\+\+Handler}!Board module@{Board module}|hyperpage}{26}
-\indexentry{Board module@{Board module}!fr\+\_\+dx\+\_\+pulse@{fr\+\_\+dx\+\_\+pulse}|hyperpage}{26}
-\indexentry{fr\+\_\+dx\+\_\+pulse@{fr\+\_\+dx\+\_\+pulse}!Board module@{Board module}|hyperpage}{26}
-\indexentry{Board module@{Board module}!fr\+\_\+sx\+\_\+pulse@{fr\+\_\+sx\+\_\+pulse}|hyperpage}{26}
-\indexentry{fr\+\_\+sx\+\_\+pulse@{fr\+\_\+sx\+\_\+pulse}!Board module@{Board module}|hyperpage}{26}
-\indexentry{Board module@{Board module}!get\+\_\+fr\+\_\+dx\+\_\+rpm@{get\+\_\+fr\+\_\+dx\+\_\+rpm}|hyperpage}{27}
-\indexentry{get\+\_\+fr\+\_\+dx\+\_\+rpm@{get\+\_\+fr\+\_\+dx\+\_\+rpm}!Board module@{Board module}|hyperpage}{27}
-\indexentry{Board module@{Board module}!get\+\_\+fr\+\_\+sx\+\_\+rpm@{get\+\_\+fr\+\_\+sx\+\_\+rpm}|hyperpage}{27}
-\indexentry{get\+\_\+fr\+\_\+sx\+\_\+rpm@{get\+\_\+fr\+\_\+sx\+\_\+rpm}!Board module@{Board module}|hyperpage}{27}
-\indexentry{Board module@{Board module}!get\+\_\+rt\+\_\+dx\+\_\+rpm@{get\+\_\+rt\+\_\+dx\+\_\+rpm}|hyperpage}{27}
-\indexentry{get\+\_\+rt\+\_\+dx\+\_\+rpm@{get\+\_\+rt\+\_\+dx\+\_\+rpm}!Board module@{Board module}|hyperpage}{27}
-\indexentry{Board module@{Board module}!get\+\_\+rt\+\_\+sx\+\_\+rpm@{get\+\_\+rt\+\_\+sx\+\_\+rpm}|hyperpage}{28}
-\indexentry{get\+\_\+rt\+\_\+sx\+\_\+rpm@{get\+\_\+rt\+\_\+sx\+\_\+rpm}!Board module@{Board module}|hyperpage}{28}
-\indexentry{Board module@{Board module}!model\+\_\+init@{model\+\_\+init}|hyperpage}{28}
-\indexentry{model\+\_\+init@{model\+\_\+init}!Board module@{Board module}|hyperpage}{28}
-\indexentry{Board module@{Board module}!apps\+\_\+plausibility@{apps\+\_\+plausibility}|hyperpage}{29}
-\indexentry{apps\+\_\+plausibility@{apps\+\_\+plausibility}!Board module@{Board module}|hyperpage}{29}
-\indexentry{Board module@{Board module}!apps\+\_\+plausibility@{apps\+\_\+plausibility}|hyperpage}{29}
-\indexentry{apps\+\_\+plausibility@{apps\+\_\+plausibility}!Board module@{Board module}|hyperpage}{29}
-\indexentry{Board module@{Board module}!brake\+\_\+percentage@{brake\+\_\+percentage}|hyperpage}{29}
-\indexentry{brake\+\_\+percentage@{brake\+\_\+percentage}!Board module@{Board module}|hyperpage}{29}
-\indexentry{Board module@{Board module}!brake\+\_\+percentage@{brake\+\_\+percentage}|hyperpage}{29}
-\indexentry{brake\+\_\+percentage@{brake\+\_\+percentage}!Board module@{Board module}|hyperpage}{29}
-\indexentry{Board module@{Board module}!brake\+\_\+plausibility@{brake\+\_\+plausibility}|hyperpage}{29}
-\indexentry{brake\+\_\+plausibility@{brake\+\_\+plausibility}!Board module@{Board module}|hyperpage}{29}
-\indexentry{Board module@{Board module}!brake\+\_\+plausibility@{brake\+\_\+plausibility}|hyperpage}{30}
-\indexentry{brake\+\_\+plausibility@{brake\+\_\+plausibility}!Board module@{Board module}|hyperpage}{30}
-\indexentry{Board module@{Board module}!tps1\+\_\+percentage@{tps1\+\_\+percentage}|hyperpage}{30}
-\indexentry{tps1\+\_\+percentage@{tps1\+\_\+percentage}!Board module@{Board module}|hyperpage}{30}
-\indexentry{Board module@{Board module}!tps1\+\_\+percentage@{tps1\+\_\+percentage}|hyperpage}{30}
-\indexentry{tps1\+\_\+percentage@{tps1\+\_\+percentage}!Board module@{Board module}|hyperpage}{30}
-\indexentry{Board module@{Board module}!tps2\+\_\+percentage@{tps2\+\_\+percentage}|hyperpage}{30}
-\indexentry{tps2\+\_\+percentage@{tps2\+\_\+percentage}!Board module@{Board module}|hyperpage}{30}
-\indexentry{Board module@{Board module}!tps2\+\_\+percentage@{tps2\+\_\+percentage}|hyperpage}{30}
-\indexentry{tps2\+\_\+percentage@{tps2\+\_\+percentage}!Board module@{Board module}|hyperpage}{30}
-\indexentry{C\+A\+Nopen N\+M\+T module@{C\+A\+Nopen N\+M\+T module}|hyperpage}{31}
-\indexentry{C\+A\+Nopen N\+M\+T module@{C\+A\+Nopen N\+M\+T module}!proceed\+N\+M\+Tstate\+Change@{proceed\+N\+M\+Tstate\+Change}|hyperpage}{31}
-\indexentry{proceed\+N\+M\+Tstate\+Change@{proceed\+N\+M\+Tstate\+Change}!C\+A\+Nopen N\+M\+T module@{C\+A\+Nopen N\+M\+T module}|hyperpage}{31}
-\indexentry{C\+A\+Nopen N\+M\+T module@{C\+A\+Nopen N\+M\+T module}!slave\+Send\+Boot\+Up@{slave\+Send\+Boot\+Up}|hyperpage}{32}
-\indexentry{slave\+Send\+Boot\+Up@{slave\+Send\+Boot\+Up}!C\+A\+Nopen N\+M\+T module@{C\+A\+Nopen N\+M\+T module}|hyperpage}{32}
-\indexentry{C\+A\+Nopen P\+D\+O module@{C\+A\+Nopen P\+D\+O module}|hyperpage}{33}
-\indexentry{C\+A\+Nopen P\+D\+O module@{C\+A\+Nopen P\+D\+O module}!build\+P\+DO@{build\+P\+DO}|hyperpage}{33}
-\indexentry{build\+P\+DO@{build\+P\+DO}!C\+A\+Nopen P\+D\+O module@{C\+A\+Nopen P\+D\+O module}|hyperpage}{33}
-\indexentry{C\+A\+Nopen P\+D\+O module@{C\+A\+Nopen P\+D\+O module}!proceed\+P\+DO@{proceed\+P\+DO}|hyperpage}{34}
-\indexentry{proceed\+P\+DO@{proceed\+P\+DO}!C\+A\+Nopen P\+D\+O module@{C\+A\+Nopen P\+D\+O module}|hyperpage}{34}
-\indexentry{Main module@{Main module}|hyperpage}{35}
-\indexentry{Main module@{Main module}!loop@{loop}|hyperpage}{35}
-\indexentry{loop@{loop}!Main module@{Main module}|hyperpage}{35}
-\indexentry{Main module@{Main module}!setup@{setup}|hyperpage}{35}
-\indexentry{setup@{setup}!Main module@{Main module}|hyperpage}{35}
-\indexentry{Board pinout@{Board pinout}|hyperpage}{36}
-\indexentry{Message@{Message}|hyperpage}{37}
-\indexentry{Message@{Message}!cob\+\_\+id@{cob\+\_\+id}|hyperpage}{37}
-\indexentry{cob\+\_\+id@{cob\+\_\+id}!Message@{Message}|hyperpage}{37}
-\indexentry{Message@{Message}!data@{data}|hyperpage}{37}
-\indexentry{data@{data}!Message@{Message}|hyperpage}{37}
-\indexentry{Message@{Message}!len@{len}|hyperpage}{38}
-\indexentry{len@{len}!Message@{Message}|hyperpage}{38}
-\indexentry{C\+A\+N\+\_\+\+I\+D.\+h@{C\+A\+N\+\_\+\+I\+D.\+h}|hyperpage}{39}
-\indexentry{C\+O\+\_\+can.\+cpp@{C\+O\+\_\+can.\+cpp}|hyperpage}{40}
-\indexentry{C\+O\+\_\+can.\+h@{C\+O\+\_\+can.\+h}|hyperpage}{41}
-\indexentry{common.\+h@{common.\+h}|hyperpage}{42}
-\indexentry{def.\+h@{def.\+h}|hyperpage}{44}
-\indexentry{filter.\+cpp@{filter.\+cpp}|hyperpage}{45}
-\indexentry{filter.\+h@{filter.\+h}|hyperpage}{47}
-\indexentry{model.\+cpp@{model.\+cpp}|hyperpage}{48}
-\indexentry{model.\+h@{model.\+h}|hyperpage}{52}
-\indexentry{nmt.\+cpp@{nmt.\+cpp}|hyperpage}{55}
-\indexentry{nmt.\+h@{nmt.\+h}|hyperpage}{56}
-\indexentry{pdo.\+cpp@{pdo.\+cpp}|hyperpage}{57}
-\indexentry{pdo.\+h@{pdo.\+h}|hyperpage}{58}
-\indexentry{S\+C\+U.\+ino@{S\+C\+U.\+ino}|hyperpage}{59}
-\indexentry{sensors\+\_\+pinout.\+h@{sensors\+\_\+pinout.\+h}|hyperpage}{60}
+\indexentry{C\+A\+N Servizi Network@{C\+A\+N Servizi Network}|hyperpage}{17}
+\indexentry{C\+A\+N Servizi Network@{C\+A\+N Servizi Network}!C\+A\+N\+\_\+general\+\_\+callback@{C\+A\+N\+\_\+general\+\_\+callback}|hyperpage}{18}
+\indexentry{C\+A\+N\+\_\+general\+\_\+callback@{C\+A\+N\+\_\+general\+\_\+callback}!C\+A\+N Servizi Network@{C\+A\+N Servizi Network}|hyperpage}{18}
+\indexentry{C\+A\+N Servizi Network@{C\+A\+N Servizi Network}!can\+Send@{can\+Send}|hyperpage}{19}
+\indexentry{can\+Send@{can\+Send}!C\+A\+N Servizi Network@{C\+A\+N Servizi Network}|hyperpage}{19}
+\indexentry{C\+A\+N Servizi Network@{C\+A\+N Servizi Network}!get\+Node\+Id@{get\+Node\+Id}|hyperpage}{19}
+\indexentry{get\+Node\+Id@{get\+Node\+Id}!C\+A\+N Servizi Network@{C\+A\+N Servizi Network}|hyperpage}{19}
+\indexentry{C\+A\+N Servizi Network@{C\+A\+N Servizi Network}!init\+C\+AN@{init\+C\+AN}|hyperpage}{19}
+\indexentry{init\+C\+AN@{init\+C\+AN}!C\+A\+N Servizi Network@{C\+A\+N Servizi Network}|hyperpage}{19}
+\indexentry{C\+A\+N Servizi Network@{C\+A\+N Servizi Network}!set\+Node\+Id@{set\+Node\+Id}|hyperpage}{20}
+\indexentry{set\+Node\+Id@{set\+Node\+Id}!C\+A\+N Servizi Network@{C\+A\+N Servizi Network}|hyperpage}{20}
+\indexentry{C\+A\+N Network Nodes ID@{C\+A\+N Network Nodes ID}|hyperpage}{21}
+\indexentry{Common Defines@{Common Defines}|hyperpage}{22}
+\indexentry{S\+C\+U firmware selection@{S\+C\+U firmware selection}|hyperpage}{23}
+\indexentry{C\+A\+Nopen Function Codes@{C\+A\+Nopen Function Codes}|hyperpage}{24}
+\indexentry{C\+A\+Nopen N\+M\+T Command Specifiers@{C\+A\+Nopen N\+M\+T Command Specifiers}|hyperpage}{25}
+\indexentry{Data filtering module@{Data filtering module}|hyperpage}{26}
+\indexentry{Data filtering module@{Data filtering module}!filter\+\_\+buffer@{filter\+\_\+buffer}|hyperpage}{26}
+\indexentry{filter\+\_\+buffer@{filter\+\_\+buffer}!Data filtering module@{Data filtering module}|hyperpage}{26}
+\indexentry{Board module@{Board module}|hyperpage}{28}
+\indexentry{Board module@{Board module}!B\+U\+F\+F\+E\+RS@{B\+U\+F\+F\+E\+RS}|hyperpage}{32}
+\indexentry{B\+U\+F\+F\+E\+RS@{B\+U\+F\+F\+E\+RS}!Board module@{Board module}|hyperpage}{32}
+\indexentry{Board module@{Board module}!A\+D\+C\+\_\+\+Handler@{A\+D\+C\+\_\+\+Handler}|hyperpage}{32}
+\indexentry{A\+D\+C\+\_\+\+Handler@{A\+D\+C\+\_\+\+Handler}!Board module@{Board module}|hyperpage}{32}
+\indexentry{Board module@{Board module}!fr\+\_\+dx\+\_\+pulse@{fr\+\_\+dx\+\_\+pulse}|hyperpage}{32}
+\indexentry{fr\+\_\+dx\+\_\+pulse@{fr\+\_\+dx\+\_\+pulse}!Board module@{Board module}|hyperpage}{32}
+\indexentry{Board module@{Board module}!fr\+\_\+sx\+\_\+pulse@{fr\+\_\+sx\+\_\+pulse}|hyperpage}{32}
+\indexentry{fr\+\_\+sx\+\_\+pulse@{fr\+\_\+sx\+\_\+pulse}!Board module@{Board module}|hyperpage}{32}
+\indexentry{Board module@{Board module}!get\+\_\+fr\+\_\+dx\+\_\+rpm@{get\+\_\+fr\+\_\+dx\+\_\+rpm}|hyperpage}{33}
+\indexentry{get\+\_\+fr\+\_\+dx\+\_\+rpm@{get\+\_\+fr\+\_\+dx\+\_\+rpm}!Board module@{Board module}|hyperpage}{33}
+\indexentry{Board module@{Board module}!get\+\_\+fr\+\_\+sx\+\_\+rpm@{get\+\_\+fr\+\_\+sx\+\_\+rpm}|hyperpage}{33}
+\indexentry{get\+\_\+fr\+\_\+sx\+\_\+rpm@{get\+\_\+fr\+\_\+sx\+\_\+rpm}!Board module@{Board module}|hyperpage}{33}
+\indexentry{Board module@{Board module}!get\+\_\+rt\+\_\+dx\+\_\+rpm@{get\+\_\+rt\+\_\+dx\+\_\+rpm}|hyperpage}{33}
+\indexentry{get\+\_\+rt\+\_\+dx\+\_\+rpm@{get\+\_\+rt\+\_\+dx\+\_\+rpm}!Board module@{Board module}|hyperpage}{33}
+\indexentry{Board module@{Board module}!get\+\_\+rt\+\_\+sx\+\_\+rpm@{get\+\_\+rt\+\_\+sx\+\_\+rpm}|hyperpage}{34}
+\indexentry{get\+\_\+rt\+\_\+sx\+\_\+rpm@{get\+\_\+rt\+\_\+sx\+\_\+rpm}!Board module@{Board module}|hyperpage}{34}
+\indexentry{Board module@{Board module}!model\+\_\+init@{model\+\_\+init}|hyperpage}{34}
+\indexentry{model\+\_\+init@{model\+\_\+init}!Board module@{Board module}|hyperpage}{34}
+\indexentry{Board module@{Board module}!apps\+\_\+plausibility@{apps\+\_\+plausibility}|hyperpage}{35}
+\indexentry{apps\+\_\+plausibility@{apps\+\_\+plausibility}!Board module@{Board module}|hyperpage}{35}
+\indexentry{Board module@{Board module}!apps\+\_\+plausibility@{apps\+\_\+plausibility}|hyperpage}{35}
+\indexentry{apps\+\_\+plausibility@{apps\+\_\+plausibility}!Board module@{Board module}|hyperpage}{35}
+\indexentry{Board module@{Board module}!brake\+\_\+percentage@{brake\+\_\+percentage}|hyperpage}{35}
+\indexentry{brake\+\_\+percentage@{brake\+\_\+percentage}!Board module@{Board module}|hyperpage}{35}
+\indexentry{Board module@{Board module}!brake\+\_\+percentage@{brake\+\_\+percentage}|hyperpage}{35}
+\indexentry{brake\+\_\+percentage@{brake\+\_\+percentage}!Board module@{Board module}|hyperpage}{35}
+\indexentry{Board module@{Board module}!brake\+\_\+plausibility@{brake\+\_\+plausibility}|hyperpage}{35}
+\indexentry{brake\+\_\+plausibility@{brake\+\_\+plausibility}!Board module@{Board module}|hyperpage}{35}
+\indexentry{Board module@{Board module}!brake\+\_\+plausibility@{brake\+\_\+plausibility}|hyperpage}{36}
+\indexentry{brake\+\_\+plausibility@{brake\+\_\+plausibility}!Board module@{Board module}|hyperpage}{36}
+\indexentry{Board module@{Board module}!tps1\+\_\+percentage@{tps1\+\_\+percentage}|hyperpage}{36}
+\indexentry{tps1\+\_\+percentage@{tps1\+\_\+percentage}!Board module@{Board module}|hyperpage}{36}
+\indexentry{Board module@{Board module}!tps1\+\_\+percentage@{tps1\+\_\+percentage}|hyperpage}{36}
+\indexentry{tps1\+\_\+percentage@{tps1\+\_\+percentage}!Board module@{Board module}|hyperpage}{36}
+\indexentry{Board module@{Board module}!tps2\+\_\+percentage@{tps2\+\_\+percentage}|hyperpage}{36}
+\indexentry{tps2\+\_\+percentage@{tps2\+\_\+percentage}!Board module@{Board module}|hyperpage}{36}
+\indexentry{Board module@{Board module}!tps2\+\_\+percentage@{tps2\+\_\+percentage}|hyperpage}{36}
+\indexentry{tps2\+\_\+percentage@{tps2\+\_\+percentage}!Board module@{Board module}|hyperpage}{36}
+\indexentry{C\+A\+Nopen N\+M\+T module@{C\+A\+Nopen N\+M\+T module}|hyperpage}{37}
+\indexentry{C\+A\+Nopen N\+M\+T module@{C\+A\+Nopen N\+M\+T module}!proceed\+N\+M\+Tstate\+Change@{proceed\+N\+M\+Tstate\+Change}|hyperpage}{37}
+\indexentry{proceed\+N\+M\+Tstate\+Change@{proceed\+N\+M\+Tstate\+Change}!C\+A\+Nopen N\+M\+T module@{C\+A\+Nopen N\+M\+T module}|hyperpage}{37}
+\indexentry{C\+A\+Nopen N\+M\+T module@{C\+A\+Nopen N\+M\+T module}!slave\+Send\+Boot\+Up@{slave\+Send\+Boot\+Up}|hyperpage}{38}
+\indexentry{slave\+Send\+Boot\+Up@{slave\+Send\+Boot\+Up}!C\+A\+Nopen N\+M\+T module@{C\+A\+Nopen N\+M\+T module}|hyperpage}{38}
+\indexentry{C\+A\+Nopen P\+D\+O module@{C\+A\+Nopen P\+D\+O module}|hyperpage}{39}
+\indexentry{C\+A\+Nopen P\+D\+O module@{C\+A\+Nopen P\+D\+O module}!build\+P\+DO@{build\+P\+DO}|hyperpage}{39}
+\indexentry{build\+P\+DO@{build\+P\+DO}!C\+A\+Nopen P\+D\+O module@{C\+A\+Nopen P\+D\+O module}|hyperpage}{39}
+\indexentry{C\+A\+Nopen P\+D\+O module@{C\+A\+Nopen P\+D\+O module}!proceed\+P\+DO@{proceed\+P\+DO}|hyperpage}{40}
+\indexentry{proceed\+P\+DO@{proceed\+P\+DO}!C\+A\+Nopen P\+D\+O module@{C\+A\+Nopen P\+D\+O module}|hyperpage}{40}
+\indexentry{Radio module@{Radio module}|hyperpage}{41}
+\indexentry{Radio module@{Radio module}!C\+I\+P\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N\+G\+TH@{C\+I\+P\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N\+G\+TH}|hyperpage}{42}
+\indexentry{C\+I\+P\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N\+G\+TH@{C\+I\+P\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N\+G\+TH}!Radio module@{Radio module}|hyperpage}{42}
+\indexentry{Radio module@{Radio module}!J\+S\+O\+N\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE@{J\+S\+O\+N\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}|hyperpage}{42}
+\indexentry{J\+S\+O\+N\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE@{J\+S\+O\+N\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}!Radio module@{Radio module}|hyperpage}{42}
+\indexentry{Radio module@{Radio module}!byte\+\_\+padding@{byte\+\_\+padding}|hyperpage}{42}
+\indexentry{byte\+\_\+padding@{byte\+\_\+padding}!Radio module@{Radio module}|hyperpage}{42}
+\indexentry{Radio module@{Radio module}!encrypt\+\_\+model@{encrypt\+\_\+model}|hyperpage}{43}
+\indexentry{encrypt\+\_\+model@{encrypt\+\_\+model}!Radio module@{Radio module}|hyperpage}{43}
+\indexentry{Radio module@{Radio module}!generate\+\_\+iv@{generate\+\_\+iv}|hyperpage}{43}
+\indexentry{generate\+\_\+iv@{generate\+\_\+iv}!Radio module@{Radio module}|hyperpage}{43}
+\indexentry{Radio module@{Radio module}!generate\+\_\+random\+\_\+char@{generate\+\_\+random\+\_\+char}|hyperpage}{44}
+\indexentry{generate\+\_\+random\+\_\+char@{generate\+\_\+random\+\_\+char}!Radio module@{Radio module}|hyperpage}{44}
+\indexentry{Radio module@{Radio module}!pkcs7\+\_\+padding@{pkcs7\+\_\+padding}|hyperpage}{44}
+\indexentry{pkcs7\+\_\+padding@{pkcs7\+\_\+padding}!Radio module@{Radio module}|hyperpage}{44}
+\indexentry{Radio module@{Radio module}!radio\+\_\+init@{radio\+\_\+init}|hyperpage}{45}
+\indexentry{radio\+\_\+init@{radio\+\_\+init}!Radio module@{Radio module}|hyperpage}{45}
+\indexentry{Radio module@{Radio module}!radio\+\_\+send\+\_\+model@{radio\+\_\+send\+\_\+model}|hyperpage}{45}
+\indexentry{radio\+\_\+send\+\_\+model@{radio\+\_\+send\+\_\+model}!Radio module@{Radio module}|hyperpage}{45}
+\indexentry{Radio module@{Radio module}!iv@{iv}|hyperpage}{45}
+\indexentry{iv@{iv}!Radio module@{Radio module}|hyperpage}{45}
+\indexentry{Main module@{Main module}|hyperpage}{46}
+\indexentry{Main module@{Main module}!loop@{loop}|hyperpage}{46}
+\indexentry{loop@{loop}!Main module@{Main module}|hyperpage}{46}
+\indexentry{Main module@{Main module}!setup@{setup}|hyperpage}{46}
+\indexentry{setup@{setup}!Main module@{Main module}|hyperpage}{46}
+\indexentry{Board pinout@{Board pinout}|hyperpage}{47}
+\indexentry{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}|hyperpage}{48}
+\indexentry{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!e\+\_\+node\+State@{e\+\_\+node\+State}|hyperpage}{49}
+\indexentry{e\+\_\+node\+State@{e\+\_\+node\+State}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}|hyperpage}{49}
+\indexentry{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!enum\+\_\+node\+State@{enum\+\_\+node\+State}|hyperpage}{49}
+\indexentry{enum\+\_\+node\+State@{enum\+\_\+node\+State}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}|hyperpage}{49}
+\indexentry{Initialisation@{Initialisation}!C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module@{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module}|hyperpage}{49}
+\indexentry{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module@{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module}!Initialisation@{Initialisation}|hyperpage}{49}
+\indexentry{Disconnected@{Disconnected}!C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module@{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module}|hyperpage}{49}
+\indexentry{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module@{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module}!Disconnected@{Disconnected}|hyperpage}{49}
+\indexentry{Connecting@{Connecting}!C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module@{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module}|hyperpage}{49}
+\indexentry{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module@{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module}!Connecting@{Connecting}|hyperpage}{49}
+\indexentry{Preparing@{Preparing}!C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module@{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module}|hyperpage}{49}
+\indexentry{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module@{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module}!Preparing@{Preparing}|hyperpage}{49}
+\indexentry{Stopped@{Stopped}!C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module@{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module}|hyperpage}{49}
+\indexentry{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module@{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module}!Stopped@{Stopped}|hyperpage}{49}
+\indexentry{Operational@{Operational}!C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module@{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module}|hyperpage}{49}
+\indexentry{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module@{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module}!Operational@{Operational}|hyperpage}{49}
+\indexentry{Pre\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}operational@{Pre\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}operational}!C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module@{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module}|hyperpage}{49}
+\indexentry{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module@{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module}!Pre\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}operational@{Pre\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}operational}|hyperpage}{49}
+\indexentry{Unknown\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}state@{Unknown\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}state}!C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module@{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module}|hyperpage}{49}
+\indexentry{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module@{C\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}Nopen Finite State Machine module}!Unknown\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}state@{Unknown\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize  {7}{8}\selectfont  $\leftarrow \joinrel  \rhook $}}{}{}state}|hyperpage}{49}
+\indexentry{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!can\+Dispatch@{can\+Dispatch}|hyperpage}{49}
+\indexentry{can\+Dispatch@{can\+Dispatch}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}|hyperpage}{49}
+\indexentry{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!get\+State@{get\+State}|hyperpage}{50}
+\indexentry{get\+State@{get\+State}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}|hyperpage}{50}
+\indexentry{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!initialisation@{initialisation}|hyperpage}{50}
+\indexentry{initialisation@{initialisation}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}|hyperpage}{50}
+\indexentry{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!operational@{operational}|hyperpage}{50}
+\indexentry{operational@{operational}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}|hyperpage}{50}
+\indexentry{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!pre\+Operational@{pre\+Operational}|hyperpage}{51}
+\indexentry{pre\+Operational@{pre\+Operational}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}|hyperpage}{51}
+\indexentry{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!set\+State@{set\+State}|hyperpage}{51}
+\indexentry{set\+State@{set\+State}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}|hyperpage}{51}
+\indexentry{C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}!stopped@{stopped}|hyperpage}{52}
+\indexentry{stopped@{stopped}!C\+A\+Nopen Finite State Machine module@{C\+A\+Nopen Finite State Machine module}|hyperpage}{52}
+\indexentry{C\+A\+Nopen Timer module@{C\+A\+Nopen Timer module}|hyperpage}{53}
+\indexentry{C\+A\+Nopen Timer module@{C\+A\+Nopen Timer module}!Time\+Dispatch@{Time\+Dispatch}|hyperpage}{54}
+\indexentry{Time\+Dispatch@{Time\+Dispatch}!C\+A\+Nopen Timer module@{C\+A\+Nopen Timer module}|hyperpage}{54}
+\indexentry{C\+A\+Nopen Timer module@{C\+A\+Nopen Timer module}!timer\+Init@{timer\+Init}|hyperpage}{54}
+\indexentry{timer\+Init@{timer\+Init}!C\+A\+Nopen Timer module@{C\+A\+Nopen Timer module}|hyperpage}{54}
+\indexentry{C\+A\+Nopen Timer module@{C\+A\+Nopen Timer module}!timer\+Start@{timer\+Start}|hyperpage}{54}
+\indexentry{timer\+Start@{timer\+Start}!C\+A\+Nopen Timer module@{C\+A\+Nopen Timer module}|hyperpage}{54}
+\indexentry{C\+A\+Nopen Timer module@{C\+A\+Nopen Timer module}!timer\+Stop@{timer\+Stop}|hyperpage}{54}
+\indexentry{timer\+Stop@{timer\+Stop}!C\+A\+Nopen Timer module@{C\+A\+Nopen Timer module}|hyperpage}{54}
+\indexentry{Message@{Message}|hyperpage}{55}
+\indexentry{Message@{Message}!cob\+\_\+id@{cob\+\_\+id}|hyperpage}{55}
+\indexentry{cob\+\_\+id@{cob\+\_\+id}!Message@{Message}|hyperpage}{55}
+\indexentry{Message@{Message}!data@{data}|hyperpage}{55}
+\indexentry{data@{data}!Message@{Message}|hyperpage}{55}
+\indexentry{Message@{Message}!len@{len}|hyperpage}{56}
+\indexentry{len@{len}!Message@{Message}|hyperpage}{56}
+\indexentry{C\+A\+N\+\_\+\+I\+D.\+h@{C\+A\+N\+\_\+\+I\+D.\+h}|hyperpage}{57}
+\indexentry{C\+O\+\_\+can.\+cpp@{C\+O\+\_\+can.\+cpp}|hyperpage}{58}
+\indexentry{C\+O\+\_\+can.\+h@{C\+O\+\_\+can.\+h}|hyperpage}{60}
+\indexentry{common.\+h@{common.\+h}|hyperpage}{61}
+\indexentry{def.\+h@{def.\+h}|hyperpage}{63}
+\indexentry{filter.\+cpp@{filter.\+cpp}|hyperpage}{64}
+\indexentry{filter.\+h@{filter.\+h}|hyperpage}{66}
+\indexentry{model.\+cpp@{model.\+cpp}|hyperpage}{67}
+\indexentry{model.\+h@{model.\+h}|hyperpage}{71}
+\indexentry{nmt.\+cpp@{nmt.\+cpp}|hyperpage}{74}
+\indexentry{nmt.\+h@{nmt.\+h}|hyperpage}{75}
+\indexentry{pdo.\+cpp@{pdo.\+cpp}|hyperpage}{76}
+\indexentry{pdo.\+h@{pdo.\+h}|hyperpage}{77}
+\indexentry{radio.\+cpp@{radio.\+cpp}|hyperpage}{78}
+\indexentry{radio.\+h@{radio.\+h}|hyperpage}{80}
+\indexentry{S\+C\+U.\+ino@{S\+C\+U.\+ino}|hyperpage}{82}
+\indexentry{sensors\+\_\+pinout.\+h@{sensors\+\_\+pinout.\+h}|hyperpage}{83}
+\indexentry{states.\+cpp@{states.\+cpp}|hyperpage}{84}
+\indexentry{states.\+h@{states.\+h}|hyperpage}{86}
+\indexentry{timer.\+cpp@{timer.\+cpp}|hyperpage}{88}
+\indexentry{timer.\+h@{timer.\+h}|hyperpage}{89}

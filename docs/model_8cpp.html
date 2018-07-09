@@ -178,7 +178,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:ga99f732ac210a4d6b6635ed58681d3d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of ADC channels used in frontal SCU board. <br /></td></tr>
 <tr class="separator:ga99f732ac210a4d6b6635ed58681d3d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1b36d02d5fef3342ea7159722fa50ff3"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga1b36d02d5fef3342ea7159722fa50ff3">SCU_FRONTAL_ADC_CHANNELS_LIST</a>&#160;&#160;&#160;<a class="el" href="group___board__pinout__group.html#ga99b2a7dadaf495e3c559a46440f9141f">TPS1_ADC_CHAN_NUM</a> | <a class="el" href="group___board__pinout__group.html#ga4cecb8c10512873904099a1a88d69ed3">TPS2_ADC_CHAN_NUM</a> | <a class="el" href="group___board__pinout__group.html#ga310547321c4a016c4ad19922920fadfd">BRAKE_ADC_CHAN_NUM</a> | <a class="el" href="group___board__pinout__group.html#gab536d8e8e876dfd8764cc1d31620803a">FR_SX_ADC_CHAN_NUM</a> | <a class="el" href="group___board__pinout__group.html#ga9d0085cf869db954c00e9c13d9661d51">FR_DX_ADC_CHAN_NUM</a></td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga1b36d02d5fef3342ea7159722fa50ff3">SCU_FRONTAL_ADC_CHANNELS_LIST</a>&#160;&#160;&#160;<a class="el" href="group___board__pinout__group.html#ga99b2a7dadaf495e3c559a46440f9141f">TPS1_ADC_CHAN_NUM</a> | <a class="el" href="group___board__pinout__group.html#ga4cecb8c10512873904099a1a88d69ed3">TPS2_ADC_CHAN_NUM</a> | <a class="el" href="group___board__pinout__group.html#ga310547321c4a016c4ad19922920fadfd">BRAKE_ADC_CHAN_NUM</a> | <a class="el" href="group___board__pinout__group.html#ga3582ac3b04abaa9d74b16da2b18a62f9">FR_SX_SUSP_ADC_CHAN_NUM</a> | <a class="el" href="group___board__pinout__group.html#ga0e9f0303c372af214367d86ad38f660d">FR_DX_SUSP_ADC_CHAN_NUM</a></td></tr>
 <tr class="memdesc:ga1b36d02d5fef3342ea7159722fa50ff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of ADC channels dedicated to each IO port in frontal SCU board. <br /></td></tr>
 <tr class="separator:ga1b36d02d5fef3342ea7159722fa50ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadedc78ae5ed236e74a4e12c031209d29"><td class="memItemLeft" align="right" valign="top">
@@ -186,7 +186,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:gadedc78ae5ed236e74a4e12c031209d29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of ADC channels used in rear SCU board. <br /></td></tr>
 <tr class="separator:gadedc78ae5ed236e74a4e12c031209d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5190c5da456959fb6c7132518a51f12f"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga5190c5da456959fb6c7132518a51f12f">SCU_RETRO_ADC_CHANNELS_LIST</a>&#160;&#160;&#160;ACC_X_ADC_CHAN_NUM | ACC_Z_ADC_CHAN_NUM | RT_SX_ADC_CHAN_NUM | RT_DX_ADC_CHAN_NUM</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga5190c5da456959fb6c7132518a51f12f">SCU_RETRO_ADC_CHANNELS_LIST</a>&#160;&#160;&#160;ACC_X_ADC_CHAN_NUM | ACC_Z_ADC_CHAN_NUM | RT_SX_SUSP_ADC_CHAN_NUM | RT_DX_SUSP_ADC_CHAN_NUM</td></tr>
 <tr class="memdesc:ga5190c5da456959fb6c7132518a51f12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of ADC channels dedicated to each IO port in retro SCU board. <br /></td></tr>
 <tr class="separator:ga5190c5da456959fb6c7132518a51f12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7ce02d79fba23321a377a26a963e2bdf"><td class="memItemLeft" align="right" valign="top">
@@ -261,10 +261,10 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#gafef4d6ed48b3edc5f7a74defba82e7d8">obufn</a></td></tr>
 <tr class="memdesc:gafef4d6ed48b3edc5f7a74defba82e7d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA buffer pointer. <br /></td></tr>
 <tr class="separator:gafef4d6ed48b3edc5f7a74defba82e7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2bab0e665606eb5a547deb0d23446f41"><td class="memItemLeft" align="right" valign="top">
-volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga2bab0e665606eb5a547deb0d23446f41">buf</a> [<a class="el" href="group___board__model__group.html#gaabe0f927d44a09f458bd5fe5ab4e2f7f">BUFFERS</a>][<a class="el" href="group___board__model__group.html#gaf7b7dc9a200cb1404c280bd500fd1551">BUFFER_LENGTH</a>]</td></tr>
-<tr class="memdesc:ga2bab0e665606eb5a547deb0d23446f41"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA buffers: <a class="el" href="group___board__model__group.html#gaabe0f927d44a09f458bd5fe5ab4e2f7f" title="Number of DMA buffers. ">BUFFERS</a> number of buffers each of <a class="el" href="group___board__model__group.html#gaf7b7dc9a200cb1404c280bd500fd1551" title="Length, in bytes, of each DMA buffer. ">BUFFER_LENGTH</a> size; DMA is configured in cyclic mode: after one of <a class="el" href="group___board__model__group.html#gaabe0f927d44a09f458bd5fe5ab4e2f7f" title="Number of DMA buffers. ">BUFFERS</a> is filled then DMA transfer head moves to next buffer in circular indexing. <br /></td></tr>
-<tr class="separator:ga2bab0e665606eb5a547deb0d23446f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa785fe4a3446344207127079a33a9ea6"><td class="memItemLeft" align="right" valign="top">
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#gaa785fe4a3446344207127079a33a9ea6">buf</a> [<a class="el" href="group___board__model__group.html#gaabe0f927d44a09f458bd5fe5ab4e2f7f">BUFFERS</a>][<a class="el" href="group___board__model__group.html#gaf7b7dc9a200cb1404c280bd500fd1551">BUFFER_LENGTH</a>]</td></tr>
+<tr class="memdesc:gaa785fe4a3446344207127079a33a9ea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA buffers: <a class="el" href="group___board__model__group.html#gaabe0f927d44a09f458bd5fe5ab4e2f7f" title="Number of DMA buffers. ">BUFFERS</a> number of buffers each of <a class="el" href="group___board__model__group.html#gaf7b7dc9a200cb1404c280bd500fd1551" title="Length, in bytes, of each DMA buffer. ">BUFFER_LENGTH</a> size; DMA is configured in cyclic mode: after one of <a class="el" href="group___board__model__group.html#gaabe0f927d44a09f458bd5fe5ab4e2f7f" title="Number of DMA buffers. ">BUFFERS</a> is filled then DMA transfer head moves to next buffer in circular indexing. <br /></td></tr>
+<tr class="separator:gaa785fe4a3446344207127079a33a9ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3d6043851868b7da3c1d6381f835a559"><td class="memItemLeft" align="right" valign="top">
 volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga3d6043851868b7da3c1d6381f835a559">tps1_value</a> = 0</td></tr>
 <tr class="memdesc:ga3d6043851868b7da3c1d6381f835a559"><td class="mdescLeft">&#160;</td><td class="mdescRight">First APPS value retrieved directly by analog tps1 signal (<a class="el" href="group___board__pinout__group.html#gae9aa914854f611488701c96a330b0bd4" title="Pin on board dedicated to first APPS (tps1) ">TPS1_PIN</a>) and filtered after DMA buffer is filled entirely. <br /></td></tr>
@@ -359,7 +359,7 @@ volatile unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a cla
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 9 2018 00:01:06 for Sensors Control Unit (SCU) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 9 2018 12:46:42 for Sensors Control Unit (SCU) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.14
 </small></address>

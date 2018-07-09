@@ -1,5 +1,5 @@
 <map id="pdo.h" name="pdo.h">
 <area shape="rect" id="node2" href="$pdo_8cpp.html" title="CANopen PDO support header file. " alt="" coords="5,80,73,107"/>
-<area shape="rect" id="node3" href="$states_8cpp_source.html" title="states.cpp" alt="" coords="98,80,181,107"/>
-<area shape="rect" id="node4" href="$timer_8cpp_source.html" title="timer.cpp" alt="" coords="205,80,281,107"/>
+<area shape="rect" id="node3" href="$states_8cpp.html" title="CANopen finite state machine implementation file. " alt="" coords="98,80,181,107"/>
+<area shape="rect" id="node4" href="$timer_8cpp.html" title="CANopen timer implementation file. " alt="" coords="205,80,281,107"/>
 </map>

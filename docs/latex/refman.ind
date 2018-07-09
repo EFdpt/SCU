@@ -1,146 +1,247 @@
 \begin{theindex}
 
   \item {A\+D\+C\+\_\+\+Handler}
-    \subitem {Board module}, \hyperpage{26}
+    \subitem {Board module}, \hyperpage{32}
   \item {apps\+\_\+plausibility}
-    \subitem {Board module}, \hyperpage{29}
+    \subitem {Board module}, \hyperpage{35}
 
   \indexspace
 
   \item {B\+U\+F\+F\+E\+RS}
-    \subitem {Board module}, \hyperpage{25}
-  \item {Board module}, \hyperpage{22}
-    \subitem {A\+D\+C\+\_\+\+Handler}, \hyperpage{26}
-    \subitem {apps\+\_\+plausibility}, \hyperpage{29}
-    \subitem {B\+U\+F\+F\+E\+RS}, \hyperpage{25}
-    \subitem {brake\+\_\+percentage}, \hyperpage{29}
-    \subitem {brake\+\_\+plausibility}, \hyperpage{29, 30}
-    \subitem {fr\+\_\+dx\+\_\+pulse}, \hyperpage{26}
-    \subitem {fr\+\_\+sx\+\_\+pulse}, \hyperpage{26}
-    \subitem {get\+\_\+fr\+\_\+dx\+\_\+rpm}, \hyperpage{27}
-    \subitem {get\+\_\+fr\+\_\+sx\+\_\+rpm}, \hyperpage{27}
-    \subitem {get\+\_\+rt\+\_\+dx\+\_\+rpm}, \hyperpage{27}
-    \subitem {get\+\_\+rt\+\_\+sx\+\_\+rpm}, \hyperpage{28}
-    \subitem {model\+\_\+init}, \hyperpage{28}
-    \subitem {tps1\+\_\+percentage}, \hyperpage{30}
-    \subitem {tps2\+\_\+percentage}, \hyperpage{30}
-  \item {Board pinout}, \hyperpage{36}
+    \subitem {Board module}, \hyperpage{32}
+  \item {Board module}, \hyperpage{28}
+    \subitem {A\+D\+C\+\_\+\+Handler}, \hyperpage{32}
+    \subitem {apps\+\_\+plausibility}, \hyperpage{35}
+    \subitem {B\+U\+F\+F\+E\+RS}, \hyperpage{32}
+    \subitem {brake\+\_\+percentage}, \hyperpage{35}
+    \subitem {brake\+\_\+plausibility}, \hyperpage{35, 36}
+    \subitem {fr\+\_\+dx\+\_\+pulse}, \hyperpage{32}
+    \subitem {fr\+\_\+sx\+\_\+pulse}, \hyperpage{32}
+    \subitem {get\+\_\+fr\+\_\+dx\+\_\+rpm}, \hyperpage{33}
+    \subitem {get\+\_\+fr\+\_\+sx\+\_\+rpm}, \hyperpage{33}
+    \subitem {get\+\_\+rt\+\_\+dx\+\_\+rpm}, \hyperpage{33}
+    \subitem {get\+\_\+rt\+\_\+sx\+\_\+rpm}, \hyperpage{34}
+    \subitem {model\+\_\+init}, \hyperpage{34}
+    \subitem {tps1\+\_\+percentage}, \hyperpage{36}
+    \subitem {tps2\+\_\+percentage}, \hyperpage{36}
+  \item {Board pinout}, \hyperpage{47}
   \item {brake\+\_\+percentage}
-    \subitem {Board module}, \hyperpage{29}
+    \subitem {Board module}, \hyperpage{35}
   \item {brake\+\_\+plausibility}
-    \subitem {Board module}, \hyperpage{29, 30}
+    \subitem {Board module}, \hyperpage{35, 36}
   \item {build\+P\+DO}
-    \subitem {C\+A\+Nopen P\+D\+O module}, \hyperpage{33}
+    \subitem {C\+A\+Nopen P\+D\+O module}, \hyperpage{39}
+  \item {byte\+\_\+padding}
+    \subitem {Radio module}, \hyperpage{42}
 
   \indexspace
 
-  \item {C\+A\+N Network Nodes ID}, \hyperpage{15}
-  \item {C\+A\+N Servizi Network}, \hyperpage{13}
-    \subitem {can\+Send}, \hyperpage{14}
-    \subitem {init\+C\+AN}, \hyperpage{14}
-  \item {C\+A\+N\+\_\+\+I\+D.\+h}, \hyperpage{39}
-  \item {C\+A\+Nopen Function Codes}, \hyperpage{18}
-  \item {C\+A\+Nopen N\+M\+T Command Specifiers}, \hyperpage{19}
-  \item {C\+A\+Nopen N\+M\+T module}, \hyperpage{31}
-    \subitem {proceed\+N\+M\+Tstate\+Change}, \hyperpage{31}
-    \subitem {slave\+Send\+Boot\+Up}, \hyperpage{32}
-  \item {C\+A\+Nopen P\+D\+O module}, \hyperpage{33}
-    \subitem {build\+P\+DO}, \hyperpage{33}
-    \subitem {proceed\+P\+DO}, \hyperpage{34}
-  \item {C\+O\+\_\+can.\+cpp}, \hyperpage{40}
-  \item {C\+O\+\_\+can.\+h}, \hyperpage{41}
+  \item {C\+A\+N Network Nodes ID}, \hyperpage{21}
+  \item {C\+A\+N Servizi Network}, \hyperpage{17}
+    \subitem {C\+A\+N\+\_\+general\+\_\+callback}, \hyperpage{18}
+    \subitem {can\+Send}, \hyperpage{19}
+    \subitem {get\+Node\+Id}, \hyperpage{19}
+    \subitem {init\+C\+AN}, \hyperpage{19}
+    \subitem {set\+Node\+Id}, \hyperpage{20}
+  \item {C\+A\+N\+\_\+\+I\+D.\+h}, \hyperpage{57}
+  \item {C\+A\+N\+\_\+general\+\_\+callback}
+    \subitem {C\+A\+N Servizi Network}, \hyperpage{18}
+  \item {C\+A\+Nopen Finite State Machine module}, \hyperpage{48}
+    \subitem {can\+Dispatch}, \hyperpage{49}
+    \subitem {e\+\_\+node\+State}, \hyperpage{49}
+    \subitem {enum\+\_\+node\+State}, \hyperpage{49}
+    \subitem {get\+State}, \hyperpage{50}
+    \subitem {initialisation}, \hyperpage{50}
+    \subitem {operational}, \hyperpage{50}
+    \subitem {pre\+Operational}, \hyperpage{51}
+    \subitem {set\+State}, \hyperpage{51}
+    \subitem {stopped}, \hyperpage{52}
+  \item {C\+A\+Nopen Function Codes}, \hyperpage{24}
+  \item {C\+A\+Nopen N\+M\+T Command Specifiers}, \hyperpage{25}
+  \item {C\+A\+Nopen N\+M\+T module}, \hyperpage{37}
+    \subitem {proceed\+N\+M\+Tstate\+Change}, \hyperpage{37}
+    \subitem {slave\+Send\+Boot\+Up}, \hyperpage{38}
+  \item {C\+A\+Nopen P\+D\+O module}, \hyperpage{39}
+    \subitem {build\+P\+DO}, \hyperpage{39}
+    \subitem {proceed\+P\+DO}, \hyperpage{40}
+  \item {C\+A\+Nopen Timer module}, \hyperpage{53}
+    \subitem {Time\+Dispatch}, \hyperpage{54}
+    \subitem {timer\+Init}, \hyperpage{54}
+    \subitem {timer\+Start}, \hyperpage{54}
+    \subitem {timer\+Stop}, \hyperpage{54}
+  \item {C\+I\+P\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N\+G\+TH}
+    \subitem {Radio module}, \hyperpage{42}
+  \item {C\+O\+\_\+can.\+cpp}, \hyperpage{58}
+  \item {C\+O\+\_\+can.\+h}, \hyperpage{60}
+  \item {can\+Dispatch}
+    \subitem {C\+A\+Nopen Finite State Machine module}, \hyperpage{49}
   \item {can\+Send}
-    \subitem {C\+A\+N Servizi Network}, \hyperpage{14}
+    \subitem {C\+A\+N Servizi Network}, \hyperpage{19}
   \item {cob\+\_\+id}
-    \subitem {Message}, \hyperpage{37}
-  \item {Common Defines}, \hyperpage{16}
-  \item {common.\+h}, \hyperpage{42}
+    \subitem {Message}, \hyperpage{55}
+  \item {Common Defines}, \hyperpage{22}
+  \item {common.\+h}, \hyperpage{61}
 
   \indexspace
 
   \item {data}
-    \subitem {Message}, \hyperpage{37}
-  \item {Data filtering module}, \hyperpage{20}
-    \subitem {filter\+\_\+buffer}, \hyperpage{20}
-  \item {def.\+h}, \hyperpage{44}
+    \subitem {Message}, \hyperpage{55}
+  \item {Data filtering module}, \hyperpage{26}
+    \subitem {filter\+\_\+buffer}, \hyperpage{26}
+  \item {def.\+h}, \hyperpage{63}
 
   \indexspace
 
-  \item {filter.\+cpp}, \hyperpage{45}
-  \item {filter.\+h}, \hyperpage{47}
+  \item {e\+\_\+node\+State}
+    \subitem {C\+A\+Nopen Finite State Machine module}, \hyperpage{49}
+  \item {encrypt\+\_\+model}
+    \subitem {Radio module}, \hyperpage{43}
+  \item {enum\+\_\+node\+State}
+    \subitem {C\+A\+Nopen Finite State Machine module}, \hyperpage{49}
+
+  \indexspace
+
+  \item {filter.\+cpp}, \hyperpage{64}
+  \item {filter.\+h}, \hyperpage{66}
   \item {filter\+\_\+buffer}
-    \subitem {Data filtering module}, \hyperpage{20}
+    \subitem {Data filtering module}, \hyperpage{26}
   \item {fr\+\_\+dx\+\_\+pulse}
-    \subitem {Board module}, \hyperpage{26}
+    \subitem {Board module}, \hyperpage{32}
   \item {fr\+\_\+sx\+\_\+pulse}
-    \subitem {Board module}, \hyperpage{26}
+    \subitem {Board module}, \hyperpage{32}
 
   \indexspace
 
+  \item {generate\+\_\+iv}
+    \subitem {Radio module}, \hyperpage{43}
+  \item {generate\+\_\+random\+\_\+char}
+    \subitem {Radio module}, \hyperpage{44}
   \item {get\+\_\+fr\+\_\+dx\+\_\+rpm}
-    \subitem {Board module}, \hyperpage{27}
+    \subitem {Board module}, \hyperpage{33}
   \item {get\+\_\+fr\+\_\+sx\+\_\+rpm}
-    \subitem {Board module}, \hyperpage{27}
+    \subitem {Board module}, \hyperpage{33}
   \item {get\+\_\+rt\+\_\+dx\+\_\+rpm}
-    \subitem {Board module}, \hyperpage{27}
+    \subitem {Board module}, \hyperpage{33}
   \item {get\+\_\+rt\+\_\+sx\+\_\+rpm}
-    \subitem {Board module}, \hyperpage{28}
+    \subitem {Board module}, \hyperpage{34}
+  \item {get\+Node\+Id}
+    \subitem {C\+A\+N Servizi Network}, \hyperpage{19}
+  \item {get\+State}
+    \subitem {C\+A\+Nopen Finite State Machine module}, \hyperpage{50}
 
   \indexspace
 
   \item {init\+C\+AN}
-    \subitem {C\+A\+N Servizi Network}, \hyperpage{14}
+    \subitem {C\+A\+N Servizi Network}, \hyperpage{19}
+  \item {initialisation}
+    \subitem {C\+A\+Nopen Finite State Machine module}, \hyperpage{50}
+  \item {iv}
+    \subitem {Radio module}, \hyperpage{45}
+
+  \indexspace
+
+  \item {J\+S\+O\+N\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}
+    \subitem {Radio module}, \hyperpage{42}
 
   \indexspace
 
   \item {len}
-    \subitem {Message}, \hyperpage{38}
+    \subitem {Message}, \hyperpage{56}
   \item {loop}
-    \subitem {Main module}, \hyperpage{35}
+    \subitem {Main module}, \hyperpage{46}
 
   \indexspace
 
-  \item {Main module}, \hyperpage{35}
-    \subitem {loop}, \hyperpage{35}
-    \subitem {setup}, \hyperpage{35}
-  \item {Message}, \hyperpage{37}
-    \subitem {cob\+\_\+id}, \hyperpage{37}
-    \subitem {data}, \hyperpage{37}
-    \subitem {len}, \hyperpage{38}
-  \item {model.\+cpp}, \hyperpage{48}
-  \item {model.\+h}, \hyperpage{52}
+  \item {Main module}, \hyperpage{46}
+    \subitem {loop}, \hyperpage{46}
+    \subitem {setup}, \hyperpage{46}
+  \item {Message}, \hyperpage{55}
+    \subitem {cob\+\_\+id}, \hyperpage{55}
+    \subitem {data}, \hyperpage{55}
+    \subitem {len}, \hyperpage{56}
+  \item {model.\+cpp}, \hyperpage{67}
+  \item {model.\+h}, \hyperpage{71}
   \item {model\+\_\+init}
-    \subitem {Board module}, \hyperpage{28}
+    \subitem {Board module}, \hyperpage{34}
 
   \indexspace
 
-  \item {nmt.\+cpp}, \hyperpage{55}
-  \item {nmt.\+h}, \hyperpage{56}
+  \item {nmt.\+cpp}, \hyperpage{74}
+  \item {nmt.\+h}, \hyperpage{75}
 
   \indexspace
 
-  \item {pdo.\+cpp}, \hyperpage{57}
-  \item {pdo.\+h}, \hyperpage{58}
+  \item {operational}
+    \subitem {C\+A\+Nopen Finite State Machine module}, \hyperpage{50}
+
+  \indexspace
+
+  \item {pdo.\+cpp}, \hyperpage{76}
+  \item {pdo.\+h}, \hyperpage{77}
+  \item {pkcs7\+\_\+padding}
+    \subitem {Radio module}, \hyperpage{44}
+  \item {pre\+Operational}
+    \subitem {C\+A\+Nopen Finite State Machine module}, \hyperpage{51}
   \item {proceed\+N\+M\+Tstate\+Change}
-    \subitem {C\+A\+Nopen N\+M\+T module}, \hyperpage{31}
+    \subitem {C\+A\+Nopen N\+M\+T module}, \hyperpage{37}
   \item {proceed\+P\+DO}
-    \subitem {C\+A\+Nopen P\+D\+O module}, \hyperpage{34}
+    \subitem {C\+A\+Nopen P\+D\+O module}, \hyperpage{40}
 
   \indexspace
 
-  \item {S\+C\+U firmware selection}, \hyperpage{17}
-  \item {S\+C\+U.\+ino}, \hyperpage{59}
-  \item {sensors\+\_\+pinout.\+h}, \hyperpage{60}
+  \item {Radio module}, \hyperpage{41}
+    \subitem {byte\+\_\+padding}, \hyperpage{42}
+    \subitem {C\+I\+P\+H\+E\+R\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N\+G\+TH}, 
+		\hyperpage{42}
+    \subitem {encrypt\+\_\+model}, \hyperpage{43}
+    \subitem {generate\+\_\+iv}, \hyperpage{43}
+    \subitem {generate\+\_\+random\+\_\+char}, \hyperpage{44}
+    \subitem {iv}, \hyperpage{45}
+    \subitem {J\+S\+O\+N\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}, 
+		\hyperpage{42}
+    \subitem {pkcs7\+\_\+padding}, \hyperpage{44}
+    \subitem {radio\+\_\+init}, \hyperpage{45}
+    \subitem {radio\+\_\+send\+\_\+model}, \hyperpage{45}
+  \item {radio.\+cpp}, \hyperpage{78}
+  \item {radio.\+h}, \hyperpage{80}
+  \item {radio\+\_\+init}
+    \subitem {Radio module}, \hyperpage{45}
+  \item {radio\+\_\+send\+\_\+model}
+    \subitem {Radio module}, \hyperpage{45}
+
+  \indexspace
+
+  \item {S\+C\+U firmware selection}, \hyperpage{23}
+  \item {S\+C\+U.\+ino}, \hyperpage{82}
+  \item {sensors\+\_\+pinout.\+h}, \hyperpage{83}
+  \item {set\+Node\+Id}
+    \subitem {C\+A\+N Servizi Network}, \hyperpage{20}
+  \item {set\+State}
+    \subitem {C\+A\+Nopen Finite State Machine module}, \hyperpage{51}
   \item {setup}
-    \subitem {Main module}, \hyperpage{35}
+    \subitem {Main module}, \hyperpage{46}
   \item {slave\+Send\+Boot\+Up}
-    \subitem {C\+A\+Nopen N\+M\+T module}, \hyperpage{32}
+    \subitem {C\+A\+Nopen N\+M\+T module}, \hyperpage{38}
+  \item {states.\+cpp}, \hyperpage{84}
+  \item {states.\+h}, \hyperpage{86}
+  \item {stopped}
+    \subitem {C\+A\+Nopen Finite State Machine module}, \hyperpage{52}
 
   \indexspace
 
+  \item {Time\+Dispatch}
+    \subitem {C\+A\+Nopen Timer module}, \hyperpage{54}
+  \item {timer.\+cpp}, \hyperpage{88}
+  \item {timer.\+h}, \hyperpage{89}
+  \item {timer\+Init}
+    \subitem {C\+A\+Nopen Timer module}, \hyperpage{54}
+  \item {timer\+Start}
+    \subitem {C\+A\+Nopen Timer module}, \hyperpage{54}
+  \item {timer\+Stop}
+    \subitem {C\+A\+Nopen Timer module}, \hyperpage{54}
   \item {tps1\+\_\+percentage}
-    \subitem {Board module}, \hyperpage{30}
+    \subitem {Board module}, \hyperpage{36}
   \item {tps2\+\_\+percentage}
-    \subitem {Board module}, \hyperpage{30}
+    \subitem {Board module}, \hyperpage{36}
 
 \end{theindex}
