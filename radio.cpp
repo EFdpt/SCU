@@ -7,12 +7,11 @@
  */
 
 #include "radio.h"
+#include "radio_drive.h"
 
 #if defined(_RETRO_)
 
 #include <SPI.h>
-#include <nRF24L01.h>
-#include <RF24.h>
 #include <Arduino.h> // _DSB()
 #include <ArduinoJson.h>
 #include <Base64.h>
@@ -104,7 +103,6 @@ char cipher[CIPHER_MAX_LENGTH + 1] = {0};
  *  @var RF24 radio(RADIO_CE_PIN, RADIO_CSN_PIN)
  *  @brief Radio
  */
-RF24 radio(RADIO_CE_PIN, RADIO_CSN_PIN);
 
 /** 
  *  @var const uint64_t pipe;
@@ -216,9 +214,7 @@ void radio_init() {
     TRNG->TRNG_CR = TRNG_CR_KEY(0x524e47) | TRNG_CR_ENABLE;
 
     // init radio
-    radio.begin();
-    radio.openWritingPipe(pipe);
-    radio.stopListening();
+    radioInit();
 }
 
 /**
@@ -292,7 +288,7 @@ void radio_send_model() {
     Base64.encode(encodedString, iv, IV_LEN);
     Base64.encode(encodedString + encodedIvLength, cipher, CIPHER_MAX_LENGTH);
 
-    radio.write(encodedString, encodedIvLength + encodedLength);
+    radioSend(encodedString, encodedIvLength + encodedLength);
 }
 
 #endif
