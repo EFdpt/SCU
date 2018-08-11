@@ -56,10 +56,10 @@ static unsigned char spiRead(unsigned char reg, char *pBuf, uint16_t length) {
 
 	digitalWrite(CSN, 0);                   // Set CSN low, init SPI tranaction
 	sstatus = SPI.transfer(reg);       	    // Select register to write to and read status unsigned char
-
-	for(i=0;i<length;i++)
+	pBuf = SPI.transfer(0,length);
+	/*for(i=0;i<length;i++)
 		pBuf[i] = SPI.transfer(0);    // Perform SPI.transfer to read unsigned char from nRF24L01
-
+	*/
 	digitalWrite(CSN, 1);                   // Set CSN high again
 
 	return(sstatus);                  // return nRF24L01 status unsigned char
@@ -94,12 +94,13 @@ static unsigned char spiWrite(unsigned char reg, char *pBuf, uint16_t length) {
   unsigned char sstatus,i;
 
   digitalWrite(CSN, 0);                   // Set CSN low, init SPI tranaction
-  sstatus = SPI.transfer(reg);             // Select register to write to and read status unsigned char
-  for(i=0;i<length; i++)             // then write all unsigned char in buffer(*pBuf)
+  sstatus = SPI.transfer(reg);           // Select register to write to and read status unsigned char
+  SPI.transfer(pBuf,length);		// then write all unsigned char in buffer(*pBuf)
+  /*for(i=0;i<length; i++)             
   {
     SPI.transfer(*pBuf++);
-  }
-  digitalWrite(CSN, 1);                   // Set CSN high again
+  }*/
+  digitalWrite(CSN, 1);             // Set CSN high again
   return(sstatus);                  // return nRF24L01 status unsigned char
 }
 
