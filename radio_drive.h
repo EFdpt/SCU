@@ -21,4 +21,5 @@
 
 bool radioInit();
 bool radioSend(char* value, uint16_t length);
+void radioSetPowerAndDatarate(unsigned char power, unsigned char datarate)
 

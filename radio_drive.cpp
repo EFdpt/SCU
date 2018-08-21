@@ -38,11 +38,12 @@ static unsigned char spiRead(unsigned char reg) {
 	unsigned char reg_val;
 
 	digitalWrite(CSN, 0);                // CSN low, initialize SPI communication...
-	SPI.transfer(reg);                         // Select register to read from..
-	reg_val = SPI.transfer(0);                 // ..then read register value
+	SPI.transfer(reg);                   // Select register to read from..
+	reg_val = SPI.transfer(0);           // ..then read register value
 	digitalWrite(CSN, 1);                // CSN high, terminate SPI communication
 
 	return(reg_val);                     // return register value
+
 }
 
 /**************************************************
@@ -51,18 +52,16 @@ static unsigned char spiRead(unsigned char reg) {
  * Description:
  * Reads 'unsigned chars' #of unsigned chars from register 'reg'
 /**************************************************/
-static unsigned char spiRead(unsigned char reg, char *pBuf, uint16_t length) {
+static unsigned char spiRead(unsigned char reg, unsigned char *pBuf, uint16_t length) {
 	unsigned char sstatus,i;
 
 	digitalWrite(CSN, 0);                   // Set CSN low, init SPI tranaction
 	sstatus = SPI.transfer(reg);       	    // Select register to write to and read status unsigned char
-	pBuf = SPI.transfer(0,length);
-	/*for(i=0;i<length;i++)
-		pBuf[i] = SPI.transfer(0);    // Perform SPI.transfer to read unsigned char from nRF24L01
-	*/
+	for(i=0;i<length;i++)
+		pBuf[i] = SPI.transfer(0);    		// Perform SPI.transfer to read unsigned char from nRF24L01
 	digitalWrite(CSN, 1);                   // Set CSN high again
 
-	return(sstatus);                  // return nRF24L01 status unsigned char
+	return(sstatus);                  		// return nRF24L01 status unsigned char
 }
 
 
@@ -76,11 +75,11 @@ static unsigned char spiWrite(unsigned char reg, char value) {
 	unsigned char sstatus;
 
 	digitalWrite(CSN, 0);                   // CSN low, init SPI transaction
-	SPI.transfer(reg);                            // select register
-	SPI.transfer(value);                          // ..and write value to it..
+	sstatus = SPI.transfer(reg);            // select register
+	SPI.transfer(value);                    // ..and write value to it..
 	digitalWrite(CSN, 1);                   // CSN high again
 
-	return(sstatus);                   // return nRF24L01 status unsigned char
+	return(sstatus);                   		// return nRF24L01 status unsigned char
 }
 
 
@@ -90,18 +89,15 @@ static unsigned char spiWrite(unsigned char reg, char value) {
  * Description:
  * Writes contents of buffer '*pBuf' to nRF24L01
 /**************************************************/
-static unsigned char spiWrite(unsigned char reg, char *pBuf, uint16_t length) {
-  unsigned char sstatus,i;
+static unsigned char spiWrite(unsigned char reg, unsigned char *pBuf, uint16_t length) {
+  unsigned char sstatus;
 
-  digitalWrite(CSN, 0);                   // Set CSN low, init SPI tranaction
-  sstatus = SPI.transfer(reg);           // Select register to write to and read status unsigned char
+  digitalWrite(CSN, 0);             // Set CSN low, init SPI tranaction
+  sstatus = SPI.transfer(reg);      // Select register to write to and read status unsigned char
   SPI.transfer(pBuf,length);		// then write all unsigned char in buffer(*pBuf)
-  /*for(i=0;i<length; i++)             
-  {
-    SPI.transfer(*pBuf++);
-  }*/
   digitalWrite(CSN, 1);             // Set CSN high again
   return(sstatus);                  // return nRF24L01 status unsigned char
+
 }
 
 /**************************************************
@@ -141,7 +137,7 @@ bool radioInit() {
  * Description:
  * Send a value to the receiver, return true if done
 /**************************************************/
-bool radioSend(char* value, uint16_t length) {
+bool radioSend(unsigned char* value, uint16_t length) {
 	unsigned char sstatus = spiRead(STATUS);
 
 	if(sstatus&TX_DS) {                            // if receive data ready (TX_DS) interrupt
@@ -153,3 +149,18 @@ bool radioSend(char* value, uint16_t length) {
 
 	return !(sstatus&MAX_RT);					// return true if MAX_RT interrupt is not flagged
 }
+
+/**************************************************
+ * Function: radioSetPowerAndDatarate();
+ * 
+ * Description:
+ * Set the power and the datarate of nRF24L01 module
+/**************************************************/
+void radioSetPowerAndDatarate(unsigned char power, unsigned char datarate) {
+	digitalWrite(CE, 0);
+	spiWrite(WRITE_REG + CONFIG, 0x0c);     		// Set PWR_UP bit to 0, shutdown the nRF24L01 module
+	spiWrite(WRITE_REG + RF_SETUP,datarate+power);	// Set the new TW_PWR and datarate parameters
+	spiWrite(WRITE_REG + CONFIG, 0x0e);     		// Set PWR_UP bit to 1
+	digitalWrite(CE, 1);
+}
+
